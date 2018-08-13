@@ -1,0 +1,1 @@
+[Android的Application理解](http://www.cnblogs.com/bastard/archive/2012/04/01/2428903.html)
