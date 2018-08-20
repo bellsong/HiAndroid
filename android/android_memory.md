@@ -1,5 +1,6 @@
 # I,Programmer
-##Day 2 Memory Leak
+
+## Day 2 Memory Leak
 
 什么是内存泄漏
 
@@ -70,7 +71,13 @@ Reference Tree代表指向该实例的引用，可以从这里面查看内存泄
 3、WebView	
 >不要在xml中声明，销毁时移除所有的view，直接将weview相关的放在一个进程中，退出时直接杀死进程
 
-[参考链接](https://medium.com/freenet-engineering/memory-leaks-in-android-identify-treat-and-avoid-d0b1233acc8#.bnwtaamwh)
+[参考链接]
+
+[Android 内存优化——常见内存泄露及优化方案](https://juejin.im/entry/58ef30fd44d904006cdfcbb6)
+
+[Android性能优化：那些关于Bitmap优化的小事](https://juejin.im/entry/5aa873996fb9a028db586153)
+
+(https://medium.com/freenet-engineering/memory-leaks-in-android-identify-treat-and-avoid-d0b1233acc8#.bnwtaamwh)
 
 
 内存泄露检测工具

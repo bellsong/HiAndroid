@@ -22,6 +22,9 @@ https://github.com/friendlyrobotnyc/TinyDancer [方式2]
 https://github.com/android-notes/Cockroach
 
 ####参考
+
+https://juejin.im/entry/587c43a3570c352201039814
+
 [Android UI性能优化 检测应用中的UI卡顿](http://blog.csdn.net/lmj623565791/article/details/58626355)
 
 [Android性能优化典范（一）](http://www.csdn.net/article/2015-01-20/2823621-android-performance-patterns)

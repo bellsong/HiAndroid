@@ -93,6 +93,9 @@
 
 ### 高级篇
 
+[Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
+
+
 [OpenGL](./android_3_opengl.md)
 
 ### [Programmer](./programmer.md)
@@ -213,6 +216,9 @@ https://github.com/zzz40500/GsonFormat
 http://hukai.me/
 胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
 
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+
 https://hujiaweibujidao.github.io/
 Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
 
@@ -222,6 +228,8 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 * [反编译](./android_decomplie.md)
 
 通过Android API Hook技术，即通过动态代理等方法替换关键节点
+
+[Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
 
 [几个不错的Android开源音视频播放器](https://mp.weixin.qq.com/s/-QYABYGPBhPXQu06drmpUA)
 
