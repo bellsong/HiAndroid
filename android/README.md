@@ -9,6 +9,7 @@
 ### 高级篇
 ### 开源项目学习
 ### 编码规范
+### 案例实践
 
 ### 基础篇
 
@@ -497,4 +498,9 @@ http://blog.csdn.net/lincyang/article/details/7095417
 
 UI展示 View
 
+[ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
+
+
+### 案例实践
+[图片颜色提取](./android_case.md)
 
