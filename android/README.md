@@ -10,6 +10,7 @@
 ### 开源项目学习
 ### 编码规范
 ### 案例实践
+### 源码阅读
 
 ### 基础篇
 
@@ -502,5 +503,9 @@ UI展示 View
 
 
 ### 案例实践
-[图片颜色提取](./android_case.md)
+[图片颜色提取 Android Palette](./android_case.md)
+
+### 源码阅读
+[Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
+[Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
 

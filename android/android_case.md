@@ -5,8 +5,7 @@
 #### 原理
 #### 实践
 #### 参考
-
-
+#### 知识点
 
 #### 背景
     通过筛选图片的主色调来显示如红色系，蓝色系的照片。这里涉及到图片主色调的提取。Android 采用的是 Google 官方推出的 Palette 算法。（其他还有什么算法？）
@@ -29,3 +28,27 @@
 > compile 'com.android.support:palette-v7:21.0.0'
 
 #### 参考
+[android 调用Camera，获取预览帧中的图像](https://blog.csdn.net/u013869488/article/details/49853217)
+
+[Camera API](https://developer.android.com/guide/topics/media/camera#java)
+
+[Android 分别使用 SurfaceView 和 TextureView 来预览 Camera，获取NV21数据](https://rustfisher.github.io/2018/02/26/Android_note/Android-camera_nv21_surfaceview_textureview/)
+
+[Android Camera SurfaceView 预览拍照](https://www.jianshu.com/p/9e0f3fc5a3b4)
+
+[Android 上的调色板 —— Palette](https://www.jianshu.com/p/430274ade74f)
+
+[GlidePalette](https://github.com/florent37/GlidePalette)
+
+[Android 使用Palette获取Gallery图片主色调](https://blog.csdn.net/zhoumushui/article/details/70143462)
+
+[MaterialDesignDemo](https://github.com/loonggg/MaterialDesignDemo)
+
+[Android Lollipop：使用Palette抽取图片主色调](https://www.jianshu.com/p/4dc897dc5354)
+
+[cameraview](https://github.com/google/cameraview)
+
+#### 知识点
+1. Camera / android.hardware.camera2(API 21)
+2. SurfaceView
+3. Palette
