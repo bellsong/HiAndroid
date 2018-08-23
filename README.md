@@ -7,4 +7,10 @@
     
 3. Y Launcher 一个桌面应用
 4. Y Explore 一个文件浏览器
+5. Y Palette 一个调色板 
 
+    生活中的颜色收集器，通过摄像头拍照生活中的物品，收集颜色
+
+### Android 100问
+
+1. [简单讲一下AsyncTask的优缺点](./QA/asynctask.md)
