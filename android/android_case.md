@@ -48,6 +48,8 @@
 
 [cameraview](https://github.com/google/cameraview)
 
+[Android Camera踩坑详解](https://hakuless.github.io/2017/12/12/Android-Camera%E8%B8%A9%E5%9D%91%E8%AF%A6%E8%A7%A3/)
+
 #### 知识点
 1. Camera / android.hardware.camera2(API 21)
 2. SurfaceView

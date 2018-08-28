@@ -220,6 +220,7 @@ http://hukai.me/
 
 [Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
 
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
 
 https://hujiaweibujidao.github.io/
 Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
@@ -418,6 +419,9 @@ JSPatch
 
 ### 架构
 [MVP](http://www.jianshu.com/p/7567ed0d1853)
+
+[MVVM](./Architecture/MVVM.md)
+
 
 ### [开源项目](./android_open_source.md)
 
