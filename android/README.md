@@ -213,7 +213,6 @@ IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
-
 性能优化
 http://hukai.me/
 胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
@@ -225,8 +224,9 @@ http://hukai.me/
 https://hujiaweibujidao.github.io/
 Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
 
-[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
+[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
 
 * [反编译](./android_decomplie.md)
 
@@ -384,6 +384,7 @@ JSPatch
 [android 软软的动画弹出菜单，基于Facebook的Rebuond](https://gold.xitu.io/post/5849658161ff4b006cb86031)
 [Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
 [模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
+[模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
 
 ### 动态加载
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
@@ -512,4 +513,8 @@ UI展示 View
 ### 源码阅读
 [Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
 [Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
+
+
+#### 体系
+[蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
 
