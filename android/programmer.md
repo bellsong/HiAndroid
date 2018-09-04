@@ -142,6 +142,9 @@ Lobsters
 
 官方网站：https://lobste.rs/
 
+## Think
+[一个思维习惯，让你成为架构师](https://juejin.im/post/5b864509e51d4538815f0125)
+
 ## 防御式编程 
 
 理论部分摘自代码大全
