@@ -514,7 +514,12 @@ UI展示 View
 [Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
 [Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
 
+[反作弊](./android_anticheat.md)
 
 #### 体系
 [蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
 
+
+# 主题切换
+
+[Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)

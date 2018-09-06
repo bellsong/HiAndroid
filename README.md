@@ -11,6 +11,7 @@
 
     生活中的颜色收集器，通过摄像头拍照生活中的物品，收集颜色
 
+### [Android Architecture](./android/Architecture/README.md)
 
 ### [Android Explore](./android/README.md)    
 
