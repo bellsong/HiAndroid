@@ -54,3 +54,5 @@
 1. Camera / android.hardware.camera2(API 21)
 2. SurfaceView
 3. Palette
+
+[理解JobScheduler机制](http://gityuan.com/2017/03/10/job_scheduler_service/)
