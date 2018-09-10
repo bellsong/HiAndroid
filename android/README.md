@@ -87,7 +87,7 @@
 ### 性能优化
 * [内存](android_memory.md)
   
-* [启动专项](./android_special_start.md)
+* [启动性能优化](./android_speed_start.md)
 
 * [Size专项](./android_optimize_size.md)
 
@@ -96,7 +96,6 @@
 ### 高级篇
 
 [Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
-
 
 [OpenGL](./android_3_opengl.md)
 
@@ -213,18 +212,6 @@ IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
-性能优化
-http://hukai.me/
-胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
-https://hujiaweibujidao.github.io/
-Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
 [Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
 
@@ -523,3 +510,5 @@ UI展示 View
 # 主题切换
 
 [Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)
+
+
