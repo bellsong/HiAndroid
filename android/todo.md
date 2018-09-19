@@ -67,3 +67,14 @@ Android里面的线程模式
 多线程的处理问题，并发，异步，同步锁
 
 结构化体系化思维能力，要说明白：问题是什么？我要做什么？解决途径是什么？进度在解决途径中体现出来即可，主要体现我们对用户增长这个事情的理解
+
+
+### [图片资源](https://zhuanlan.zhihu.com/p/26073777)
+
+### [设计资源](https://zhuanlan.zhihu.com/p/20321959)
+
+[如何评价 Google 的 Fuchsia、Android、iOS 跨平台应用框架 Flutter？](https://www.zhihu.com/question/50156415)
+
+[程序员的书籍资源](https://zhuanlan.zhihu.com/p/23857699?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+

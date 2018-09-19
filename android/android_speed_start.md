@@ -463,6 +463,8 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 
 [【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
+[一触即发 App启动优化最佳实践](https://zhuanlan.zhihu.com/p/23442027)
+
 ---
 READ MORE，
 THINK MORE，

@@ -145,6 +145,11 @@ Lobsters
 ## Think
 [一个思维习惯，让你成为架构师](https://juejin.im/post/5b864509e51d4538815f0125)
 
+[如何快速成长为技术大牛？阿里资深技术专家的总结亮了](http://www.infoq.com/cn/articles/how-to-become-tech-master?utm_source=infoq&utm_campaign=user_page&utm_medium=link)
+
+[当我们聊技术实力的时候，我们到底在聊什么](http://www.infoq.com/cn/articles/talk-about-technology)
+
+
 ## 防御式编程 
 
 理论部分摘自代码大全

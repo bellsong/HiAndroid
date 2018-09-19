@@ -7,7 +7,7 @@
 具体包括：
 UI性能（界面卡顿），内存，CPU，电池，磁盘，网络流量，服务器资源
 
-#### 如何检测应用在UI线程的卡顿 
+#### 如何检测应用在UI线程的卡顿
 
 利用UI线程Looper打印的日志
 利用Choreographer
@@ -22,6 +22,8 @@ https://github.com/friendlyrobotnyc/TinyDancer [方式2]
 https://github.com/android-notes/Cockroach
 
 ####参考
+
+[Android性能优化来龙去脉总结](https://juejin.im/entry/5b971f6c6fb9a05d151c883a?utm_source=gold_browser_extension)
 
 https://juejin.im/entry/587c43a3570c352201039814
 
