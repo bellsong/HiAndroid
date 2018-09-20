@@ -78,7 +78,6 @@
 [Android混淆](./android_proguard.md)
 
 ##### WebView
-
 [Android WebView Memory Leak WebView内存泄漏解决方案](http://my.oschina.net/zhibuji/blog/100580)
 
 #### 安全
@@ -86,10 +85,9 @@
 [Android 逆向](./android_decomplie.md)
 
 ### 性能优化
-
 * [内存](android_memory.md)
   
-* [启动性能优化](./android_speed_start.md)
+* [启动专项](./android_speed_start.md)
 
 * [Size专项](./android_optimize_size.md)
 
@@ -98,6 +96,7 @@
 ### 高级篇
 
 [Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
+
 
 [OpenGL](./android_3_opengl.md)
 
@@ -214,6 +213,18 @@ IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
+性能优化
+http://hukai.me/
+胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+https://hujiaweibujidao.github.io/
+Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
 [Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
 
@@ -412,6 +423,8 @@ JSPatch
 
 [MVVM](./Architecture/MVVM.md)
 
+### [组件化](./Architecture/README.md)
+
 
 ### [开源项目](./android_open_source.md)
 
@@ -472,7 +485,6 @@ Talk is cheap,show me the code.
 
 ### 总结归纳
 [随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
-
 [android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
 
 [设计模式](http://blog.csdn.net/hguisu/article/category/1133340)
@@ -482,19 +494,10 @@ Talk is cheap,show me the code.
 android.os.BadParcelableException: ClassNotFoundException when unmarshalling
 http://blog.csdn.net/lincyang/article/details/7095417
 
+[TODO](./todo.md)
 
-将所有的Api抓取下来
-
-一个App的开发
-
-网络请求 OKHttp
-数据转化 GSON
-数据存储 SharePreference
-
-UI展示 View
 
 [ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
-
 
 ### 案例实践
 [图片颜色提取 Android Palette](./android_case.md)
@@ -510,7 +513,4 @@ UI展示 View
 
 
 # 主题切换
-
 [Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)
-
-

@@ -1,8 +1,32 @@
-# I,Programmer
+## 内存优化
 
-## Day 2 Memory Leak
+内存优化那么主要就是去消除应用中的内存泄露、避免内存抖动。
 
-什么是内存泄漏
+1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
+
+2、常见的内存泄露情况：
+
+● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
+
+● 静态变量：同样也是应为生命周期比较长
+
+● 非静态内部类创建静态实例造成的内存泄漏
+
+● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
+
+● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
+
+● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
+
+● 复用问题（bitmap释放）
+
+Android 内存优化总结&实践： mp.weixin.qq.com/s/2MsEAR9pQ…
+
+Android内存优化之OOM： hukai.me/android-per…
+
+Android应用内存泄露分析、改善经验总结： zhuanlan.zhihu.com/p/20831913
+
+### 什么是内存泄漏
 
 Android虚拟机的垃圾回收采用的是根搜索算法。GC会从根节点（GC Roots）开始对heap进行遍历。到最后，部分没有直接或者间接引用到GC Roots的就是需要回收的垃圾，会被GC回收掉。而内存泄漏出现的原因就是存在了无效的引用，导致本来需要被GC的对象没有被回收掉。
 
@@ -102,6 +126,8 @@ Reference Tree代表指向该实例的引用，可以从这里面查看内存泄
 [腾讯](http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332083&idx=1&sn=d5a1b24736d6f14ff24dfecf15e397a9&scene=0#wechat_redirect)
 
 [内存分析命令](http://gityuan.com/2016/01/02/memory-analysis-command/)
+
+[如何写一个匿名内部类，而又不引起内存泄漏](http://www.atatech.org/articles/58280)
 
 ## Leakcanary分享
 
@@ -209,3 +235,10 @@ MAT(Memory Analyzer Tool)，一个基于Eclipse的内存分析工具，是一个
 [Android 应用内存泄漏的定位、分析与解决策略](https://www.diycode.cc/topics/475)
 
 [MemoryMonitor](https://www.diycode.cc/projects/cundong/MemoryMonitor)
+
+[Android 系统不释放内存么？](https://juejin.im/entry/5b9af2de6fb9a05cdd2cf457?utm_source=gold_browser_extension)
+
+[内存泄露](http://blog.csdn.net/xiaochuanding/article/details/56286074?utm_source=gank.io&utm_medium=email)
+
+##### WebView
+[Android WebView Memory Leak WebView内存泄漏解决方案](http://my.oschina.net/zhibuji/blog/100580)

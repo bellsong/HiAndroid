@@ -364,33 +364,6 @@ github.com/wasabeef/Ta… [方式2]
 
 github.com/friendlyrob… [方式2]
 
-内存优化
-
-内存优化那么主要就是去消除应用中的内存泄露、避免内存抖动。
-
-1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
-
-2、常见的内存泄露情况：
-
-● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
-
-● 静态变量：同样也是应为生命周期比较长
-
-● 非静态内部类创建静态实例造成的内存泄漏
-
-● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
-
-● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
-
-● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
-
-● 复用问题（bitmap释放）
-
-Android 内存优化总结&实践： mp.weixin.qq.com/s/2MsEAR9pQ…
-
-Android内存优化之OOM： hukai.me/android-per…
-
-Android应用内存泄露分析、改善经验总结： zhuanlan.zhihu.com/p/20831913
 
 apk体积优化
 
