@@ -32,30 +32,6 @@
 
 #### [View](./android_view.md)
 
-* [Fragment](./android_fragment.md)
-
-* [ListView](./android_listview.md)
-
-* [RecyclerView](http://antonioleiva.com/recyclerview-listener/)
-
-* [Bitmap](./android_view_bitmap.md)
-
-* [ImageView](./android_view_imageview.md)
-
-* [ViewStub](./android_viewstub.md)
-
-* [AndroidCircularSeekBar](https://github.com/RaghavSood/AndroidCircularSeekBar)
-
-* [软键盘](./android_keyboard.md)
-
-* [Toast](./android_toast.md)
-
-* [UI专题](http://dev.10086.cn/cmdn/bbs/viewthread.php?tid=18736&page=1#pid89255)
-
-* TextView
-
-  [获取TextView显示的字符串宽度](http://2kpurple.github.io/2014/11/02/get-text-view-text-width/)
-
 * [BroadCast](./android_broadcast.md)
 
 #### [Application](./android_application.md)
@@ -77,15 +53,12 @@
 
 [Android混淆](./android_proguard.md)
 
-##### WebView
-[Android WebView Memory Leak WebView内存泄漏解决方案](http://my.oschina.net/zhibuji/blog/100580)
-
 #### 安全
 
 [Android 逆向](./android_decomplie.md)
 
 ### 性能优化
-* [内存](android_memory.md)
+* [内存](./android_memory.md)
   
 * [启动专项](./android_speed_start.md)
 
@@ -175,9 +148,6 @@ Just something markable.
 
 [Android热修复升级探索——追寻极致的代码热替换](http://www.atatech.org/articles/72533)
 
-[内存泄露](http://blog.csdn.net/xiaochuanding/article/details/56286074?utm_source=gank.io&utm_medium=email)
-
-
 [Android Classloader热修复技术之百家齐放](http://blog.csdn.net/sbsujjbcy/article/details/51760578)
 
 [Android消息机制—sdk源码解读之旅](https://zhuanlan.zhihu.com/p/25222485?utm_source=gank.io&utm_medium=email&refer=levent-j)
@@ -252,8 +222,6 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [Android性能：Release版如何排查CPU占用率高的问题](http://www.atatech.org/articles/58453)
 
 [Android上如何在发生崩溃时抓取日志](http://www.atatech.org/articles/58418)
-
-[如何写一个匿名内部类，而又不引起内存泄漏](http://www.atatech.org/articles/58280)
 
 在开发，测试，灰度，发布各个阶段对性能问题的关注和诉求是不一样的，所采取具体措施也有所不同。例如开发阶段主要是防止低性能的设计，编码，例如可以通过IDE插件在编码阶段就对低性能的代码进行告警。测试阶段，可以基于实验室环境，对卡顿，流量，IO，内存，启动速度等等性能数据进行详尽的自动化测试，越详细越好。灰度阶段是基于线上环境，对一些核心性能点进行监测。发布后则只针对一些核心指标进行粗粒度的监控。
 
@@ -440,7 +408,6 @@ JSPatch
 [一个27岁零基础无业游民的第一个开源作品](http://www.jianshu.com/p/aef225ae1502?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 [「daza.io」这将是我独立完成全端开发的项目](http://www.jianshu.com/p/0b6e630e5cf2?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[Android 仿美团网，探索使用ViewPager+GridView实现左右滑动查看更多分类的功能](http://blog.csdn.net/qq_20785431/article/details/52528404)
 
 [2017年初你绝对想尝试的25个新安卓库](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0216/7122.html)
 

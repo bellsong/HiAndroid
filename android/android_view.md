@@ -156,16 +156,53 @@ public static int generateViewId() {
 
 ##参考资料
 * [张兴业](http://blog.csdn.net/xyz_lmn)
+
 * [View的加载过程](http://www.cnblogs.com/xyzlmn/p/3641702.html)
+
 * [View原理](http://www.jianshu.com/p/17b372ef3f41)
 * [教你实现一个具备展开折叠功能的TextView](http://www.jianshu.com/p/317b118dd2d7)
+
 * [把RecyclerView撸成 马 蜂 窝](http://www.jianshu.com/p/6c78a5a07db5)
+
 * [Vector](http://www.jianshu.com/p/e3614e7abc03)
+
 * [屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
+
 * [自定义View](http://www.jianshu.com/p/c84693096e41)
+
 * [Android 的窗口管理系统 (View, Canvas, WindowManager)](http://www.cnblogs.com/samchen2009/p/3367496.html)
+
 * [Android重写view时onAttachedToWindow () 和 onDetachedFromWindow ()](http://blog.csdn.net/eyu8874521/article/details/8493995)
 
 * [Android 屏幕元素层次结构](http://www.uml.org.cn/jmshj/201303261.asp)
 
-[Android 分享一个流量显示界面](http://blog.csdn.net/wangjinyu501/article/details/39527021)
+* [Android 分享一个流量显示界面](http://blog.csdn.net/wangjinyu501/article/details/39527021)
+
+* [Android 仿美团网，探索使用ViewPager+GridView实现左右滑动查看更多分类的功能](http://blog.csdn.net/qq_20785431/article/details/52528404)
+
+* [Andorid Drawable玩法](https://blog.csdn.net/lmj623565791/article/details/43752383)
+
+* [Fragment](./android_fragment.md)
+
+* [ListView](./android_listview.md)
+
+* [RecyclerView](http://antonioleiva.com/recyclerview-listener/)
+
+* [Bitmap](./android_view_bitmap.md)
+
+* [ImageView](./android_view_imageview.md)
+
+* [ViewStub](./android_viewstub.md)
+
+* [AndroidCircularSeekBar](https://github.com/RaghavSood/AndroidCircularSeekBar)
+
+
+* [软键盘](./android_keyboard.md)
+
+* [Toast](./android_toast.md)
+
+* [UI专题](http://dev.10086.cn/cmdn/bbs/viewthread.php?tid=18736&page=1#pid89255)
+
+* TextView
+
+  [获取TextView显示的字符串宽度](http://2kpurple.github.io/2014/11/02/get-text-view-text-width/)
