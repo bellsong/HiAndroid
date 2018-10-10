@@ -8,8 +8,14 @@
 3. Y Launcher 一个桌面应用
 4. Y Explore 一个文件浏览器
 5. Y Palette 一个调色板 
-
     生活中的颜色收集器，通过摄像头拍照生活中的物品，收集颜色
+
+6. Y Clean 一个清理工具 工具类型产品
+7. Y Browser 一个浏览器
+8. Y 联系人
+9. Y 相册
+10. Y 电话
+11. Y 短信
 
 ### [Android Architecture](./android/Architecture/README.md)
 
@@ -24,3 +30,4 @@
 
 1. [最美应用](http://zuimeia.com/?platform=2)
 
+mkdir -p mips64el-linux-android/prebuilt/darwin-x86_64

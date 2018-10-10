@@ -110,7 +110,6 @@ Q3:[android 定时任务的解决方案](./android_alarm.md)
 # Doc
 Just something markable.
 
-
 1、ListView 中局部刷新Item
 
 2、am
@@ -463,7 +462,6 @@ http://blog.csdn.net/lincyang/article/details/7095417
 
 [TODO](./todo.md)
 
-
 [ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
 
 ### 案例实践
@@ -481,3 +479,6 @@ http://blog.csdn.net/lincyang/article/details/7095417
 
 # 主题切换
 [Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)
+
+## 其他
+[ButterKnife](http://jakewharton.github.io/butterknife/)
