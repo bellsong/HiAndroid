@@ -25,9 +25,6 @@
 
 1. [简单讲一下AsyncTask的优缺点](./QA/asynctask.md)
 
-
 ### 优秀 App
 
 1. [最美应用](http://zuimeia.com/?platform=2)
-
-mkdir -p mips64el-linux-android/prebuilt/darwin-x86_64

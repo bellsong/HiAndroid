@@ -385,13 +385,7 @@ JSPatch
 [Android Studio发布库到Jcenter并推送到Maven Central最新超级详细!!!](http://www.jianshu.com/p/fb1e0fb2d966)
 [Android Studio提交库至Bintray jCenter从入门到放弃](http://www.jianshu.com/p/31410d71eaba#)
 
-### 架构
-[MVP](http://www.jianshu.com/p/7567ed0d1853)
-
-[MVVM](./Architecture/MVVM.md)
-
-### [组件化](./Architecture/README.md)
-
+### [Android Architecture 架构](./Architecture/README.md)
 
 ### [开源项目](./android_open_source.md)
 

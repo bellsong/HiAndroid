@@ -7,3 +7,7 @@
 [Android Clean](./android_clean.md)
 
 [Architecture 实践](https://github.com/googlesamples/android-architecture)
+
+[MVP](http://www.jianshu.com/p/7567ed0d1853)
+
+[MVVM](./MVVM.md)
