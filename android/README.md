@@ -1,6 +1,6 @@
 # Android Explore
 
-## Y Android
+## Y Android 知识点
 
 ![](./res/android_path.png)
 
@@ -154,7 +154,6 @@ Just something markable.
 [【FreeBuf年终策划】2017年最好用的Android渗透工具合集](http://www.freebuf.com/sectool/124507.html)
 
 [Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
-
 
 [jsoup爬虫获取数据](http://blog.csdn.net/qq_30379689/article/details/55005796)
 
@@ -476,3 +475,19 @@ http://blog.csdn.net/lincyang/article/details/7095417
 
 ## 其他
 [ButterKnife](http://jakewharton.github.io/butterknife/)
+
+## 常见问题通用解决方案
+
+### 埋点
+[JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
+
+### 悬浮窗
+[Android仿微信文章悬浮窗效果](https://juejin.im/post/5bbc564df265da0aea69962a?utm_source=gold_browser_extension)
+
+### 消息推送
+
+WebSocket 
+优点：开发成本低，数据安全，对于服务器压力较小（相对轮询）
+缺点：耗电量高，容易被系统kill，需要一定的技术
+
+[Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)

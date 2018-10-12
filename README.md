@@ -17,13 +17,9 @@
 10. Y 电话
 11. Y 短信
 
-### [Android Architecture](./android/Architecture/README.md)
-
 ### [Android Explore](./android/README.md)    
 
-### Android 100问
-
-1. [简单讲一下AsyncTask的优缺点](./QA/asynctask.md)
+### [Android 100问](./QA/README.md)
 
 ### 优秀 App
 
