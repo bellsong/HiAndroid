@@ -491,3 +491,8 @@ WebSocket
 缺点：耗电量高，容易被系统kill，需要一定的技术
 
 [Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)
+
+
+### 生产效能
+
+#### [android studio快捷键盘](./android_keymap.md)
