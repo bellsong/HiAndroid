@@ -1,9 +1,64 @@
+## Android Adb
+
+android adb 启动activity、service，发送broadcast等操作
+
+一、adb启动activity：
+
+adb shellam start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}
+
+如：启动浏览器﻿
+
+adb shellam start -n com.android.browser/com.android.browser.BrowserActivity
+
+二、adb关闭activity：
+
+adb shellam force-stop ｛包(package)名｝
+
+如：关闭浏览器adb shellam force-stopcom.android.browser
+
+三、adb启动service：
+
+adb shell am startservice -n｛包(package)名｝/｛包名｝.{服务(service)名称}
+
+如：启动自己应用中一个service
+
+adb shell am startservice -n com.android.traffic/com.android.traffic.maniservice﻿﻿
+
+四、adb卸载应用程序：
+
+adb uninstall｛包(package)名｝
+
+如：卸载浏览器 adb uninstall com.android.browser
+
+五、adb发送broadcast：
+
+adb shellam broadcast -a <广播动作>
+
+如：发送一个网络变化的广播
+
+adb shellam broadcast -a android.net.conn.CONNECTIVITY_CHANGE﻿﻿
+
+六、adb端口转发：
+
+adb shell am broadcast -a NotifyServiceStop
+
+adb forward tcp:12580 tcp:10086
+
+adb shell am broadcast -a NotifyServiceStart
+--------------------- 
+作者：longgewxs 
+来源：CSDN 
+原文：https://blog.csdn.net/longgewxs/article/details/56489836?utm_source=copy 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+### am命令
 先说下am命令，am全称activity manager，你能使用am去模拟各种系统的行为，例如去启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等等。当你在adb shell命令下执行am命令：
 
 am <command>
 你也可以在adb shell前执行am命令：
 adb shell am start -a android.intent.action.VIEW
 关于一些am命令的介绍：
+
 start [options] <INTENT> ：启动activity通过指定的intent参数。具体intent参数参照官方表。
 
 startservice [options] <INTENT> ： 启动service通过指定的intent参数。具体intent跟start命令参数相同。
@@ -33,6 +88,9 @@ display-size [reset|<WxH>]
 display-density <dpi>
 to-uri <INTENT>
 to-intent-uri <INTENT>
+
+
+## PM命令
 
 接下来介绍pm命令，pm全称package manager，你能使用pm命令去模拟Android行为或者查询设备上的应用等，当你在adb shell命令下执行pm命令：
 

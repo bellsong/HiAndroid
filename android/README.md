@@ -492,7 +492,8 @@ WebSocket
 
 [Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)
 
-
 ### 生产效能
 
 #### [android studio快捷键盘](./android_keymap.md)
+
+### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
