@@ -24,3 +24,6 @@
 ### 优秀 App
 
 1. [最美应用](http://zuimeia.com/?platform=2)
+
+### 思想
+面向接口编程

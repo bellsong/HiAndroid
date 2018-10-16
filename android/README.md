@@ -351,6 +351,12 @@ JSPatch
 [Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
 [模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
 [模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
+[Android 帧动画]
+
+注意事项：
+内存
+卡顿
+什么时候开始播放，什么时候结束
 
 ### 动态加载
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
@@ -497,3 +503,8 @@ WebSocket
 #### [android studio快捷键盘](./android_keymap.md)
 
 ### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
+
+# KEY WORD
+
+推荐引擎 作用？实现？
+

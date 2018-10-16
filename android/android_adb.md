@@ -143,7 +143,6 @@ get-max-users ：该设备所支持的最大USER数。（某些设备不支持�
 以上某些命令可能需要ROOT权限。
 
 
-
 # ![Awesome Adb](./assets/title.png)
 
 ADB，即 [Android Debug Bridge](https://developer.android.com/studio/command-line/adb.html)，它是 Android 开发/测试人员不可替代的强大工具，也是 Android 设备玩家的好玩具。
