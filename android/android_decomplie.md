@@ -36,6 +36,9 @@
 
 3.jd-gui-windows-1.4.0 可以反编译jar文件,导出java源码,所以这个工具根据必须跟第二个工具结合使用
 
+[常见APK反编译工具安装与使用](https://www.jianshu.com/p/918c7e3d6fc2)
+
+
 ###反编译一步到位 jadx-0.6.0
 jadx的优点在于:可以一行命令直接反编译恢复出.java文件
 
