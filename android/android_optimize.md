@@ -7,6 +7,51 @@
 具体包括：
 UI性能（界面卡顿），内存，CPU，电池，磁盘，网络流量，服务器资源
 
+在开发，测试，灰度，发布各个阶段对性能问题的关注和诉求是不一样的，所采取具体措施也有所不同。
+
+例如
+
+开发阶段主要是防止低性能的设计，编码，例如可以通过IDE插件在编码阶段就对低性能的代码进行告警。
+
+测试阶段，可以基于实验室环境，对卡顿，流量，IO，内存，启动速度等等性能数据进行详尽的自动化测试，越详细越好。
+
+灰度阶段是基于线上环境，对一些核心性能点进行监测。
+
+发布后则只针对一些核心指标进行粗粒度的监控。
+
+* [内存优化专项](./android_memory.md)
+  
+* [启动优化专项](./android_speed_start.md)
+
+* [Size优化专项](./android_optimize_size.md)
+
+* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+[Hujiawei，魅族开发者](https://hujiaweibujidao.github.io/)
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
+
+[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
+
+[Android性能：远程触发GC](http://www.atatech.org/articles/58479)
+
+[Android性能：Release版如何排查CPU占用率高的问题](http://www.atatech.org/articles/58453)
+
+[天猫Android性能优化2——文件IO如何设置Buffer](http://www.atatech.org/articles/56936)
+
+[Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
+
+[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
+
+[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
+
+
+
+
 #### 如何检测应用在UI线程的卡顿
 
 利用UI线程Looper打印的日志

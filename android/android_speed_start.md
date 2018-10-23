@@ -1,4 +1,4 @@
-## 启动优化专项
+## 启动速度优化专项
 
 #### 现象
 #### 原理
@@ -45,13 +45,18 @@ time = 210
 
 提个建议：当初我也尝试过是这么做的，但有个问题，图片的内存会释放不掉，所以放在activity的super调用前，用流资源方式加载图片，设置到window的背景中去就好了
 
+* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
 #### 原理
 [Android 官方关于启动说明](https://developer.android.com/topic/performance/vitals/launch-time)
-
 [Android应用启动界面分析（Starting Window）](http://blog.csdn.net/xueshanhaizi/article/details/51262528)
 [Android冷启动白屏解析，带你一步步分析和解决问题](http://blog.csdn.net/guolin_blog/article/details/51019856)
-
 [Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
 
 #### 原则
@@ -449,6 +454,10 @@ Android性能优化Tips整理
 • 批量处理原则：对于需要循环调用地方，采用批量处理
 
 # 启动性能优化
+
+[Android 开发之 App 启动时间统计](https://www.jianshu.com/p/c967653a9468)
+
+[应用启动速度(Launch-Time)的优化](https://www.jianshu.com/p/56971f2cf0ec)
 
 性能优化
 http://hukai.me/

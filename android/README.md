@@ -57,19 +57,9 @@
 
 [Android 逆向](./android_decomplie.md)
 
-### 性能优化
-* [内存](./android_memory.md)
-  
-* [启动专项](./android_speed_start.md)
-
-* [Size专项](./android_optimize_size.md)
-
-* [android优化](./android_optimize.md)
-
 ### 高级篇
 
 [Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
-
 
 [OpenGL](./android_3_opengl.md)
 
@@ -181,21 +171,6 @@ IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
-性能优化
-http://hukai.me/
-胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
-https://hujiaweibujidao.github.io/
-Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
-
-[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
-
 * [反编译](./android_decomplie.md)
 
 通过Android API Hook技术，即通过动态代理等方法替换关键节点
@@ -215,30 +190,17 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 
 [提高代码质量－工具篇](http://www.atatech.org/articles/58486)
 
-[Android性能：远程触发GC](http://www.atatech.org/articles/58479)
-
-[Android性能：Release版如何排查CPU占用率高的问题](http://www.atatech.org/articles/58453)
-
 [Android上如何在发生崩溃时抓取日志](http://www.atatech.org/articles/58418)
-
-在开发，测试，灰度，发布各个阶段对性能问题的关注和诉求是不一样的，所采取具体措施也有所不同。例如开发阶段主要是防止低性能的设计，编码，例如可以通过IDE插件在编码阶段就对低性能的代码进行告警。测试阶段，可以基于实验室环境，对卡顿，流量，IO，内存，启动速度等等性能数据进行详尽的自动化测试，越详细越好。灰度阶段是基于线上环境，对一些核心性能点进行监测。发布后则只针对一些核心指标进行粗粒度的监控。
-
 
 [Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
 
 [章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
 
-[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
-
 [EasyAdapter for Android 高效列表开发解决方案](http://www.atatech.org/articles/57535)
 
 [Android 新权限系统，及使用AOP进行适配](http://www.atatech.org/articles/57176)
 
-[天猫Android性能优化2——文件IO如何设置Buffer](http://www.atatech.org/articles/56936)
-
 [Android解决ImageSpan不居中的问题](http://www.atatech.org/articles/57158)
-
-[Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
 
 [Android上使用SVG矢量图](http://www.atatech.org/articles/56499)
 
@@ -247,8 +209,6 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [简单的安卓monkey测试脚本](http://www.atatech.org/articles/56363)
 
 [Android 方法数杂谈](http://www.atatech.org/articles/56219)
-
-[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
 
 [Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
 
@@ -324,12 +284,6 @@ Sdk日志跟服务器上不一致
 JSPatch
 
 拥有的不过是岁月留下来的经验，而不是智慧。
-使用的场景是什么，如何优化，针对
-
-
-优化卡顿
-初始化启动卡顿 1.92%降低到0.03%
-广告请求的卡顿从 1.32%降低到0.02%
 
 ### Android Map  
 
@@ -507,4 +461,49 @@ WebSocket
 # KEY WORD
 
 推荐引擎 作用？实现？
+
+
+
+
+
+### 性能优化专项
+
+在开发，测试，灰度，发布各个阶段对性能问题的关注和诉求是不一样的，所采取具体措施也有所不同。
+例如开发阶段主要是防止低性能的设计，编码，例如可以通过IDE插件在编码阶段就对低性能的代码进行告警。
+测试阶段，可以基于实验室环境，对卡顿，流量，IO，内存，启动速度等等性能数据进行详尽的自动化测试，越详细越好。
+灰度阶段是基于线上环境，对一些核心性能点进行监测。
+发布后则只针对一些核心指标进行粗粒度的监控。
+
+* [内存优化专项](./android_memory.md)
+  
+* [启动优化专项](./android_speed_start.md)
+
+* [Size优化专项](./android_optimize_size.md)
+
+* [android优化](./android_optimize.md)
+
+* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+[Hujiawei，魅族开发者](https://hujiaweibujidao.github.io/)
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
+
+[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
+
+[Android性能：远程触发GC](http://www.atatech.org/articles/58479)
+
+[Android性能：Release版如何排查CPU占用率高的问题](http://www.atatech.org/articles/58453)
+
+[天猫Android性能优化2——文件IO如何设置Buffer](http://www.atatech.org/articles/56936)
+
+[Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
+
+[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
+
+[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
+
 
