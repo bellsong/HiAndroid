@@ -461,7 +461,7 @@ Android性能优化Tips整理
 
 性能优化
 http://hukai.me/
-胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。
+[胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。]()
 
 [Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
 
