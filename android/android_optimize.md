@@ -25,15 +25,9 @@ UI性能（界面卡顿），内存，CPU，电池，磁盘，网络流量，服
 
 * [Size优化专项](./android_optimize_size.md)
 
-* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
 
 [Hujiawei，魅族开发者](https://hujiaweibujidao.github.io/)
 
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
 [Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
 
@@ -491,3 +485,6 @@ So瘦身
 ●根据实际场景确定请求策略,避免使用固定的间隔频率来进行网络操作.比如连接WiFi并充电的情况下请求频率可以高,第一次网络请求失败后可以使用双倍的时间间隔来进行下一次
 
 ●减少数据传输量,对传输的数据做压缩.如果传输的是图片,需要选择合适的图片格式以及根据显示大小请求合适规格的图片.对于普通数据,可以考虑使用ProtocalBuffers来减小传输数据的大小.
+
+[android app性能优化大汇总（UI渲染性能优化）](https://www.jianshu.com/p/e058f88b305b)
+

@@ -1,30 +1,38 @@
-## 内存优化
+## 内存优化 
 
-内存优化那么主要就是去消除应用中的内存泄露、避免内存抖动。
+1. 处理内存泄漏 工具
+接入 LeakCanary
 
-1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
+[通过MAT查看内存占用](https://blog.csdn.net/xiaanming/article/details/42396507)
 
-2、常见的内存泄露情况：
+adb shell dumpsys meminfo packagename -d
 
-● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
+2. 图片分辨率 处理Bitmap
+	获取图片大小 getrowBytes()
+	防止图片位置
 
-● 静态变量：同样也是应为生命周期比较长
+	当前机器的Density 图片放置的位置
 
-● 非静态内部类创建静态实例造成的内存泄漏
+	[Android代码内存优化建议-Android资源篇](https://xiaozhuanlan.com/topic/7154902863)
+	[Android APP内存优化之图片优化](https://zmywly8866.github.io/2015/07/01/android-reduce-app-memory-use.html)
 
-● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
+3. 图片压缩
 
-● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
+4. 缓存池大小
 
-● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
+5. 内存抖动
 
-● 复用问题（bitmap释放）
+[Android 内存优化](http://yefangqingchen.com/2017/04/01/Android-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/)
 
-Android 内存优化总结&实践： mp.weixin.qq.com/s/2MsEAR9pQ…
+[Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
 
-Android内存优化之OOM： hukai.me/android-per…
+[使用 Memory Profiler 查看 Java 堆和内存分配](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
 
-Android应用内存泄露分析、改善经验总结： zhuanlan.zhihu.com/p/20831913
+[Android 内存优化](http://wuxiaolong.me/2017/04/15/memory/)
+
+[Android性能优化：全面带你了解 内存优化 & 解决方案](https://juejin.im/entry/5aea6d08f265da0b8f62601f)
+
+[Google官方andorid性能优化](https://www.kancloud.cn/alex_wsc/better/202711)
 
 ### 什么是内存泄漏
 
@@ -38,7 +46,6 @@ mLeak是存储在静态区的静态变量，而Leak是内部类，其持有外�
 
 再举一个最常犯的栗子
 ![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIvpTuo6NNUIpjrjPueOic8uToBfczO5rA0cdQpGK9fkDHdvZaxkvmlgg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
 
 如果我们在在调用Singleton的getInstance()方法时传入了Activity。那么当instance没有释放时，这个Activity会一直存在。因此造成内存泄露。
 
@@ -81,7 +88,6 @@ Reference Tree代表指向该实例的引用，可以从这里面查看内存泄
 
 掌握了Android Monitor的使用方法后，妈妈再也不担心我写的App会出现内存泄漏啦！！！
 
-
  * [基于Android Studio的内存泄漏检测与解决全攻略](http://wetest.qq.com/lab/view/?id=99)
   * [腾讯手机管家实战分析：内存突增是为神马？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=30&highlight=%E5%86%85%E5%AD%98%E7%AA%81%E5%A2%9E)
   内存泄露场景
@@ -94,6 +100,32 @@ Reference Tree代表指向该实例的引用，可以从这里面查看内存泄
 
 3、WebView	
 >不要在xml中声明，销毁时移除所有的view，直接将weview相关的放在一个进程中，退出时直接杀死进程
+
+内存优化，主要就是去消除应用中的内存泄露、避免内存抖动。
+
+1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
+
+2、常见的内存泄露情况：
+
+● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
+
+● 静态变量：同样也是应为生命周期比较长
+
+● 非静态内部类创建静态实例造成的内存泄漏
+
+● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
+
+● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
+
+● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
+
+● 复用问题（bitmap释放）
+
+Android 内存优化总结&实践
+
+Android内存优化之OOM
+
+[Android应用内存泄露分析、改善经验总结](zhuanlan.zhihu.com/p/20831913)
 
 [参考链接]
 
@@ -239,6 +271,8 @@ MAT(Memory Analyzer Tool)，一个基于Eclipse的内存分析工具，是一个
 [Android 系统不释放内存么？](https://juejin.im/entry/5b9af2de6fb9a05cdd2cf457?utm_source=gold_browser_extension)
 
 [内存泄露](http://blog.csdn.net/xiaochuanding/article/details/56286074?utm_source=gank.io&utm_medium=email)
+
+[[Android] 内存泄漏调试经验分享 (一)](http://rayleeya.iteye.com/blog/727074)
 
 ##### WebView
 [Android WebView Memory Leak WebView内存泄漏解决方案](http://my.oschina.net/zhibuji/blog/100580)

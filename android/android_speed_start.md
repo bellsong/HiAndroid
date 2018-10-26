@@ -474,6 +474,12 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 
 [一触即发 App启动优化最佳实践](https://zhuanlan.zhihu.com/p/23442027)
 
+[android面试题-App应用启动分析与优化](https://www.jianshu.com/p/f0f73fefdd43)
+
+[Activity到底是什么时候显示到屏幕上的呢？](http://blog.desmondyao.com/android-show-time/)
+
+[Android性能优化典范 - 第6季](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578016&idx=1&sn=d997d1142bac09e3764c075392468ae5&chksm=84b3b127b3c4383197c7d1cf15ecec44d66a1119b033ae383f9e2126bb1be0abc93416622dc0&scene=21#wechat_redirect)
+
 ---
 READ MORE，
 THINK MORE，
