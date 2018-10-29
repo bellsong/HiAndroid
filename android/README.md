@@ -14,17 +14,7 @@
 
 ### 基础篇
 
-####  java 基础知识
-
-[Java集合---ArrayList的实现原理](http://www.cnblogs.com/ITtangtang/p/3948555.html)
-
-[Java中Vector和ArrayList的区别](http://www.cnblogs.com/wanlipeng/archive/2010/10/21/1857791.html)
-
-[android HashMap源码分析](http://blog.csdn.net/liuluchao0543/article/details/53457721)
-
-（1）ConcurrentHashMap的锁分段技术
-（2）ConcurrentHashMap的读是否要加锁，为什么
-（3）ConcurrentHashMap的迭代器是强一致性的迭代器还是弱一致性的迭代器
+#### [java 基础知识](./android_java.md)
 
 #### [Activity](./android_activity.md)
 
@@ -32,14 +22,11 @@
 
 #### [View](./android_view.md)
 
-* [BroadCast](./android_broadcast.md)
+#### [BroadCast](./android_broadcast.md)
 
 #### [Application](./android_application.md)
 
 [Reflection](./android_2_reflection.md)
-
-* [如何理解Android的多进程](http://www.jianshu.com/p/536978a4f4b2)
-* [多进程保活](https://juejin.im/post/58cf80abb123db3f6b45525d?utm_source=gold_browser_extension)
 
 ### 进阶篇
 
@@ -88,24 +75,14 @@ Q2:[一种动态为apk写入信息的方案](http://pingguohe.net/2016/03/21/Dyn
 
 Q3:[android 定时任务的解决方案](./android_alarm.md)
 
-
 ![Android Map](./res/android_map.png)
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
-
-
-相关下载
-[工具下载地址](./tool/)
 
 # Doc
 Just something markable.
 
 1、ListView 中局部刷新Item
-
-2、am
-> am start -n "com.pp.assistant/.activity.PPMainActivity"  --ei "key_show_fg_index" 2 --ei "key_curr_frame_index" 2 --ez "key_from_jump" true 
-
-3、pm
 
 [国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
 
@@ -118,8 +95,6 @@ Just something markable.
 
 [Android逆向之旅---带你爆破一款应用的签名验证问题](http://blog.csdn.net/jiangwei0910410003/article/details/54629728)
 
-[关于Android中为什么主线程不会因为Looper.loop()里的死循环卡死？引发的思考，事实可能不是一个 epoll 那么 简单。](http://www.cnblogs.com/linguanh/p/6412042.html)
-
 [Android中View的绘制流程](https://gold.xitu.io/post/58aaac80b123db00671da58a?utm_source=gold_browser_extension)
 
 [自定义View系列：打造一个显示密码等级的控件](https://philipdroid.github.io/2016/10/26/%E4%B8%80%E4%B8%AA%E6%98%BE%E7%A4%BA%E5%AF%86%E7%A0%81%E7%AD%89%E7%BA%A7%E7%9A%84%E6%8E%A7%E4%BB%B6PasswordLevelView/)
@@ -130,8 +105,6 @@ Just something markable.
 [面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
 
 ### [Andorid事件分发机制](./android_event.md)
-
-[Android 进程保活](./android_process.md)
 
 [Android 反射机制](./android_reflection.md)
 
@@ -183,16 +156,11 @@ https://github.com/zzz40500/GsonFormat
 
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
 
-[线程池运行原理分析](http://www.jianshu.com/p/edab547f2710)
-
-
 [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
 [提高代码质量－工具篇](http://www.atatech.org/articles/58486)
 
 [Android上如何在发生崩溃时抓取日志](http://www.atatech.org/articles/58418)
-
-[Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
 
 [章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
 
@@ -212,7 +180,6 @@ https://github.com/zzz40500/GsonFormat
 
 [Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
 
-[进程保活](http://www.atatech.org/articles/55546)
 
 [无痕换肤的实现方案 for Android](http://www.atatech.org/articles/24389)
 
@@ -278,7 +245,7 @@ Sdk日志跟服务器上不一致
 ### 如何实现一个日志模块
 
 #### 数据收集
-#### 数据保存 内存 本地持久化
+#### 数据保存 本地持久化
 #### 数据上传
 
 JSPatch
@@ -289,12 +256,12 @@ JSPatch
 
 ### Android 基础
 [Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
-[Android 消息机制学习](http://www.jianshu.com/p/1e5640e6bef9#)
 
 ### [View](./android_view.md)
 
-### 多线程
-[Android多线程全面解析：IntentService用法&源码](http://www.jianshu.com/p/8a3c44a9173a)
+### [多线程](./android_thread.md)
+
+### [进程](./android_process.md)
 
 ### Android Fragment 
 [Android Fragment 的使用，一些你不可不知的注意事项](http://www.jianshu.com/p/3a101ce9e04d)
@@ -306,11 +273,6 @@ JSPatch
 [模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
 [模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
 [Android 帧动画]
-
-注意事项：
-内存
-卡顿
-什么时候开始播放，什么时候结束
 
 ### 动态加载
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
@@ -463,47 +425,4 @@ WebSocket
 推荐引擎 作用？实现？
 
 
-
-
-
-### 性能优化专项
-
-在开发，测试，灰度，发布各个阶段对性能问题的关注和诉求是不一样的，所采取具体措施也有所不同。
-例如开发阶段主要是防止低性能的设计，编码，例如可以通过IDE插件在编码阶段就对低性能的代码进行告警。
-测试阶段，可以基于实验室环境，对卡顿，流量，IO，内存，启动速度等等性能数据进行详尽的自动化测试，越详细越好。
-灰度阶段是基于线上环境，对一些核心性能点进行监测。
-发布后则只针对一些核心指标进行粗粒度的监控。
-
-* [内存优化专项](./android_memory.md)
-  
-* [启动优化专项](./android_speed_start.md)
-
-* [Size优化专项](./android_optimize_size.md)
-
-* [android优化](./android_optimize.md)
-
-* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
-[Hujiawei，魅族开发者](https://hujiaweibujidao.github.io/)
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
-
-[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
-
-[Android性能：远程触发GC](http://www.atatech.org/articles/58479)
-
-[Android性能：Release版如何排查CPU占用率高的问题](http://www.atatech.org/articles/58453)
-
-[天猫Android性能优化2——文件IO如何设置Buffer](http://www.atatech.org/articles/56936)
-
-[Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
-
-[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
-
-[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
-
-
+### [性能优化专项](./android_optimize.md)

@@ -44,3 +44,4 @@ postDelayed( Runnable, long )
 
 
 [Handler源码分析 - Java层](http://www.jianshu.com/p/1bd6e015653f)
+[Android 消息机制学习](http://www.jianshu.com/p/1e5640e6bef9#)

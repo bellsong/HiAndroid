@@ -172,6 +172,17 @@ public class TempService extends Service {
 >
 [进程保活](http://www.atatech.org/articles/54730/?frm=mail_week)
 
+[Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
+
+[进程保活](http://www.atatech.org/articles/55546)
+
+[Android 进程保活](./android_process.md)
+
+* [如何理解Android的多进程](http://www.jianshu.com/p/536978a4f4b2)
+* [多进程保活](https://juejin.im/post/58cf80abb123db3f6b45525d?utm_source=gold_browser_extension)
+
+
+
 > [Demo](.././code/demo_keep_process_alive)
 
 [几种进程通信方式的对比总结](http://blog.csdn.net/u011240877/article/details/72863432)

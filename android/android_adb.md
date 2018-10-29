@@ -2330,3 +2330,9 @@ taskkill /PID 1548
 * [像高手一样使用ADB命令行（2）](http://cabins.github.io/2016/03/25/UseAdbLikeAPro-2/)
 
 [1]: #ip-地址
+
+
+2、am
+> am start -n "com.pp.assistant/.activity.PPMainActivity"  --ei "key_show_fg_index" 2 --ei "key_curr_frame_index" 2 --ez "key_from_jump" true 
+
+3、pm
