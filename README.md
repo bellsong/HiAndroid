@@ -16,6 +16,8 @@
 9. Y 相册
 10. Y 电话
 11. Y 短信
+12. Y 天气
+13. Y 闹钟
 
 ### [Android Explore](./android/README.md)    
 
