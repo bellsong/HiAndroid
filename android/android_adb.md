@@ -4,15 +4,15 @@ android adb 启动activity、service，发送broadcast等操作
 
 一、adb启动activity：
 
-adb shellam start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}
+adb shell am start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}
 
 如：启动浏览器﻿
 
-adb shellam start -n com.android.browser/com.android.browser.BrowserActivity
+adb shell am start -n com.android.browser/com.android.browser.BrowserActivity
 
 二、adb关闭activity：
 
-adb shellam force-stop ｛包(package)名｝
+adb shell am force-stop ｛包(package)名｝
 
 如：关闭浏览器adb shellam force-stopcom.android.browser
 
@@ -36,7 +36,7 @@ adb shellam broadcast -a <广播动作>
 
 如：发送一个网络变化的广播
 
-adb shellam broadcast -a android.net.conn.CONNECTIVITY_CHANGE﻿﻿
+adb shell am broadcast -a android.net.conn.CONNECTIVITY_CHANGE﻿﻿
 
 六、adb端口转发：
 
@@ -45,6 +45,7 @@ adb shell am broadcast -a NotifyServiceStop
 adb forward tcp:12580 tcp:10086
 
 adb shell am broadcast -a NotifyServiceStart
+
 --------------------- 
 作者：longgewxs 
 来源：CSDN 
