@@ -2,8 +2,6 @@
 
 ## Y Android 知识点
 
-![](./res/android_path.png)
-
 ### 基础篇
 ### 进阶篇
 ### 高级篇
@@ -26,19 +24,21 @@
 
 #### [Application](./android_application.md)
 
-[Reflection](./android_2_reflection.md)
+#### [Android Proguard 混淆](./android_proguard.md)
+
+#### [Android Reflection 反射调用](./android_2_reflection.md)
+
+#### [Android Permission 权限管理](./android_systempermissions.md)
+
+#### [数据格式处理](./android_2_data.md)
 
 ### 进阶篇
 
+#### [性能优化专项](./android_optimize.md)
+
 #### [插件化](./android_pulgin.md)
 
-##### [Android 6.0 动态权限介绍](./android_systempermissions.md)
-
 ##### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
-
-[数据格式处理](./android_2_data.md)
-
-[Android混淆](./android_proguard.md)
 
 #### 安全
 
@@ -424,5 +424,4 @@ WebSocket
 
 推荐引擎 作用？实现？
 
-
-### [性能优化专项](./android_optimize.md)
+![](./res/android_path.png)
