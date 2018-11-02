@@ -18,18 +18,28 @@ UI性能（界面卡顿），内存，CPU，电池，磁盘，网络流量，服
 灰度阶段是基于线上环境，对一些核心性能点进行监测。
 
 发布后则只针对一些核心指标进行粗粒度的监控。
-
-* [内存优化专项](./android_memory.md)
   
 * [启动优化专项](./android_speed_start.md)
 
 * [Size优化专项](./android_optimize_size.md)
 
+* [UI卡顿优化](./android_carton.md)
+
+* [内存优化专项](./android_memory.md)
+
+* [电量优化专项]
+
+* [网络速度优化专项]
+
+* [网络流量优化专项]
+
+    [Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
+
+
+#### 检测工具
+[Android性能测试工具列表](https://zmywly8866.github.io/2015/09/09/android-performance-tools.html)
 
 [Hujiawei，魅族开发者](https://hujiaweibujidao.github.io/)
-
-
-[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
 
 [Android性能：远程触发GC](http://www.atatech.org/articles/58479)
 
@@ -37,36 +47,11 @@ UI性能（界面卡顿），内存，CPU，电池，磁盘，网络流量，服
 
 [天猫Android性能优化2——文件IO如何设置Buffer](http://www.atatech.org/articles/56936)
 
-[Android 流量优化(一)：模块化流量统计](http://www.atatech.org/articles/56540)
-
-[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
-
-[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
-
-
-
-
-#### 如何检测应用在UI线程的卡顿
-
-利用UI线程Looper打印的日志
-利用Choreographer
-两种方式都有一些开源项目，例如：
-
-https://github.com/markzhai/AndroidPerformanceMonitor [方式1]
-https://github.com/wasabeef/Takt [方式2]
-https://github.com/friendlyrobotnyc/TinyDancer [方式2]
-
-一个还比较有意思的方案，该方法的灵感来源于一篇给我微信投稿的文章：
-
-https://github.com/android-notes/Cockroach
-
 ####参考
 
 [Android性能优化来龙去脉总结](https://juejin.im/entry/5b971f6c6fb9a05d151c883a?utm_source=gold_browser_extension)
 
 https://juejin.im/entry/587c43a3570c352201039814
-
-[Android UI性能优化 检测应用中的UI卡顿](http://blog.csdn.net/lmj623565791/article/details/58626355)
 
 [Android性能优化典范（一）](http://www.csdn.net/article/2015-01-20/2823621-android-performance-patterns)
 
@@ -80,10 +65,7 @@ https://juejin.im/entry/587c43a3570c352201039814
 
 [Android性能优化案例研究](http://www.importnew.com/4065.html)
 
-[OOM优化](http://rayleeya.iteye.com/blog/1956059)
-
 [Android性能优化案例研究](http://codingnow.cn/android/1378.html)
-
 
 [Android应用性能剖析全攻略](http://toughcoder.net/blog/2015/09/11/android-performance-profiling-made-easy/)
 

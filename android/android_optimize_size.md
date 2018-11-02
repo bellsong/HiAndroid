@@ -56,3 +56,10 @@ ThinR插件在编译时将除R$styleable.class以外的所有R.class删除掉，
 
 [APK瘦身记](http://www.atatech.org/articles/51081)
 [Android客户端方法数精简的尝试](http://www.atatech.org/articles/57128)
+
+[Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
+
+[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
+
+[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
+

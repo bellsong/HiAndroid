@@ -1,20 +1,18 @@
-## 内存优化 
+## 内存优化
 
-1. 处理内存泄漏 工具
-接入 LeakCanary
+### 内存优化指南
+* 内存的分析
+	* 查看的方法
+		[WETEST](https://wetest.qq.com/lab/view/359.html)
+	* 监控的手段
 
-[通过MAT查看内存占用](https://blog.csdn.net/xiaanming/article/details/42396507)
+* 产生的原因
 
-adb shell dumpsys meminfo packagename -d
+* 优化的方案
 
-2. 图片分辨率 处理Bitmap
-	获取图片大小 getrowBytes()
-	防止图片位置
+1. [内存泄漏](./android_memory_leak.md)
 
-	当前机器的Density 图片放置的位置
-
-	[Android代码内存优化建议-Android资源篇](https://xiaozhuanlan.com/topic/7154902863)
-	[Android APP内存优化之图片优化](https://zmywly8866.github.io/2015/07/01/android-reduce-app-memory-use.html)
+2. [图片优化](./android_memory_bitmap.md)
 
 3. 图片压缩
 
@@ -22,122 +20,26 @@ adb shell dumpsys meminfo packagename -d
 
 5. 内存抖动
 
-[Android 内存优化](http://yefangqingchen.com/2017/04/01/Android-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/)
+6. Android Studio Inspection Code
 
-[Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
+* 工具使用
 
-[使用 Memory Profiler 查看 Java 堆和内存分配](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
+1. adb shell dumpsys meminfo packagename -d
 
-[Android 内存优化](http://wuxiaolong.me/2017/04/15/memory/)
+1. [LeakCanary](./android_tool_leakcanary.md)
 
-[Android性能优化：全面带你了解 内存优化 & 解决方案](https://juejin.im/entry/5aea6d08f265da0b8f62601f)
-
-[Google官方andorid性能优化](https://www.kancloud.cn/alex_wsc/better/202711)
-
-### 什么是内存泄漏
-
-Android虚拟机的垃圾回收采用的是根搜索算法。GC会从根节点（GC Roots）开始对heap进行遍历。到最后，部分没有直接或者间接引用到GC Roots的就是需要回收的垃圾，会被GC回收掉。而内存泄漏出现的原因就是存在了无效的引用，导致本来需要被GC的对象没有被回收掉。
-
-举个栗子
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicITOibQWYvaD2Byq7hqCC51wicOcDoLXgicAGGictiaJhmLRqb4ehicJCicXVjg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-mLeak是存储在静态区的静态变量，而Leak是内部类，其持有外部类Activity的引用。这样就导致Activity需要被销毁时，由于被mLeak所持有，所以系统不会对其进行GC，这样就造成了内存泄漏。
-
-再举一个最常犯的栗子
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIvpTuo6NNUIpjrjPueOic8uToBfczO5rA0cdQpGK9fkDHdvZaxkvmlgg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-如果我们在在调用Singleton的getInstance()方法时传入了Activity。那么当instance没有释放时，这个Activity会一直存在。因此造成内存泄露。
-
-解决方法可以将new Singleton(context)改为new Singleton(context.getApplicationContext())即可，这样便和传入的Activity没关系了。
-
-内存泄漏的检测
-
-打开Android Studio，编译代码，在模拟器或者真机上运行App，然后点击[Anroid monitor]，在Android Monitor下点击Monitor对应的Tab，进入如下界面
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIDGicvgU8Ba8tqVzOyE3lVKiaNv70J2MHF98cPb6pPPoaWDGhcrSwIbrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-在Memory一栏中，可以观察不同时间App内存的动态使用情况，点击可以手动触发GC，点击可以进入HPROF Viewer界面，查看Java的Heap，如下图
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIkKlU2m8UQFZqSsXQiaEfonIRHybC7NOVfFic3moO2ZJrFjeIMgkf3BGg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-Reference Tree代表指向该实例的引用，可以从这里面查看内存泄漏的原因，Shallow Size指的是该对象本身占用内存的大小，Retained Size代表该对象被释放后，垃圾回收器能回收的内存总和。
-
-下面我们以掌上道聚城客户端为例，来一探内存泄漏检测的方法。
-
-打开Android Studio，编译代码，运行掌上道聚城，然后开始尽情的耍我们的App啦，然后就从Memory Monitor里面观察App的内存使用曲线，突然发现，纳尼！！！怎么内存使用越来越大了，这就很有可能是发生内存泄漏了，然后点击手动进行GC，再点击观看JavaHeap，点击Analyzer Task，Android Monitor就可以为我们自动分析泄漏的Activity啦，分析出来如下图所示
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIWicdLDjWa0KownTuuB49eLwKFuMFfUN34q0JXfW3cPA3AkprGyvNdJQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-在Reference Tree里面，我们直接就可以看到持有该Activity的单例对象，直接定位到该单例中的代码，发现代码中出现了
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicI9Q3wjyEnJ8vauhib0UXFaqR261U57iaeZj6bMDK1PlXjibibiaLOrNcuAEA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-和刚刚举得栗子里出现的错误一模一样啊，这段代码是谁写的，拖出去······
-
-我们修复了检查出的内存泄漏的问题，并将修复前和修复后的代码在相同的模拟器上运行并进行相同的操作，查看他们使用内存的情况，如下图所示
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIKG37QKiclEic3avYPsibfNCYhqkNqxmTfcDYtCu4EXmTGAJf3bqDK9Zpg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-
-有内存泄漏的情况，占用内存约为43M
-
-![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIbNT8KhARyMalcyo211tvLdWnL3K0WmicNldlBhME4z8jP5ibf6emOOpA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-修复了内存泄漏问题，占用内存为36M。
-
-在修复了内存泄漏问题后，内存使用下降了16.3%！！！
-
-掌握了Android Monitor的使用方法后，妈妈再也不担心我写的App会出现内存泄漏啦！！！
-
- * [基于Android Studio的内存泄漏检测与解决全攻略](http://wetest.qq.com/lab/view/?id=99)
-  * [腾讯手机管家实战分析：内存突增是为神马？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=30&highlight=%E5%86%85%E5%AD%98%E7%AA%81%E5%A2%9E)
-  内存泄露场景
-
-1、注册了监听器，忘了反过注册；
->销毁时反注册
-
-2、内部类，匿名内部类；
->静态内部类
-
-3、WebView	
->不要在xml中声明，销毁时移除所有的view，直接将weview相关的放在一个进程中，退出时直接杀死进程
-
-内存优化，主要就是去消除应用中的内存泄露、避免内存抖动。
-
-1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
-
-2、常见的内存泄露情况：
-
-● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
-
-● 静态变量：同样也是应为生命周期比较长
-
-● 非静态内部类创建静态实例造成的内存泄漏
-
-● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
-
-● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
-
-● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
-
-● 复用问题（bitmap释放）
-
-Android 内存优化总结&实践
+2. [MAT使用指南](./android_tool_mat.md)
 
 Android内存优化之OOM
 
 [Android应用内存泄露分析、改善经验总结](zhuanlan.zhihu.com/p/20831913)
-
-[参考链接]
+[Android应用内存泄露分析、改善经验总结](https://zmywly8866.github.io/2016/05/04/android-application-leak-analysis-and-fix.html)
 
 [Android 内存优化——常见内存泄露及优化方案](https://juejin.im/entry/58ef30fd44d904006cdfcbb6)
 
 [Android性能优化：那些关于Bitmap优化的小事](https://juejin.im/entry/5aa873996fb9a028db586153)
 
 (https://medium.com/freenet-engineering/memory-leaks-in-android-identify-treat-and-avoid-d0b1233acc8#.bnwtaamwh)
-
-
-内存泄露检测工具
-[LeakCanary](http://www.jianshu.com/p/e9891d7512ff)
 
 [Android内存分析命令](http://gityuan.com/2016/01/02/memory-analysis-command/)
 
@@ -147,6 +49,7 @@ Android内存优化之OOM
 
 [Android - 利用LeakCanary检测内存泄露](http://cashow.github.io/android-detect-out-of-memory-with-leakcanary.html)
 
+[Android 内存优化总结 & 实践](https://juejin.im/entry/58d4c7735c497d0057ead153)
 
 [内存泄露从入门到精通三部曲之基础知识篇](http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=400674207&idx=1&sn=a9580ca0dffc62a6d7dbb8fd3d7a2ef1&scene=0&key=b410d3164f5f798e3f4b6de393face7f291ae1d5d6ce312646e1e72ba2b6849e52d3ef5d2d0e4e8579cc7841aac8b439&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.11.1+build(15B42)&version=11020201&pass_ticket=hgYTL4MW7%2FI9mnat%2BT9S2RRS0IkFfm6yOLSy%2F4bguL4%3D)
 
@@ -240,23 +143,19 @@ DisplayLeakService类默认的处理是在通知栏中展示引用链，我们�
 HeapAnalyzer分析内存泄漏打印结果如下：
 	![](http://i.imgur.com/EULOdSS.png)
 
-**5. 更全面的分析内存泄漏问题**
+### 参考
 
-有时候通过Leakcanary可以方便的找出内存泄漏的嫌疑点，但有可能分析的结果不太好排查内存泄漏问题，这时我们可以使用更高级的工具来分析原始的hprof文件。
+[Android 内存优化](http://yefangqingchen.com/2017/04/01/Android-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/)
 
-MAT [MAT使用指南](http://androidperformance.com/2015/04/11/AndroidMemory-Usage-Of-MAT.html)
+[Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
 
-MAT(Memory Analyzer Tool)，一个基于Eclipse的内存分析工具，是一个快速、功能丰富的JAVA heap分析工具，它可以帮助我们查找内存泄漏和减少内存消耗。使用内存分析工具从众多的对象中进行分析，快速的计算出在内存中对象的占用大小，看看是谁阻止了垃圾收集器的回收工作，并可以通过报表直观的查看到可能造成这种结果的对象。
+[使用 Memory Profiler 查看 Java 堆和内存分配](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
 
-前面介绍到的由Android dump出来的 hprof 文件，如果要在 MAT 中打开，需要使用Android sdk提供的 hprof-conv 工具对文件进行转换：
+[Android 内存优化](http://wuxiaolong.me/2017/04/15/memory/)
 
-		hprof-conv input.hprof out.hprof
+[Android性能优化：全面带你了解 内存优化 & 解决方案](https://juejin.im/entry/5aea6d08f265da0b8f62601f)
 
-然后通过 MAT 导入hprof文件即可
-
-**6. 一些有用的资料**
-
-[MAT使用指南](http://androidperformance.com/2015/04/11/AndroidMemory-Usage-Of-MAT.html)
+[Google官方andorid性能优化](https://www.kancloud.cn/alex_wsc/better/202711)
 
 [Android 内存剖析 – 发现潜在问题](http://www.importnew.com/2433.html)
 
@@ -276,3 +175,5 @@ MAT(Memory Analyzer Tool)，一个基于Eclipse的内存分析工具，是一个
 
 ##### WebView
 [Android WebView Memory Leak WebView内存泄漏解决方案](http://my.oschina.net/zhibuji/blog/100580)
+
+[OOM优化](http://rayleeya.iteye.com/blog/1956059)
