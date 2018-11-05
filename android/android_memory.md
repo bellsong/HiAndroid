@@ -2,10 +2,9 @@
 
 ## 内存优化指南
 
-### 内存概述
+### [内存查看和监控](./android_memory_monitor.md)	
 
-* 内存的分析
-	* 查看的方法
+* 查看的方法
 
 		[WETEST](https://wetest.qq.com/lab/view/359.html)
 
@@ -40,12 +39,6 @@
 1. [LeakCanary](./android_tool_leakcanary.md)
 
 2. [MAT使用指南](./android_tool_mat.md)
-
-
-[Android有效解决加载大图片时内存溢出的问题](http://www.cnblogs.com/wanqieddy/archive/2011/11/25/2263381.html)
-
-
-[腾讯](http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332083&idx=1&sn=d5a1b24736d6f14ff24dfecf15e397a9&scene=0#wechat_redirect)
 
 
 ### 参考

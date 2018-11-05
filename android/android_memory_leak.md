@@ -1,85 +1,97 @@
 # 内存泄漏
 
+### 什么是内存泄漏
 
-## Leakcanary分享
+一些对象有着有限的生命周期。当这些对象所要做的事情完成了，我们希望他们会被回收掉。但是如果有一系列对这个对象的引用，那么在我们期待这个对象生命周期结束的时候被收回的时候，它是不会被回收的。它还会占用内存，这就造成了内存泄露。持续累加，内存很快被耗尽。
 
-**1. github地址**
+比如，当 Activity.onDestroy 被调用之后，activity 以及它涉及到的 view 和相关的 bitmap 都应该被回收。但是，如果有一个后台线程持有这个 activity 的引用，那么 activity 对应的内存就不能被回收。这最终将会导致内存耗尽，然后因为 OOM 而 crash。
 
-[https://github.com/square/leakcanary](https://github.com/square/leakcanary)
+Android虚拟机的垃圾回收采用的是根搜索算法。GC会从根节点（GC Roots）开始对heap进行遍历。到最后，部分没有直接或者间接引用到GC Roots的就是需要回收的垃圾，会被GC回收掉。而内存泄漏出现的原因就是存在了无效的引用，导致本来需要被GC的对象没有被回收掉。
 
-[中文版翻译地址](http://www.liaohuqiu.net/cn/posts/leak-canary/)
+举个栗子
 
-**2. 接入指南**
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicITOibQWYvaD2Byq7hqCC51wicOcDoLXgicAGGictiaJhmLRqb4ehicJCicXVjg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-- 引入leakcanary工程
+mLeak是存储在静态区的静态变量，而Leak是内部类，其持有外部类Activity的引用。这样就导致Activity需要被销毁时，由于被mLeak所持有，所以系统不会对其进行GC，这样就造成了内存泄漏。
 
-		debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta1'
-    	releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1'
+再举一个最常犯的栗子
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIvpTuo6NNUIpjrjPueOic8uToBfczO5rA0cdQpGK9fkDHdvZaxkvmlgg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-> 目前官网稳定版本是 1.3.1，但是接入时发现一些机型dump文件有问题，在1.4-beta1上已解决
+如果我们在在调用Singleton的getInstance()方法时传入了Activity。那么当instance没有释放时，这个Activity会一直存在。因此造成内存泄露。
 
-- Application中初始化Leakcanary类
-	
-		LeakCanary.install(Application); // Application 
-		LeakCanary.install(this, PPMemLeakHandleService.class, AndroidExcludedRefs.createAppDefaults().build());
+解决方法可以将new Singleton(context)改为new Singleton(context.getApplicationContext())即可，这样便和传入的Activity没关系了。
 
-- 对需要检测的内存泄漏的地方使用 RefWather的watch方法
-		
-		RefWather().watch(Object)
+内存泄漏的检测
 
-- 生成的dump存放路径
+打开Android Studio，编译代码，在模拟器或者真机上运行App，然后点击[Anroid monitor]，在Android Monitor下点击Monitor对应的Tab，进入如下界面
 
-		/sdcard/Download/leakcanary-packageName/
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIDGicvgU8Ba8tqVzOyE3lVKiaNv70J2MHF98cPb6pPPoaWDGhcrSwIbrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
+在Memory一栏中，可以观察不同时间App内存的动态使用情况，点击可以手动触发GC，点击可以进入HPROF Viewer界面，查看Java的Heap，如下图
 
-**3. Leakcanary实现原理**
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIkKlU2m8UQFZqSsXQiaEfonIRHybC7NOVfFic3moO2ZJrFjeIMgkf3BGg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-- Leakcanary注册过程
+Reference Tree代表指向该实例的引用，可以从这里面查看内存泄漏的原因，Shallow Size指的是该对象本身占用内存的大小，Retained Size代表该对象被释放后，垃圾回收器能回收的内存总和。
 
-	![](http://i.imgur.com/RBN9Q93.png)
+下面我们以掌上道聚城客户端为例，来一探内存泄漏检测的方法。
 
-	1. 实例化一个RefWather类，用来监控内存泄漏的对象
-	2. 4.0以上版本默认开启对Activity页面的内存泄漏监控
+打开Android Studio，编译代码，运行掌上道聚城，然后开始尽情的耍我们的App啦，然后就从Memory Monitor里面观察App的内存使用曲线，突然发现，纳尼！！！怎么内存使用越来越大了，这就很有可能是发生内存泄漏了，然后点击手动进行GC，再点击观看JavaHeap，点击Analyzer Task，Android Monitor就可以为我们自动分析泄漏的Activity啦，分析出来如下图所示
 
-- WeakReference和ReferenceQueue
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIWicdLDjWa0KownTuuB49eLwKFuMFfUN34q0JXfW3cPA3AkprGyvNdJQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-		当GC线程扫描它所管辖的内存区域时，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否(这一点与SoftReference不同)，
-		都会回收它的内存。由于垃圾回收器是一个优先级很低的线程，因此不一定会很快发现那些只具有弱引用的对象。
+在Reference Tree里面，我们直接就可以看到持有该Activity的单例对象，直接定位到该单例中的代码，发现代码中出现了
 
-		WeakReference和ReferenceQueue联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。
-	
-	在Leakcanary里，就是使用了WeakReference和ReferenceQueue机制来排查内存泄漏点
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicI9Q3wjyEnJ8vauhib0UXFaqR261U57iaeZj6bMDK1PlXjibibiaLOrNcuAEA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-- RefWather工作原理
+和刚刚举得栗子里出现的错误一模一样啊，这段代码是谁写的，拖出去······
 
-	内存泄漏的监控都是由RefWather的 watch 方法来进行监控的，其实现原理如下：
+我们修复了检查出的内存泄漏的问题，并将修复前和修复后的代码在相同的模拟器上运行并进行相同的操作，查看他们使用内存的情况，如下图所示
 
-	- RefWatcher.watch(Object) 创建一个 KeyedWeakReference 到要被监控的对象，并生成一个唯一的标识reference key。
-	- 在后台线程中检查引用是否被清除，如果没有，主动触发一次GC操作
-	- 如果此时引用还是未被清除，此时把 heap 内存dump到 suspected_leak_heapdump.hprof 一个文件当中
-		> Debug.dumpHprofData(String filePath);
-	- 在另外一个进程中(默认是:leakcanary)中，HeapAnalyzerService 通过 HeapAnalyzer 类来对hprof文件进行解析
-		> 这里解析hprof的操作是通过一个 HAHA 的开源项目来实现的
-	- 通过唯一标识 reference key，HeapAnalyzer 在hprof文件中找到 KeyedWeakReference对象，定位内存泄漏。
-	- HeapAnalyzer 计算 到 GC roots 的最短强引用路径，并确定是否泄漏。如果是，建立导致泄漏的引用链。
-	- 引用链传递到 APP 进程中的 DisplayLeakService， 并以通知的形式展示出来。
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIKG37QKiclEic3avYPsibfNCYhqkNqxmTfcDYtCu4EXmTGAJf3bqDK9Zpg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-	![](http://i.imgur.com/4wU1Ybs.png)
+有内存泄漏的情况，占用内存约为43M
 
-**4. 定制化Leakcanary**
+![](http://mmbiz.qpic.cn/mmbiz/kn3fIZB16Mp3y84Lhc1FN29wKuksClicIbNT8KhARyMalcyo211tvLdWnL3K0WmicNldlBhME4z8jP5ibf6emOOpA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+修复了内存泄漏问题，占用内存为36M。
 
-HeapAnalyzer在分析出了内存泄漏结果后，将结果传递到 DisplayLeakService 中进行结果处理
-DisplayLeakService类默认的处理是在通知栏中展示引用链，我们可以通过继承这个类，加上一些自己的处理操作，如：将内存泄漏结果上传到服务器进行分析
+在修复了内存泄漏问题后，内存使用下降了16.3%！！！
 
-		protected void afterDefaultHandling(HeapDump heapDump, AnalysisResult result, String leakInfo) {}
+掌握了Android Monitor的使用方法后，妈妈再也不担心我写的App会出现内存泄漏啦！！！
 
-只需要在注册Leakcanary时传递这个Service的class对象即可：
-		
-		LeakCanary.install(this, PPMemLeakHandleService.class, AndroidExcludedRefs.createAppDefaults().build());
+ * [基于Android Studio的内存泄漏检测与解决全攻略](http://wetest.qq.com/lab/view/?id=99)
+  * [腾讯手机管家实战分析：内存突增是为神马？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=30&highlight=%E5%86%85%E5%AD%98%E7%AA%81%E5%A2%9E)
+  内存泄露场景
 
-HeapAnalyzer分析内存泄漏打印结果如下：
-	![](http://i.imgur.com/EULOdSS.png)
+1、注册了监听器，忘了反过注册；
+>销毁时反注册
 
+2、内部类，匿名内部类；
+>静态内部类
+
+3、WebView	
+>不要在xml中声明，销毁时移除所有的view，直接将weview相关的放在一个进程中，退出时直接杀死进程
+
+内存优化，主要就是去消除应用中的内存泄露、避免内存抖动。
+
+1、安卓studio的内存分析工具 + mat可以很好的检测内存抖动和内存泄露
+
+2、常见的内存泄露情况：
+
+● 单例：生命周期很长，会引用生命周期比较短的变量，导致无法释放。例如activity泄露
+
+● 静态变量：同样也是应为生命周期比较长
+
+● 非静态内部类创建静态实例造成的内存泄漏
+
+● handler内存泄露 （解决办法：Handler 声明为静态的，则其存活期跟 Activity 的生命周期就无关了。同时通过软引用的方式引入 Activity）
+
+● 匿名内部类（匿名内部类会引用外部类，导致无法释放，比如各种回调）
+
+● 资源使用完未关闭（BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap）
+
+● 复用问题（bitmap释放）
+
+Android 内存优化总结&实践
 
 [Android应用内存泄露分析、改善经验总结](zhuanlan.zhihu.com/p/20831913)
 
@@ -108,4 +120,13 @@ HeapAnalyzer分析内存泄漏打印结果如下：
 
 [内存泄露从入门到精通三部曲之基础知识篇](http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=400674207&idx=1&sn=a9580ca0dffc62a6d7dbb8fd3d7a2ef1&scene=0&key=b410d3164f5f798e3f4b6de393face7f291ae1d5d6ce312646e1e72ba2b6849e52d3ef5d2d0e4e8579cc7841aac8b439&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.11.1+build(15B42)&version=11020201&pass_ticket=hgYTL4MW7%2FI9mnat%2BT9S2RRS0IkFfm6yOLSy%2F4bguL4%3D)
 
+
+[内存泄露](http://blog.csdn.net/xiaochuanding/article/details/56286074?utm_source=gank.io&utm_medium=email)
+
+
+内存泄露检测工具
+1. [LeakCanary](./android_tool_leakcanary.md)
+
+[Android中常见的内存泄漏汇总](https://xiaozhuanlan.com/topic/0583461792)
+[Android性能优化-使用MAT分析内存泄漏](https://xiaozhuanlan.com/topic/6852741390)
 
