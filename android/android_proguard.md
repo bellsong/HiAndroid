@@ -44,11 +44,21 @@
 这里面涉及到要了解的东西
 
 
-
 1. 混淆的原理
 2. 混淆的使用 ：声明、保护代码写法 keep
 3. 对于第三方资源的混淆，例如，引入的jar包
 4. 对于动态加载的混淆
+
+优化proguard规则，包括：
+
+-optimizationpasses 5    ##提升压缩级别
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+-allowaccessmodification
+-mergeinterfacesaggressively ##合并接口
+-useuniqueclassmembernames
+-dontpreverify #关闭预校验
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 
 
