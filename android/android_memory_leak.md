@@ -127,6 +127,15 @@ Android 内存优化总结&实践
 内存泄露检测工具
 1. [LeakCanary](./android_tool_leakcanary.md)
 
+
+### 参考
+
+[Andorid 官方内存泄漏例子](https://android-developers.googleblog.com/2009/01/avoiding-memory-leaks.html)
+
 [Android中常见的内存泄漏汇总](https://xiaozhuanlan.com/topic/0583461792)
+
 [Android性能优化-使用MAT分析内存泄漏](https://xiaozhuanlan.com/topic/6852741390)
 
+[MemoryMonitor](https://www.diycode.cc/projects/cundong/MemoryMonitor)
+
+[WETEST](https://wetest.qq.com/lab/view/359.html)

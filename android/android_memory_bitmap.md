@@ -8,16 +8,6 @@
 5. 图片分辨率、当前机器的Density、图片放置的位置的关系
 6. 获取图片大小 getrowBytes()
 
-[关于Android中图片大小、内存占用与drawable文件夹关系的研究与分析](https://blog.csdn.net/zhaokaiqiang1992/article/details/49787117)
-
-[Android性能优化：那些关于Bitmap优化的小事](https://juejin.im/entry/5aa873996fb9a028db586153)
-
-
-[Android有效解决加载大图片时内存溢出的问题](http://www.cnblogs.com/wanqieddy/archive/2011/11/25/2263381.html)
-
-
-[腾讯](http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332083&idx=1&sn=d5a1b24736d6f14ff24dfecf15e397a9&scene=0#wechat_redirect)
-
 #### 优化指南
 
 ##### 高效加载大图片
@@ -91,8 +81,23 @@ public static Bitmap decodeSampledBitmapFromResource
 
 [Android 开发绕不过的坑：你的 Bitmap 究竟占多大内存？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=498#rd)
 
+[Android内存优化之图片优化](https://juejin.im/post/5af84f4b51882542714fdaa9?utm_source=gold_browser_extension)
+
+[Android 内存优化](http://yefangqingchen.com/2017/04/01/Android-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/)
+
 [Android代码内存优化建议-Android资源篇](https://xiaozhuanlan.com/topic/7154902863)
 
 [Android APP内存优化之图片优化](https://zmywly8866.github.io/2015/07/01/android-reduce-app-memory-use.html)
 
 [Android高效加载大图、多图避免程序OOM](https://xiaozhuanlan.com/topic/2084735916)
+
+[Android 内存优化 图片优化](http://yefangqingchen.com/2017/04/01/Android-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/)
+
+[关于Android中图片大小、内存占用与drawable文件夹关系的研究与分析](https://blog.csdn.net/zhaokaiqiang1992/article/details/49787117)
+
+[Android性能优化：那些关于Bitmap优化的小事](https://juejin.im/entry/5aa873996fb9a028db586153)
+
+[Android有效解决加载大图片时内存溢出的问题](http://www.cnblogs.com/wanqieddy/archive/2011/11/25/2263381.html)
+
+[腾讯](http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332083&idx=1&sn=d5a1b24736d6f14ff24dfecf15e397a9&scene=0#wechat_redirect)
+

@@ -24,7 +24,7 @@ dumpsys meminfo 输出结果包括以下部分
 
 | NO.        | 划分类型    |  排序  | 说明	|
 | --------   | -----:   | :----: |:----:|
-| 	1        | process     |   PSS    | 进程的PSS从大到小排序显示，每行显示一个进程
+| 	1        |process     |   PSS    | 进程的PSS从大到小排序显示，每行显示一个进程
 | 2       | OOM adj      |   PSS    | Native/System/Persistent/Foreground/Visible/Perceptible/A Services/Home/B Services/Cached，分别显示每类的进程情况
 | 3        | category      |   PSS    | 以Dalvik/Native/.art mmap/.dex map等划分的各类进程的总PSS情况
 | 4	| total | - | 总内存、剩余内存、可用内存、其他内存
@@ -288,6 +288,20 @@ free适用场景： 只查看系统的可用内存；
 showmap适用场景： 查看进程的虚拟地址空间的内存分配情况；
 
 vmstat适用场景： 周期性地打印出进程运行队列、系统切换、CPU时间占比等情况；
+
+### 运行时内存📱
+
+```java
+private void getMemoryInfo() {
+    ActivityManager activityManager = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
+    ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+    activityManager.getMemoryInfo(memoryInfo);
+    LogUtil.d("totalMem=" + memoryInfo.totalMem + ",availMem=" + memoryInfo.availMem);
+    if (!memoryInfo.lowMemory) {
+        // 运行在低内存环境
+    }
+}
+```
 
 ### 参考
 
