@@ -38,7 +38,11 @@
 
 #### [插件化](./android_pulgin.md)
 
-##### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
+#### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
+
+#### [网络库]
+
+#### [图片加载框架](./andorid_imageloader.md)
 
 #### 安全
 
@@ -54,6 +58,8 @@
 
 ### 其他
 
+
+
 #### 黑科技
 [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
@@ -67,13 +73,6 @@
 
 [发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-### Q&A
-
-Q1:[如何解决65535天花板？](./android_q1.md)
-
-Q2:[一种动态为apk写入信息的方案](http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-
-Q3:[android 定时任务的解决方案](./android_alarm.md)
 
 ![Android Map](./res/android_map.png)
 
