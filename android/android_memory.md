@@ -91,3 +91,5 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 [Google官方andorid性能优化](https://www.kancloud.cn/alex_wsc/better/202711)
 
 [Android 系统不释放内存么？](https://juejin.im/entry/5b9af2de6fb9a05cdd2cf457?utm_source=gold_browser_extension)
+
+[Android 内存泄漏 - 做一个有“洁癖”的开发者](https://www.jianshu.com/p/44d26d355a56)

@@ -1,6 +1,12 @@
-# Android 6.0 动态权限介绍
+# Android Permission 权限使用指南
 
-##前言
+* 权限声明
+* 动态权限说明
+* 自定义权限
+
+## Android 6.0 动态权限介绍
+
+### 前言
 
 Android自诞生以来，其安全性一直被人们所诟病。加之，国内安卓App生态环境恶劣，只要是个应用，恨不得申请所有权限。谷歌或许也意识到这个问题，因此在Marshmallow包含了期待已久的运行时权限管理。
 
@@ -463,3 +469,5 @@ PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this,
 [在Android 6.0 设备上动态获取权限](http://gudong.name/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html)
 
 [Android M 新的运行时权限开发者需要知道的一切](http://jijiaxin89.com/2015/08/30/Android-s-Runtime-Permission/)
+
+[Android 新权限系统，及使用AOP进行适配](http://www.atatech.org/articles/57176)

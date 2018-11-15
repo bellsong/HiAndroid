@@ -22,6 +22,8 @@
 
 #### [BroadCast](./android_broadcast.md)
 
+#### [ContentProvider](./android_contentprovider.md)
+
 #### [Application](./android_application.md)
 
 #### [Android Proguard 混淆](./android_proguard.md)
@@ -40,7 +42,7 @@
 
 #### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
 
-#### [网络库]
+#### [网络库](./android_network.md)
 
 #### [图片加载框架](./andorid_imageloader.md)
 
@@ -164,8 +166,6 @@ https://github.com/zzz40500/GsonFormat
 [章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
 
 [EasyAdapter for Android 高效列表开发解决方案](http://www.atatech.org/articles/57535)
-
-[Android 新权限系统，及使用AOP进行适配](http://www.atatech.org/articles/57176)
 
 [Android解决ImageSpan不居中的问题](http://www.atatech.org/articles/57158)
 
