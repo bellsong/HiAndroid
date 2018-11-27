@@ -260,8 +260,7 @@ JSPatch
 
 ### [进程](./android_process.md)
 
-### Android Fragment 
-[Android Fragment 的使用，一些你不可不知的注意事项](http://www.jianshu.com/p/3a101ce9e04d)
+### [Android Fragment](./android_fragment.md) 
 
 ### 动画
 [Android 动画 爱范儿是如何让详情页缩小为横向列表的](https://gold.xitu.io/post/584d8fd38e450a006ac7b0c6)

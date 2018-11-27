@@ -31,4 +31,6 @@ Activity是Context的继承，而fragment是Object的继承，在android.app包�
 
 [Android Fragment 的使用，一些你不可不知的注意事项](http://www.jianshu.com/p/3a101ce9e04d)
 
+[ViewPager和Fragment一篇就够了](https://www.jianshu.com/p/ad810a0bef6b)
+
 
