@@ -40,7 +40,7 @@
 
 #### [插件化](./android_pulgin.md)
 
-#### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
+#### [组件化](./android_module.md)
 
 #### [网络库](./android_network.md)
 
@@ -59,6 +59,8 @@
 ### [Programmer](./programmer.md)
 
 ### 其他
+
+#### [视屏播放相关](./android_video.md)
 
 #### 黑科技
 [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
@@ -148,8 +150,6 @@ https://github.com/zzz40500/GsonFormat
 通过Android API Hook技术，即通过动态代理等方法替换关键节点
 
 [Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
-
-[几个不错的Android开源音视频播放器](https://mp.weixin.qq.com/s/-QYABYGPBhPXQu06drmpUA)
 
 [Android逆向从未如此简单](https://juejin.im/post/58cc92a1b123db00532757cc?utm_source=gold_browser_extension)
 
@@ -366,6 +366,8 @@ Talk is cheap,show me the code.
 
 [设计模式](http://blog.csdn.net/hguisu/article/category/1133340)
 
+[设计模式](http://www.tutorialspoint.com/design_pattern/builder_pattern.htm)
+
 错题集
 
 android.os.BadParcelableException: ClassNotFoundException when unmarshalling
@@ -399,6 +401,8 @@ http://blog.csdn.net/lincyang/article/details/7095417
 ### 埋点
 [JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
 
+[Android无埋点数据收集SDK关键技术](https://www.jianshu.com/p/b5ffe845fe2d)
+
 ### 悬浮窗
 [Android仿微信文章悬浮窗效果](https://juejin.im/post/5bbc564df265da0aea69962a?utm_source=gold_browser_extension)
 
@@ -421,3 +425,30 @@ WebSocket
 推荐引擎 作用？实现？
 
 ![](./res/android_path.png)
+
+
+### More 
+
+Android程序log追踪工具_cooker-tracer
+
+skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
+[Wire Swiss GmbH](https://github.com/wireapp)
+
+[Android 架构之长连接技术](http://wingjay.com/)
+
+[Android事件分发机制源码解析](http://allenfeng.com/2017/02/22/android-touch-event-transfer-mechanism/)
+
+[2017年Android百大框架排行榜](http://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
+
+[花了 6 个月整理了 100 篇 Android 干货文章](https://juejin.im/post/598d1a0d6fb9a03c350a64c8?utm_source=gold_browser_extension)
+
+[Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
+如何准确的描述一个问题。搜索。有用资讯。决策。
+
+[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
+
+[腾讯移动推送](https://xg.qq.com/xg)
+
+[极光推送](https://www.jiguang.cn/)
+
+[android 资源](http://p.codekk.com/)
