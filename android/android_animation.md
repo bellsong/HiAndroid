@@ -6,3 +6,14 @@
 [一个用粒子动画显示文字的 Android 组件](https://www.diycode.cc/topics/782)
 []()
 []()
+
+[Android 动画 爱范儿是如何让详情页缩小为横向列表的](https://gold.xitu.io/post/584d8fd38e450a006ac7b0c6)
+[android 软软的动画弹出菜单，基于Facebook的Rebuond](https://gold.xitu.io/post/5849658161ff4b006cb86031)
+[Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
+[模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
+[模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
+[Android 帧动画]
+
+[Ripple Animation](https://guides.codepath.com/android/ripple-animation)
+
+[Creating a bubble button animation on Android](https://evgenii.com/blog/spring-button-animation-on-android/)

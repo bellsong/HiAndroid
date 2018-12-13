@@ -452,3 +452,5 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 [极光推送](https://www.jiguang.cn/)
 
 [android 资源](http://p.codekk.com/)
+
+[开放通用Api](https://github.com/MZCretin/RollToolsApi)
