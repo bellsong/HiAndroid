@@ -10,6 +10,12 @@
 ### 案例实践
 ### 源码阅读
 
+
+
+### Android Map  
+[Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
+
+
 ### 基础篇
 
 #### [java 基础知识](./android_java.md)
@@ -33,6 +39,16 @@
 #### [Android Permission 权限管理](./android_systempermissions.md)
 
 #### [数据格式处理](./android_2_data.md)
+
+### [多线程](./android_thread.md)
+
+### [进程](./android_process.md)
+
+### [Android Fragment](./android_fragment.md) 
+
+### [动画](./android_animation.md)
+
+### [ViewPager](./android_viewpager.md)
 
 ### 进阶篇
 
@@ -194,7 +210,6 @@ https://github.com/zzz40500/GsonFormat
 
 [高斯模糊](./andorid_blur.md)
 
-
 ### 编码规范
 * [编码规范](./android_style.md)
 
@@ -248,27 +263,6 @@ Sdk日志跟服务器上不一致
 JSPatch
 
 拥有的不过是岁月留下来的经验，而不是智慧。
-
-### Android Map  
-
-### Android 基础
-[Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
-
-### [View](./android_view.md)
-
-### [多线程](./android_thread.md)
-
-### [进程](./android_process.md)
-
-### [Android Fragment](./android_fragment.md) 
-
-### 动画
-[Android 动画 爱范儿是如何让详情页缩小为横向列表的](https://gold.xitu.io/post/584d8fd38e450a006ac7b0c6)
-[android 软软的动画弹出菜单，基于Facebook的Rebuond](https://gold.xitu.io/post/5849658161ff4b006cb86031)
-[Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
-[模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
-[模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
-[Android 帧动画]
 
 ### 动态加载
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
