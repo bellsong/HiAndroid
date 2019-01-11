@@ -91,7 +91,6 @@
 
 [发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-
 ![Android Map](./res/android_map.png)
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
@@ -102,7 +101,6 @@ Just something markable.
 1、ListView 中局部刷新Item
 
 [国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
-
 
 [图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)
 
@@ -192,7 +190,6 @@ https://github.com/zzz40500/GsonFormat
 [Android 方法数杂谈](http://www.atatech.org/articles/56219)
 
 [Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
-
 
 [无痕换肤的实现方案 for Android](http://www.atatech.org/articles/24389)
 
@@ -448,3 +445,6 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 [android 资源](http://p.codekk.com/)
 
 [开放通用Api](https://github.com/MZCretin/RollToolsApi)
+
+## APK瘦身
+1. 图片压缩工具 [TinyPng](https://tinypng.com/)
