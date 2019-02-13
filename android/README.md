@@ -10,8 +10,6 @@
 ### 案例实践
 ### 源码阅读
 
-
-
 ### Android Map  
 [Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
 
@@ -49,6 +47,8 @@
 ### [动画](./android_animation.md)
 
 ### [ViewPager](./android_viewpager.md)
+
+### [Andorid事件分发机制](./android_event.md)
 
 ### 进阶篇
 
@@ -118,8 +118,6 @@ Just something markable.
 
 
 [面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
-
-### [Andorid事件分发机制](./android_event.md)
 
 [Android 反射机制](./android_reflection.md)
 
@@ -474,3 +472,8 @@ NDK开发
 
 条理清晰的头脑。
 
+
+视频播放
+视频播放领域相关的知识
+
+原理、当前发展情况、技术栈、面临的问题、未来的方向
