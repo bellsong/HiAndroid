@@ -98,9 +98,6 @@ Just something markable.
 
 [自定义View系列：打造一个显示密码等级的控件](https://philipdroid.github.io/2016/10/26/%E4%B8%80%E4%B8%AA%E6%98%BE%E7%A4%BA%E5%AF%86%E7%A0%81%E7%AD%89%E7%BA%A7%E7%9A%84%E6%8E%A7%E4%BB%B6PasswordLevelView/)
 
-[重要-作为Android开发者必须了解的Gradle知识](http://www.jianshu.com/p/c31513f5f550?utm_campaign=hugo&utm_medium=reader_share&utm_content=note)
-
-
 [面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
 
 ### [Andorid事件分发机制](./android_event.md)

@@ -23,16 +23,14 @@
 
 ### [Android 100问](./QA/README.md)
 
+### [Gralde](./Gradle/README.md)
+
 ### 优秀 App
 
 1. [最美应用](http://zuimeia.com/?platform=2)
 
 ### 思想
 面向接口编程
-
-### TODO
-
-自定义Gradle插件 https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension
 
 ## 产品故事
 [今日头条融资故事：得到的和错过的](https://mp.weixin.qq.com/s?__biz=MjM5MDczODM3Mw==&mid=2653028299&idx=1&sn=33ed8afdf6760e661213bb1e27c843fd&scene=21#wechat_redirect)
