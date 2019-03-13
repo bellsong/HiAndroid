@@ -480,7 +480,236 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 
 [Android性能优化典范 - 第6季](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578016&idx=1&sn=d997d1142bac09e3764c075392468ae5&chksm=84b3b127b3c4383197c7d1cf15ecec44d66a1119b033ae383f9e2126bb1be0abc93416622dc0&scene=21#wechat_redirect)
 
+
+Android应用优化方案
+
+前言：
+
+前面两篇文章主要是讲关于activity、fragment生命周期方面的总结，这篇文章主要是总结在android应用开发过程的优化方案，还有一些常用的优化工具。优化的方向包括：启动速度、界面流畅性、内存使用情况、apk体积、耗电量、流量等方面。
+
+app启动速度
+
+1、通过style 设置一个默认的启动图来过度，从交互体验上来提高启动速度
+
+2、分析application和首屏的业务逻辑异步初始化第三方组件，防止阻塞主线程（或者延迟初始化（用的时候再初始化））
+
+3、闪屏的2秒停顿可以利用起来，把一些耗时操作延迟到这里来初始化
+
+4、同工具DDMS中的TraceView来检测耗时的点在哪里，做针对的处理
+
+5、mainActivity的onCreate流程，特别是UI的布局与渲染操作，如果布局过于复杂很可能导致严重的启动性能问题；（可以考虑先把mainActivity需要的数据请求回来），根据首页的结构可以考虑懒加载。
+
+Android APP启动优化： wuxiaolong.me/2017/03/13/…
+
+App启动速度优化之耗时检测处理： www.jianshu.com/p/a0e242d57…
+
+使用 TraceView 找到卡顿的元凶： blog.csdn.net/u011240877/…
+
+上面的几篇文章基本上描述了应用的启动流程，如何优化白屏，检测耗时以及一些SDK的懒加载等等...
+
+
+启用问题和优化思路
+
+在CPU、内存以及IO的限制下，启动问题显得尤为严重。
+
+主要问题：
+1.启动界面卡太久
+2.进入首页白屏
+
+实用工具
+## TraceView
+分阶段排查，找出各个占用CPU的耗时点。
+注意点：
+整体的Trace，观察整个时间段情况。找出明显点耗时。
+分小段，多次。因为时间过长容易把耗时占比高的稀释掉。加上线程启动时间差等叠加原因都会对性能产生影响。
+
+一般占用CPU时间，需要留意的地方：
+1. 线程（一般用于初始化其他模块）
+2. 网络请求 
+3. 日志输出
+4. GC 可能引起GC的原因：主线程中字符串拼接和扩容，容器的遍历和扩容，inflate界面；网络线程和图片加载频繁分配Byte，图片解码，HashMap操作
+
+## Threads
+分析线程情况，当前启动的线程以及执行情况
+
+
+优化步骤：
+1. 线程
+1） 分析线程数，检查线程池合理数。 去掉不必要的线程和线程池。控制线程的并发数。
+
+2）延迟非必要线程的启动时机
+
+3）降低线程优先级
+
+4）统一线程池
+
+注意：规范新线程的命名，方便后续排查
+
+2. 减少GC
+
+减少非必要缓存，频繁创建的对象如网络库和图片库的Byte数组 Buffer等做复用。
+
+3. 主线程优化
+
+4. 减少IO
+空间换时间
+
+SP优化
+数据库操作 开启事务
+
+5. 延时加载
+
+6. 功能降级
+
+---
+
+
+#1、优化dex加载
+## 背景
+由于app的体量较大，超过了65536的天坑，于是我们的安装包被迫分为2个dex文件，第2个文件在第一次启动时会进行安装。（当然，这里暂不讨论为什么不精减到一个的问题，这是后面努力的方向），然而安装的过程在低端手机上惨不忍睹，普通需要4秒以上。我们的多DEX支持的代码是从Google官方的MultiDex和MultiDexExtractor中取出来的，那么这块是否还有优化空间了呢？
+[http://www.atatech.org/articles/56465/?frm=mail_daily&uid=130616](http://www.atatech.org/articles/56465/?frm=mail_daily&uid=130616)
+
+##现状
+经过分析，安装过程中比较耗时的有2个过程，一是把classes2.dex从apk中取出来的，然后以zip的形式保存在程序目录下面，这个过程为extract。
+
+private static void extract(ZipFile apk, ZipEntry dexFile, File extractTo,
+            String extractedFilePrefix) throws IOException, FileNotFoundException {
+
+        InputStream in = apk.getInputStream(dexFile);
+        ZipOutputStream out = null;
+        File tmp = File.createTempFile(extractedFilePrefix, EXTRACTED_SUFFIX,
+                extractTo.getParentFile());
+
+        TMLog.i(TAG, "Extracting " + tmp.getPath());
+        try {
+            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
+            out.setLevel(Deflater.BEST_SPEED);
+            try {
+                ZipEntry classesDex = new ZipEntry("classes.dex");
+                // keep zip entry time since it is the criteria used by Dalvik
+                classesDex.setTime(dexFile.getTime());
+                out.putNextEntry(classesDex);
+
+                byte[] buffer = new byte[BUFFER_SIZE];
+                int length = in.read(buffer);
+                while (length != -1) {
+                    out.write(buffer, 0, length);
+                    length = in.read(buffer);
+                }
+                out.closeEntry();
+            } finally {
+                out.close();
+            }
+            TMLog.i(TAG, "Renaming to " + extractTo.getPath());
+            if (!tmp.renameTo(extractTo)) {
+                throw new IOException("Failed to rename \"" + tmp.getAbsolutePath() +
+                        "\" to \"" + extractTo.getAbsolutePath() + "\"");
+            }
+        } finally {
+            closeQuietly(in);
+            tmp.delete(); // return status ignored
+        }
+    }
+
+
+
+二是对这个dex进行安装（系统优化），这个过程为install。目前的情况，我用两台低端手机各测三次，结果如下：(单位毫秒)
+
+手机1，TCL 
+06-14 17:46:48.073 24963-24963/com.tmall.wireless E/TTTT: extract time1873
+06-14 17:46:50.553 24963-24963/com.tmall.wireless E/TTTT: install time2477
+06-14 17:47:34.193 26517-26517/com.tmall.wireless E/TTTT: extract time1878
+06-14 17:47:35.883 26517-26517/com.tmall.wireless E/TTTT: install time1679
+06-14 17:48:35.193 28026-28026/com.tmall.wireless E/TTTT: extract time1960
+06-14 17:48:36.893 28026-28026/com.tmall.wireless E/TTTT: install time1698
+
+手机2，华为电信赠送机
+
+06-14 17:48:37.698 25220-25220/com.tmall.wireless E/TTTT: extract time2518
+06-14 17:48:41.158 25220-25220/com.tmall.wireless E/TTTT: install time3447
+06-14 18:02:49.658 10344-10344/com.tmall.wireless E/TTTT: extract time2168
+06-14 18:02:52.058 10344-10344/com.tmall.wireless E/TTTT: install time2396
+06-14 18:03:20.908 11684-11684/com.tmall.wireless E/TTTT: extract time2207
+06-14 18:03:23.138 11684-11684/com.tmall.wireless E/TTTT: install time2224
+
+classes2.dex.zip 文件大小为约为2.1M
+
+尝试一
+我们知道，PathClassLoader是可以加载zip, dex等文件，看上述源代码这一行：
+
+new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
+它是把文件流取出来又重新压缩，如果不经过压缩这一步，直接取出来就是dex，那是不是会快一点呢？
+动手尝试后，发现更慢了。原因在于SD卡的写入速度。原始的dex文件有5M多，而我这手机的SD卡的写入速度了10Mb/S，约为每秒1M的写入速度，实验数据太难看，就不发出来污大家眼了。
+
+尝试二
+有了前面的经验，我尝试对压缩的参数进行调整，
+
+            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
+            out.setLevel(Deflater.BEST_COMPRESSION);
+猜一下结果，
+
+TCL
+06-14 17:46:48.073 24963-24963/com.tmall.wireless E/TTTT: extract time2564
+06-14 17:46:50.553 24963-24963/com.tmall.wireless E/TTTT: install time2311
+06-14 17:47:34.193 26517-26517/com.tmall.wireless E/TTTT: extract time2870
+06-14 17:47:35.883 26517-26517/com.tmall.wireless E/TTTT: install time1899
+06-14 17:48:35.193 28026-28026/com.tmall.wireless E/TTTT: extract time2509
+06-14 17:48:36.893 28026-28026/com.tmall.wireless E/TTTT: install time1769
+
+华为手机
+06-14 17:43:28.883 20248-20248/com.tmall.wireless E/TTTT: extract time4015
+06-14 17:43:30.983 20248-20248/com.tmall.wireless E/TTTT: install time2099
+06-14 17:44:01.123 21681-21681/com.tmall.wireless E/TTTT: extract time3703
+06-14 17:44:02.803 21681-21681/com.tmall.wireless E/TTTT: install time1676
+06-14 17:44:26.623 22339-22339/com.tmall.wireless E/TTTT: extract time3626
+06-14 17:44:28.243 22339-22339/com.tmall.wireless E/TTTT: install time1613
+
+classes2.dex.zip 文件大小为约为2.1M
+
+根本原因是压缩花了大量的时间，文件大小几乎没变！
+
+尝试三
+            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
+            out.setLevel(Deflater.BEST_SPEED);
+时间数据如下：
+
+TCL
+06-14 17:30:44.152 12719-12719/com.tmall.wireless E/TTTT: extract time924
+06-14 17:30:45.762 12719-12719/com.tmall.wireless E/TTTT: install time1605
+06-14 17:31:35.252 14335-14335/com.tmall.wireless E/TTTT: extract time865
+06-14 17:31:37.072 14335-14335/com.tmall.wireless E/TTTT: install time1821
+06-14 17:32:44.102 16292-16292/com.tmall.wireless E/TTTT: extract time838
+06-14 17:32:45.782 16292-16292/com.tmall.wireless E/TTTT: install time1675
+
+华为
+
+06-14 17:33:31.285 10842-10842/com.tmall.wireless E/TTTT: extract time1028
+06-14 17:33:34.045 10842-10842/com.tmall.wireless E/TTTT: install time2155
+06-14 17:34:07.255 12350-12350/com.tmall.wireless E/TTTT: extract time985
+06-14 17:34:09.515 12350-12350/com.tmall.wireless E/TTTT: install time2357
+06-14 17:34:46.095 13734-13734/com.tmall.wireless E/TTTT: extract time1020
+06-14 17:34:48.425 13734-13734/com.tmall.wireless E/TTTT: install time2030
+
+classes2.dex.zip文件大小约为2.28M
+
+可以看出，在install时间波动不大的情况下，解压的时间缩短了约1s的样子，使得安装第2个dex的整体时间从4到5s降低到3到4s，虽然结果还是很难看，但也算有20%到25%的提升。。。。
+
+为了追求解压速度与SD卡写入速度的一个平衡，要求速度足够快，文件又不能太大。这就需要综合了解了Deflater算法，从网上抠了别人的测试结果。
+
+时间图：
+
+
+压缩数据图：
+7bfc85c0d74ff05806e0b5a0fa0c1df1
+
+由此可以看出，BEST_COMPRESS(值为9）需要的时间最久，效果也最好，BEST_SPEED(1)最快，效果看起来是最差。但是要考虑到IO的吞吐性能与时间的综合因素，压缩参数321的收益是最大的，我考虑到移动处理器较慢的影响，最后使用了BEST_SPEED来作为程序参数。
+
+结论
+压缩是程序中经常会用到的算法，包括处理网络协议，图片，文件等，这时我们要选择适当的压缩算法，调整适当的参数，才能让算法的收益达到最大。同时，我们也要对默认参数保持足够多的警戒心。
+
+
 ---
 READ MORE，
+WRITE MORE，
 THINK MORE，
-THEN WRITE.
+THEN TEACH.

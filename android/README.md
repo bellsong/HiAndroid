@@ -10,6 +10,10 @@
 ### 案例实践
 ### 源码阅读
 
+### Android Map  
+[Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
+
+
 ### 基础篇
 
 #### [java 基础知识](./android_java.md)
@@ -34,13 +38,25 @@
 
 #### [数据格式处理](./android_2_data.md)
 
+### [多线程](./android_thread.md)
+
+### [进程](./android_process.md)
+
+### [Android Fragment](./android_fragment.md) 
+
+### [动画](./android_animation.md)
+
+### [ViewPager](./android_viewpager.md)
+
+### [Andorid事件分发机制](./android_event.md)
+
 ### 进阶篇
 
 #### [性能优化专项](./android_optimize.md)
 
 #### [插件化](./android_pulgin.md)
 
-#### [视频播放相关](https://github.com/danylovolokh/VideoPlayerManager)
+#### [组件化](./android_module.md)
 
 #### [网络库](./android_network.md)
 
@@ -60,6 +76,8 @@
 
 ### 其他
 
+#### [视屏播放相关](./android_video.md)
+
 #### 黑科技
 [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
@@ -73,7 +91,6 @@
 
 [发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-
 ![Android Map](./res/android_map.png)
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
@@ -84,7 +101,6 @@ Just something markable.
 1、ListView 中局部刷新Item
 
 [国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
-
 
 [图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)
 
@@ -99,8 +115,6 @@ Just something markable.
 [自定义View系列：打造一个显示密码等级的控件](https://philipdroid.github.io/2016/10/26/%E4%B8%80%E4%B8%AA%E6%98%BE%E7%A4%BA%E5%AF%86%E7%A0%81%E7%AD%89%E7%BA%A7%E7%9A%84%E6%8E%A7%E4%BB%B6PasswordLevelView/)
 
 [面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
-
-### [Andorid事件分发机制](./android_event.md)
 
 [Android 反射机制](./android_reflection.md)
 
@@ -146,8 +160,6 @@ https://github.com/zzz40500/GsonFormat
 
 [Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
 
-[几个不错的Android开源音视频播放器](https://mp.weixin.qq.com/s/-QYABYGPBhPXQu06drmpUA)
-
 [Android逆向从未如此简单](https://juejin.im/post/58cc92a1b123db00532757cc?utm_source=gold_browser_extension)
 
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
@@ -174,7 +186,6 @@ https://github.com/zzz40500/GsonFormat
 
 [Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
 
-
 [无痕换肤的实现方案 for Android](http://www.atatech.org/articles/24389)
 
 [浮窗系列之越过授权使用浮窗](http://www.atatech.org/articles/55874)
@@ -190,7 +201,6 @@ https://github.com/zzz40500/GsonFormat
 [异常处理](http://geek.csdn.net/news/detail/50839)
 
 [高斯模糊](./andorid_blur.md)
-
 
 ### 编码规范
 * [编码规范](./android_style.md)
@@ -245,28 +255,6 @@ Sdk日志跟服务器上不一致
 JSPatch
 
 拥有的不过是岁月留下来的经验，而不是智慧。
-
-### Android Map  
-
-### Android 基础
-[Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
-
-### [View](./android_view.md)
-
-### [多线程](./android_thread.md)
-
-### [进程](./android_process.md)
-
-### Android Fragment 
-[Android Fragment 的使用，一些你不可不知的注意事项](http://www.jianshu.com/p/3a101ce9e04d)
-
-### 动画
-[Android 动画 爱范儿是如何让详情页缩小为横向列表的](https://gold.xitu.io/post/584d8fd38e450a006ac7b0c6)
-[android 软软的动画弹出菜单，基于Facebook的Rebuond](https://gold.xitu.io/post/5849658161ff4b006cb86031)
-[Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
-[模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
-[模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)
-[Android 帧动画]
 
 ### 动态加载
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
@@ -364,6 +352,8 @@ Talk is cheap,show me the code.
 
 [设计模式](http://blog.csdn.net/hguisu/article/category/1133340)
 
+[设计模式](http://www.tutorialspoint.com/design_pattern/builder_pattern.htm)
+
 错题集
 
 android.os.BadParcelableException: ClassNotFoundException when unmarshalling
@@ -397,6 +387,8 @@ http://blog.csdn.net/lincyang/article/details/7095417
 ### 埋点
 [JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
 
+[Android无埋点数据收集SDK关键技术](https://www.jianshu.com/p/b5ffe845fe2d)
+
 ### 悬浮窗
 [Android仿微信文章悬浮窗效果](https://juejin.im/post/5bbc564df265da0aea69962a?utm_source=gold_browser_extension)
 
@@ -419,3 +411,60 @@ WebSocket
 推荐引擎 作用？实现？
 
 ![](./res/android_path.png)
+
+
+### More 
+
+Android程序log追踪工具_cooker-tracer
+
+skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
+[Wire Swiss GmbH](https://github.com/wireapp)
+
+[Android 架构之长连接技术](http://wingjay.com/)
+
+[Android事件分发机制源码解析](http://allenfeng.com/2017/02/22/android-touch-event-transfer-mechanism/)
+
+[2017年Android百大框架排行榜](http://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
+
+[花了 6 个月整理了 100 篇 Android 干货文章](https://juejin.im/post/598d1a0d6fb9a03c350a64c8?utm_source=gold_browser_extension)
+
+[Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
+如何准确的描述一个问题。搜索。有用资讯。决策。
+
+[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
+
+[腾讯移动推送](https://xg.qq.com/xg)
+
+[极光推送](https://www.jiguang.cn/)
+
+[android 资源](http://p.codekk.com/)
+
+[开放通用Api](https://github.com/MZCretin/RollToolsApi)
+
+## APK瘦身
+1. 图片压缩工具 [TinyPng](https://tinypng.com/)
+
+
+一个需求生命周期
+
+考虑点 输入 输出
+
+输入包括：
+
+1、物理键 
+2、插电拔电 网络切换的系统各种广播
+3、用户行为 滑动、点击、触摸
+
+ASR 版本 ndk 16
+
+NDK开发
+
+手势识别库已完成集成，使用说明文档：https://yuque.antfin-inc.com/docs/share/b846d9a3-ee77-44bf-b2a7-dc34931850e5 ，文中附示例demo，如有问题及时沟通，谢谢
+
+自由的创作，肆意的挥洒
+
+文字的国度里面自由翱翔。
+
+简洁高效的写作和文字编辑能力可以带来简洁高效的代码，设计，邮件，沟通，即时信息以及更多。
+
+条理清晰的头脑。
