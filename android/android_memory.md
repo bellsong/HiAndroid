@@ -24,7 +24,7 @@
 
 2. [MAT使用指南](./android_tool_mat.md)
 
-3. [Memory Profiler](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
+3. [Andorid Studio 自带的分析工具 Memory Profiler](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
 
 ### 内存优化建议
 
