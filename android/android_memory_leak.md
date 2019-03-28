@@ -58,12 +58,12 @@ Reference Tree代表指向该实例的引用，可以从这里面查看内存泄
 
 掌握了Android Monitor的使用方法后，妈妈再也不担心我写的App会出现内存泄漏啦！！！
 
- * [基于Android Studio的内存泄漏检测与解决全攻略](http://wetest.qq.com/lab/view/?id=99)
-  * [腾讯手机管家实战分析：内存突增是为神马？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=30&highlight=%E5%86%85%E5%AD%98%E7%AA%81%E5%A2%9E)
+* [基于Android Studio的内存泄漏检测与解决全攻略](http://wetest.qq.com/lab/view/?id=99)
+* [腾讯手机管家实战分析：内存突增是为神马？](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=30&highlight=%E5%86%85%E5%AD%98%E7%AA%81%E5%A2%9E)
   内存泄露场景
 
 1、注册了监听器，忘了反过注册；
->销毁时反注册
+>销毁时反注
 
 2、内部类，匿名内部类；
 >静态内部类
