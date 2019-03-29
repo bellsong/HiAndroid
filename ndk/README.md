@@ -29,3 +29,16 @@
 ## 怎么用NDK进行开发
 
 ### 开发环境准备
+1. CMake
+* CMakeList.txt 是脚本文件, 需要指定包含哪些源代码;
+* 可以写一些条件语句, 实现不同的代码包含
+* 内部说明:add_library 表示编译一个代码库, 内部包含了代码库的名称, 以及源代码有哪些
+2. NDK
+* ndk-build 形式; Android Studio 2.2之前的模式
+* CMake 形式: CLion C/C++编辑器; AS2.2之后整合了CLion代码, AS就支持了CMake形式的NDK开发
+
+
+
+## 参考
+
+https://www.jianshu.com/p/0261e6cceb3e
