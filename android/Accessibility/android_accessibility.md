@@ -4,15 +4,6 @@
 
 任何技术都是一把双刃剑，用的好与好不，都在于使用它的人，一念天堂，一念地狱。
 
- AccessibilityService根据官方的介绍，是指开发者通过增加类似contentDescription的属性，从而在不修改代码的情况下，让残障人士能够获得使用体验的优化，大家可以打开AccessibilityService来试一下，点击区域，可以有语音或者触摸的提示，帮助残障人士使用App。
-    
-    当然，现在AccessibilityService已经基本偏离了它设计的初衷，至少在国内是这样，越来越多的App借用AccessibilityService来实现了一些其它功能，甚至是灰色产品。
-
-    不知道从什么时候开始，AccessibilityService突然从一个残障人士使用的辅助服务，一跃变成了各种App的黑科技，利用AccessibilityService来做的事情，也越来越偏离了AccessibilityService设计的初衷，各种安全问题也随之暴露出来，Google的理想是好的，愿天下都是安分守己的程序员。
-
-如何理解AccessibilityService
-
-    很多人可能对AccessibilityService了解的不是很深入，所以认为AccessibilityService是在调用一些系统服务来自动执行一些操作，实际上，这个理解不能算错，当然也不全对，我觉得你可以把AccessibilityService理解为——『按键精灵』。相信很多开发者都玩过PC上的这款软件，他的作用，就是将你一次操作的整个记录，录制下来，然后就可以根据这个记录，重复的执行这些操作，例如：先点击某个输入框，再输入XXXX，再输入验证码，最后点击某按钮，这些操作如果需要重复执行，那么显然是一套机械的步骤，那么通过按键精灵，记录下这些操作后，直接通过脚本就可以完成这些操作。其实AccessibilityService跟这个是一样的，我们记录的，实际上就是我们的操作步骤，或者称之为『脚本』，那么系统在监控整个手机的各种AccessibilityService事件时，就会根据我们的逻辑来判断该使用哪一个脚本。
 
 免Root自动安装
 
@@ -206,35 +197,3 @@ http://blog.csdn.net/AndroidMsky/article/details/53490459
 https://developer.android.com/guide/topics/ui/accessibility/services.html
 
 https://developer.android.com/training/accessibility/service.html
-
-
-## 一个最优雅的抢红包App
-### 基本功能：
-1. 打开后可以监听当前群聊天进行抢红包；
-2. 抢完可以自动关闭；
-3. 可以监听通知栏抢红包；
-4. 可以自动回复；
-5. 可以自定义回复；
-
-
-### 需要素材：
-1. App Name 
-2. App Icon
-3. App PackageName
-
-### 发布市场
-1. Google Play
-2. 小米市场
-3. 华为市场
-4. Vivo市场
-5. PP市场
-6. 豌豆荚市场
-
-### 灰度用户
-1. 微信、朋友圈
-2. QQ群
-3. 技术圈
-
-### 用到的技术
-1. 自动抢红包AccessiblyService
-2. 实现微信自动向附近的人打招呼 http://blog.csdn.net/dovar_66/article/details/52640929

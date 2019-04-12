@@ -48,6 +48,8 @@
 
 ### [ViewPager](./android_viewpager.md)
 
+### [RecyclerView](./android_recyclerview.md)
+
 ### [Andorid事件分发机制](./android_event.md)
 
 ### 进阶篇
@@ -196,7 +198,7 @@ https://github.com/zzz40500/GsonFormat
 
 [Android Plugin](./android_pulgin.md)
 
-[Android Accessibility](./android_accessibility.md)
+[Android Accessibility](./Accessibility/android_accessibility.md)
 
 [异常处理](http://geek.csdn.net/news/detail/50839)
 
