@@ -26,6 +26,8 @@
 
 ## 怎么用NDK进行开发
 
+JNI的话，有一份叫 《The Java Native Interface Programmer's Guide and Specification》的文档非常好，比较清楚的讲解了Java代码如何与C/C++代码相互访问的方法。至于NDK，可以参考NDK自带的文档，或者android aosp项目中来了解如何编写Android.mk。 参考NDK自带的文档来了解如何编译，链接，调试，如何编写Application.mk，如何使用STL等。还可以搜一下如何把NDK集成进自己使用的IDE中，如Eclipse，Android Studio等等。
+
 ### 开发环境准备
 1. CMake
 * CMakeList.txt 是脚本文件, 需要指定包含哪些源代码;
@@ -51,9 +53,9 @@
 
 ## 练习
 
-1. 打印HelloWorld
+1. 环境搭建（NDK BUILD 方式和CMake方式）打印HelloWorld
 
-2. 
+2. 计算机
 
 ## 参考
 
@@ -63,12 +65,20 @@
 
 [CMake](https://developer.android.google.cn/ndk/guides/cmake)
 
-[向您的项目添加 C 和 C++ 代码]()
+[向您的项目添加 C 和 C++ 代码](https://developer.android.google.cn/studio/projects/add-native-code.html)
 
 https://www.jianshu.com/p/0261e6cceb3e
+
+[Android NDK 简介 极客学院](http://wiki.jikexueyuan.com/project/jni-ndk-developer-guide/ndkoverview.html)
 
 [NDK开发入门终极教程](https://juejin.im/post/5c3b01016fb9a049f81984bb)
 
 [AndroidStudio下NDK开发流程](http://www.liuhaihua.cn/archives/566540.html)
 
 [Android NDK开发之入门示例 用C++ 写一个能四则运算的计算器](https://yq.aliyun.com/articles/656469/)
+
+[android Ndk JNI 入门](https://cloud.tencent.com/developer/article/1356491)
+
+[Android Studio jni开发入门——看我就够了！](http://www.jcodecraeer.com/a/anzhuokaifa/2017/0401/7769.html)
+
+[JNI学习积累之一 ---- 常用函数大全](https://blog.csdn.net/qinjuning/article/details/7595104)
