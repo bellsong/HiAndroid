@@ -47,3 +47,5 @@
 ### 用到的技术
 1. 自动抢红包AccessiblyService
 2. 实现微信自动向附近的人打招呼 http://blog.csdn.net/dovar_66/article/details/52640929
+
+

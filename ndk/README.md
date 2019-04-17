@@ -59,8 +59,16 @@
 
 [官方文档](https://developer.android.com/ndk/guides)
 
-[Android NDK 入门与实践](http://wuxiaolong.me/2017/12/27/AndroidNDK/)
+[官方samples](https://developer.android.com/ndk/samples)
+
+[CMake](https://developer.android.google.cn/ndk/guides/cmake)
+
+[向您的项目添加 C 和 C++ 代码]()
 
 https://www.jianshu.com/p/0261e6cceb3e
 
-https://developer.android.com/ndk/samples
+[NDK开发入门终极教程](https://juejin.im/post/5c3b01016fb9a049f81984bb)
+
+[AndroidStudio下NDK开发流程](http://www.liuhaihua.cn/archives/566540.html)
+
+[Android NDK开发之入门示例 用C++ 写一个能四则运算的计算器](https://yq.aliyun.com/articles/656469/)
