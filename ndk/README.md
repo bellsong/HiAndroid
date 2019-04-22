@@ -51,7 +51,7 @@ JNI的话，有一份叫 《The Java Native Interface Programmer's Guide and Spe
 
 4. 当Java类中包含了native的方法, 那么这个类必须写一个静态初初始化块: System.loadLibrary("库名")
 
-## 练习
+## [练习](./demo/README.md)
 
 1. 环境搭建（NDK BUILD 方式和CMake方式）打印HelloWorld
 
@@ -82,3 +82,5 @@ https://www.jianshu.com/p/0261e6cceb3e
 [Android Studio jni开发入门——看我就够了！](http://www.jcodecraeer.com/a/anzhuokaifa/2017/0401/7769.html)
 
 [JNI学习积累之一 ---- 常用函数大全](https://blog.csdn.net/qinjuning/article/details/7595104)
+
+[JNI相关](./jni.md)
