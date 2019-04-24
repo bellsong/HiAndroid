@@ -3,6 +3,29 @@
 ## At the Beginning
 对于一个新知识，要解决三个问题：是什么，为什么，怎么做。
 
+### 概念
+1. JavaVm
+JavaVM 是虚拟机在 JNI 层的代表，一个进程只有一个 JavaVM，所有的线程共用一个 JavaVM。
+
+2. JNIEnv
+JNIEnv 表示 Java 调用 native 语言的环境，是一个封装了几乎全部 JNI 方法的指针。
+
+JNIEnv 只在创建它的线程生效，不能跨线程传递，不同线程的 JNIEnv 彼此独立。
+
+native 环境中创建的线程，如果需要访问 JNI，必须要调用 AttachCurrentThread 关联，并使用 DetachCurrentThread 解除链接
+
+### 两种代码风格（C/C++）
+JavaVM 和 JNIEnv 在 C 语言环境下和 C++ 环境下调用是有区别的，主要表现在：
+
+C风格：(*env)->NewStringUTF(env, “Hellow World!”);
+
+C++风格：env->NewStringUTF(“Hellow World!”);
+
+建议使用 C++ 风格，这也是大部分代码使用的形式。
+
+注意：C++ 风格其实只是封装了 C 风格，使得调用更加简介方便。
+
+
 ## NDK 简介
     Native Development Kit 简称 NDK，是一种基于原生程序接口的软件开发接口。不同于java编写的程序运行在虚拟机上，通过此工具开发的程序可以直接以本地语言运行。因此只有Java等基于虚拟机运行的语言程序才会有原生开发工具包。
 
