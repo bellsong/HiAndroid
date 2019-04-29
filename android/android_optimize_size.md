@@ -74,10 +74,13 @@ META_INF
 
 
 ### 相关工具
-[ThinR gradle plugin](https://github.com/meili/ThinRPlugin/blob/master/README.zh-cn.md)
+1. [ThinR gradle plugin](https://github.com/meili/ThinRPlugin/blob/master/README.zh-cn.md)
 ThinR插件在编译时将除R$styleable.class以外的所有R.class删除掉，并且在引用的地方替换成对应的常量，从而达到缩减包大小和减少dex个数的效果。
 
 该插件已经在蘑菇街app上使用，将包大小降低1mb（原包大小40mb）,dex数量减少3个。
+
+1. 图片压缩工具 [TinyPng](https://tinypng.com/)
+
 
 ### 相关方案
 [微信 安装包立减1M--微信Android资源混淆打包工具:直接处理安装包. 不依赖源码，不依赖编译过程，仅仅输入一个安装包，得到一个混淆包](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=214472913&idx=1&sn=92b54b5fcd9bbab6513e46d92095a07f&scene=1&srcid=0427eTI2x0dnk2EsFnysnjZI#rd)

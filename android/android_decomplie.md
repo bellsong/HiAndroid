@@ -465,3 +465,6 @@ http://code.google.com/p/onekey-decompile-apk/
 
 
 [逆向未来](https://www.pd521.com/)
+
+
+[Android逆向之旅---带你爆破一款应用的签名验证问题](http://blog.csdn.net/jiangwei0910410003/article/details/54629728)

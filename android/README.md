@@ -11,8 +11,6 @@
 ### 源码阅读
 
 ### Android Map  
-[Context都没弄明白，还怎么做Android开发？](http://www.jianshu.com/p/94e0f9ab3f1d)
-
 
 ### 基础篇
 
@@ -32,7 +30,7 @@
 
 #### [Android Proguard 混淆](./android_proguard.md)
 
-#### [Android Reflection 反射调用](./android_2_reflection.md)
+#### [Android Reflection 反射调用](./android_reflection.md)
 
 #### [Android Permission 权限管理](./android_systempermissions.md)
 
@@ -70,6 +68,8 @@
 
 [Android 逆向](./android_decomplie.md)
 
+[反作弊](./android_anticheat.md)
+
 ### 高级篇
 
 [Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
@@ -93,38 +93,30 @@
 
 ### Public
 
+[开放通用Api](https://github.com/MZCretin/RollToolsApi)
+
 [发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 ![Android Map](./res/android_map.png)
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
 
+### 支付
+
+[Android快速集成微信支付](http://sunzq1993.com/2017/02/17/Android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/)
+
 # Doc
 Just something markable.
-
-1、ListView 中局部刷新Item
-
-[国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
 
 [图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)
 
 [虎三说Handler](./android_handler.md)
 
-[Android快速集成微信支付](http://sunzq1993.com/2017/02/17/Android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/)
+1、ListView 中局部刷新Item
 
-[Android逆向之旅---带你爆破一款应用的签名验证问题](http://blog.csdn.net/jiangwei0910410003/article/details/54629728)
-
-[Android中View的绘制流程](https://gold.xitu.io/post/58aaac80b123db00671da58a?utm_source=gold_browser_extension)
-
-[自定义View系列：打造一个显示密码等级的控件](https://philipdroid.github.io/2016/10/26/%E4%B8%80%E4%B8%AA%E6%98%BE%E7%A4%BA%E5%AF%86%E7%A0%81%E7%AD%89%E7%BA%A7%E7%9A%84%E6%8E%A7%E4%BB%B6PasswordLevelView/)
+[国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
 
 [面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
-
-[Android 反射机制](./android_reflection.md)
-
-[Android热修复升级探索——追寻极致的代码热替换](http://www.atatech.org/articles/72533)
-
-[Android Classloader热修复技术之百家齐放](http://blog.csdn.net/sbsujjbcy/article/details/51760578)
 
 [Android消息机制—sdk源码解读之旅](https://zhuanlan.zhihu.com/p/25222485?utm_source=gank.io&utm_medium=email&refer=levent-j)
 
@@ -260,17 +252,7 @@ JSPatch
 
 拥有的不过是岁月留下来的经验，而不是智慧。
 
-### 动态加载
-[利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
-
-[Android热补丁动态更新实践](http://www.jianshu.com/p/f8edac2f7487)
-
-[热补丁方案](http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/)
-
-[安卓App热补丁动态修复技术介绍](https://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a)
-
-[美团动态加载框架](http://tech.meituan.com/mt-android-auto-split-dex.html)
-[Android热更新方案Robust](http://tech.meituan.com/android_robust.html)
+### [动态加载](./hotfix/README.md)
 
 ### 拍照
 [你需要知道的Android拍照适配方案](http://www.jianshu.com/p/f269bcda335f)
@@ -308,15 +290,20 @@ JSPatch
 [一个27岁零基础无业游民的第一个开源作品](http://www.jianshu.com/p/aef225ae1502?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 [「daza.io」这将是我独立完成全端开发的项目](http://www.jianshu.com/p/0b6e630e5cf2?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
+### 开发资源
 
 [2017年初你绝对想尝试的25个新安卓库](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0216/7122.html)
 
-### 开发资源
 [我是如何自学Android，资料分享（2015 版）](http://www.jianshu.com/p/874ff12a4c01)
 [Android最全开发资源](http://www.jianshu.com/p/0c36302e0ed0?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
 [为开发者准备的最佳 Android 函数库（2016年版）](http://www.jianshu.com/p/3baf4b4f34b6)
 
 [有赞移动技术团队](https://youzanmobile.github.io/)
+
+[途牛App](https://mp.weixin.qq.com/s/CfPlVKElv2SshAbfzHfRhg)
+
+[美团点评技术团队](http://tech.meituan.com/)
 
 [底层原理](http://qiangbo.space/)
 
@@ -344,12 +331,6 @@ Talk is cheap,show me the code.
 
 ![](./res/android_tool_2015.jpg)
 
-
-### Project
-[途牛App](https://mp.weixin.qq.com/s/CfPlVKElv2SshAbfzHfRhg)
-
-[美团点评技术团队](http://tech.meituan.com/)
-
 ### 总结归纳
 [随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
 [android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
@@ -373,8 +354,6 @@ http://blog.csdn.net/lincyang/article/details/7095417
 ### 源码阅读
 [Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
 [Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
-
-[反作弊](./android_anticheat.md)
 
 #### 体系
 [蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
@@ -404,21 +383,6 @@ WebSocket
 
 [Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)
 
-### 生产效能
-
-#### [android studio快捷键盘](./android_keymap.md)
-
-### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
-
-# KEY WORD
-
-推荐引擎 作用？实现？
-
-![](./res/android_path.png)
-
-
-### More 
-
 Android程序log追踪工具_cooker-tracer
 
 skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
@@ -443,11 +407,19 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 
 [android 资源](http://p.codekk.com/)
 
-[开放通用Api](https://github.com/MZCretin/RollToolsApi)
+### 生产效能
 
-## APK瘦身
-1. 图片压缩工具 [TinyPng](https://tinypng.com/)
+#### [android studio快捷键盘](./android_keymap.md)
 
+### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
+
+# KEY WORD
+
+推荐引擎 作用？实现？
+
+![](./res/android_path.png)
+
+### More 
 
 一个需求生命周期
 
@@ -462,8 +434,6 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 ASR 版本 ndk 16
 
 NDK开发
-
-手势识别库已完成集成，使用说明文档：https://yuque.antfin-inc.com/docs/share/b846d9a3-ee77-44bf-b2a7-dc34931850e5 ，文中附示例demo，如有问题及时沟通，谢谢
 
 自由的创作，肆意的挥洒
 
