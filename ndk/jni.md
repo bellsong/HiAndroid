@@ -11,7 +11,6 @@
 1. Java如何调用Native代码
 2. Native如何调用Java代码
 
-
 ## JNI 与 NDK关系
 JNI是Java中的接口，用于java与本地语言(例如C、C++)交互
 
