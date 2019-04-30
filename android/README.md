@@ -1,4 +1,4 @@
-# Android Explore
+# Android 实战手册
 
 ## Y Android 知识点
 
@@ -442,3 +442,10 @@ NDK开发
 简洁高效的写作和文字编辑能力可以带来简洁高效的代码，设计，邮件，沟通，即时信息以及更多。
 
 条理清晰的头脑。
+
+
+---
+READ MORE，
+WRITE MORE，
+THINK MORE，
+THEN TEACH.

@@ -707,9 +707,6 @@ classes2.dex.zip文件大小约为2.28M
 结论
 压缩是程序中经常会用到的算法，包括处理网络协议，图片，文件等，这时我们要选择适当的压缩算法，调整适当的参数，才能让算法的收益达到最大。同时，我们也要对默认参数保持足够多的警戒心。
 
+## 参考
 
----
-READ MORE，
-WRITE MORE，
-THINK MORE，
-THEN TEACH.
+[Android 启动速度优化](https://juejin.im/entry/582adaad570c35006cdcb615)

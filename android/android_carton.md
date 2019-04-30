@@ -70,3 +70,6 @@ github.com/wasabeef/Ta… [方式2]
 
 github.com/friendlyrob… [方式2]
 
+
+## 参考
+[为什么你的 App 会卡顿](https://juejin.im/entry/58f5b6a18d6d81006493bb7e)
