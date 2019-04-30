@@ -1,3 +1,7 @@
+# Android 多进程
+
+## Android 进程保活
+
 [Android进程保活的一般套路](http://www.jianshu.com/p/1da4541b70ad)
 
 如何保证android进程的存活率，是开发android应用程序的同学都要遇到的问题，常见的方法有setforeground或是采取守护进程。
@@ -168,21 +172,20 @@ public class TempService extends Service {
 
 有了这两个服务之后，你会惊奇的发现在后台之后oom_adj的值为1.其优先级则紧次于前台进程，又不会很流氓的霸占内存，又没有额外的守护进程开销，算是一种比较优雅的保活方式之一。
 
->参考资料：
->
-[进程保活](http://www.atatech.org/articles/54730/?frm=mail_week)
 
-[Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
+## 参考
 
-[进程保活](http://www.atatech.org/articles/55546)
+* [进程保活](http://www.atatech.org/articles/54730/?frm=mail_week)
 
-[Android 进程保活](./android_process.md)
+* [Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
+
+* [进程保活](http://www.atatech.org/articles/55546)
+
+* [Android 进程保活](./android_process.md)
 
 * [如何理解Android的多进程](http://www.jianshu.com/p/536978a4f4b2)
 * [多进程保活](https://juejin.im/post/58cf80abb123db3f6b45525d?utm_source=gold_browser_extension)
 
+* [几种进程通信方式的对比总结](http://blog.csdn.net/u011240877/article/details/72863432)
 
-
-> [Demo](.././code/demo_keep_process_alive)
-
-[几种进程通信方式的对比总结](http://blog.csdn.net/u011240877/article/details/72863432)
+[Android 中 AIDL 的使用与理解](https://juejin.im/entry/5721f9c879bc440066c5a832)

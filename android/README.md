@@ -292,6 +292,8 @@ JSPatch
 
 ### 开发资源
 
+[GitHub 上优质项目整理](https://juejin.im/post/5cc56099e51d456e8a12f01f?utm_source=gold_browser_extension)
+
 [2017年初你绝对想尝试的25个新安卓库](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0216/7122.html)
 
 [我是如何自学Android，资料分享（2015 版）](http://www.jianshu.com/p/874ff12a4c01)
