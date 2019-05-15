@@ -9,3 +9,6 @@
 
 ## 工具使用
 1. Gradle 升级处理
+
+## APM相关
+1. [Android ANR日志收集原理](android_anr.md)
