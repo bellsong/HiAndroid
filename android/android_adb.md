@@ -1,59 +1,7 @@
-## Android Adb
-
-android adb 启动activity、service，发送broadcast等操作
-
-一、adb启动activity：
-
-adb shell am start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}
-
-如：启动浏览器﻿
-
-adb shell am start -n com.android.browser/com.android.browser.BrowserActivity
-
-二、adb关闭activity：
-
-adb shell am force-stop ｛包(package)名｝
-
-如：关闭浏览器adb shellam force-stopcom.android.browser
-
-三、adb启动service：
-
-adb shell am startservice -n｛包(package)名｝/｛包名｝.{服务(service)名称}
-
-如：启动自己应用中一个service
-
-adb shell am startservice -n com.android.traffic/com.android.traffic.maniservice﻿﻿
-
-四、adb卸载应用程序：
-
-adb uninstall｛包(package)名｝
-
-如：卸载浏览器 adb uninstall com.android.browser
-
-五、adb发送broadcast：
-
-adb shellam broadcast -a <广播动作>
-
-如：发送一个网络变化的广播
-
-adb shell am broadcast -a android.net.conn.CONNECTIVITY_CHANGE﻿﻿
-
-六、adb端口转发：
-
-adb shell am broadcast -a NotifyServiceStop
-
-adb forward tcp:12580 tcp:10086
-
-adb shell am broadcast -a NotifyServiceStart
-
---------------------- 
-作者：longgewxs 
-来源：CSDN 
-原文：https://blog.csdn.net/longgewxs/article/details/56489836?utm_source=copy 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+## Android Adb 大全
 
 ### am命令
-先说下am命令，am全称activity manager，你能使用am去模拟各种系统的行为，例如去启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等等。当你在adb shell命令下执行am命令：
+am全称activity manager，使用am去模拟各种系统的行为，例如去启动一个activity，强制停止进程，发送广播进程，修改设备屏幕属性等等。当你在adb shell命令下执行am命令：
 
 am <command>
 你也可以在adb shell前执行am命令：
@@ -89,7 +37,6 @@ display-size [reset|<WxH>]
 display-density <dpi>
 to-uri <INTENT>
 to-intent-uri <INTENT>
-
 
 ## PM命令
 
@@ -140,9 +87,7 @@ remove-user <USER_ID> ：删除一个USER。
 
 get-max-users ：该设备所支持的最大USER数。（某些设备不支持该命令）
 
-
 以上某些命令可能需要ROOT权限。
-
 
 # ![Awesome Adb](./assets/title.png)
 
@@ -2330,10 +2275,775 @@ taskkill /PID 1548
 * [adb shell top](http://blog.csdn.net/kittyboy0001/article/details/38562515)
 * [像高手一样使用ADB命令行（2）](http://cabins.github.io/2016/03/25/UseAdbLikeAPro-2/)
 
-[1]: #ip-地址
+一、前言
+
+  1、介绍：
+
+     学习前是不是得先看看 adb 具体是啥东西，好吧，网上一大堆，截取了部分如下：
+
+SDK的Tools文件夹下包含着Android模拟器操作的重要命令adb，adb的全称为(Android Debug Bridge就是调试桥的作用。通过adb我们可以在Eclipse中方面通过DDMS来调试Android程序。借助这个工具，我们可以管理设备或手机模拟器的状态。还可以进行以下的操作：
+
+1）、快速更新设备或手机模拟器中的代码，如应用或Android 系统升级； 
+2）、在设备上运行shell命令； 
+3）、管理设备或手机模拟器上的预定端口； 
+
+4）、在设备或手机模拟器上复制或粘贴文件；
+
+2、工作环境：
+
+    adb的工作方式比较特殊采用监听Socket TCP 5554等端口的方式让IDE和Qemu通讯，默认情况下adb会daemon相关的网络端口，所以当我们运行Eclipse时adb进程就会自动运行。  
+1.通过adb可以轻松的执行Linux Shell命令，如adb shell dir 就是列举目录，在Linux中根目录为/而不是Windows上的C盘、D盘。  
+2.安装apk程序到模拟器则执行adb install android123.apk，这样名为android123的安装包就会安装到Android模拟器中，前提是android123.apk文件需要放到SDK/Tools目录下。  
+3.向emulator传送文件， 使用adb push android123.txt /tmp/android123.txt命令可以把SDK/Tools下的android123.txt文件传输到模拟器的/tmp/文件夹中，需要注意的是/tmp/文件夹中内容会在Android模拟器重新启动时清空。  
+4.从Android仿真器中回传文件到电脑  
+
+通过adb pull /tmp/android123.txt android123.txt命令就会把仿真器的tmp文件夹下android123.txt文件回传到电脑SDK/Tools目录下。
+
+3、常用命令大全
+
+    
+
+1. 显示系统中全部Android平台：
+    android list targets
+2. 显示系统中全部AVD（模拟器）：
+    android list avd
+3. 创建AVD（模拟器）：
+    android create avd --name 名称 --target 平台编号
+4. 启动模拟器：
+    emulator -avd 名称 -sdcard ~/名称.img (-skin 1280x800)
+5. 删除AVD（模拟器）：
+    android delete avd --name 名称
+6. 创建SDCard：
+    mksdcard 1024M ~/名称.img
+7. AVD(模拟器)所在位置：
+    Linux(~/.android/avd)     Windows(C:\Documents and Settings\Administrator\.android\avd)
+8. 启动DDMS：
+    ddms
+9. 显示当前运行的全部模拟器：
+    adb devices
+10. 对某一模拟器执行命令：
+      abd -s 模拟器编号 命令
+11. 安装应用程序：
+      adb install -r 应用程序.apk
+12. 获取模拟器中的文件：
+      adb pull <remote> <local>
+13. 向模拟器中写文件：
+      adb push <local> <remote>
+14. 进入模拟器的shell模式：
+      adb shell
+15. 启动SDK，文档，实例下载管理器：
+      android
+16. 缷载apk包：
+      adb shell
+      cd data/app
+      rm apk包
+      exit
+      adb uninstall apk包的主包名
+      adb install -r apk包
+17. 查看adb命令帮助信息：
+      adb help
+18. 在命令行中查看LOG信息：
+      adb logcat -s 标签名
+19. adb shell后面跟的命令主要来自：
+      源码\system\core\toolbox目录和源码\frameworks\base\cmds目录。
+20. 删除系统应用：
+      adb remount （重新挂载系统分区，使系统分区重新可写）。
+      adb shell
+      cd system/app
+      rm *.apk
+21. 获取管理员权限：
+      adb root
+22. 启动Activity：
+     adb shell am start -n 包名/包名＋类名（-n 类名,-a action,-d date,-m MIME-TYPE,-ccategory,-e 扩展数据,等）。
+23、发布端口：
+    你可以设置任意的端口号，做为主机向模拟器或设备的请求端口。如： 
+adb forward tcp:5555 tcp:8000
+24、复制文件：
+    你可向一个设备或从一个设备中复制文件， 
+     复制一个文件或目录到设备或模拟器上： 
+adb push <source> <destination></destination></source> 
+      如：adb push test.txt /tmp/test.txt 
+     从设备或模拟器上复制一个文件或目录： 
+     adb pull <source><destination></destination></source> 
+     如：adb pull /addroid/lib/libwebcore.so .
+25、搜索模拟器/设备的实例：
+     取得当前运行的模拟器/设备的实例的列表及每个实例的状态： 
+    adb devices
+26、查看bug报告： 
+adb bugreport 
+27、记录无线通讯日志：
+    一般来说，无线通讯的日志非常多，在运行时没必要去记录，但我们还是可以通过命令，设置记录： 
+    adb shell 
+    logcat -b radio
+28、获取设备的ID和序列号：
+     adb get-product 
+     adb get-serialno
+29、访问数据库SQLite3
+     adb shell 
+     sqlite3
+#cd system/sd/data //进入系统内指定文件夹 
+#ls //列表显示当前文件夹内容 
+#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件 
+#rm xxx //删除文件xxx 
+#rmdir xxx //删除xxx的文件夹
+
+30、点亮屏幕
+
+adb shellinput keyevent 82
+
+31、日志相关：
+
+日志
+
+命令行显示Log
+
+复制代码 代码如下:
 
 
-2、am
-> am start -n "com.pp.assistant/.activity.PPMainActivity"  --ei "key_show_fg_index" 2 --ei "key_curr_frame_index" 2 --ez "key_from_jump" true 
+adb logcat
 
-3、pm
+
+根据tagname过滤
+
+复制代码 代码如下:
+
+
+adb logcat -s TAG_NAME
+adb logcat -s TAG_NAME_1 TAG_NAME_2
+
+#example
+adb logcat -s TEST
+adb logcat -s TEST MYAPP
+
+优先过滤
+
+显示一个特定的优先级警告及以上的日志。
+
+复制代码 代码如下:
+
+
+adb logcat "*:PRIORITY"
+
+# example
+adb logcat "*:W"
+
+优先级:
+
+V — 细则 (最低优先级)
+D — 调试
+I — 信息
+W — 警告
+E — 错误
+F — 致命
+S — 静默 (最高优先级，不会打印任何信息)
+
+使用grep过滤
+
+这个很像在Linux上使用管道命令一样，需系统支持
+
+复制代码 代码如下:
+
+
+adb logcat | grep "SEARCH_TERM"
+adb logcat | grep "SEARCH_TERM_1\|SEARCH_TERM_2"
+
+#example
+adb logcat | grep "Exception"
+adb logcat | grep "Exception\|Error"
+
+
+清除日志块
+
+使用来清除旧的日志
+
+复制代码 代码如下:
+
+
+adb logcat -c
+
+adb对于Android程序员来说在日常的工作中使用频率很高，现将自己工作中常用的adb命令总结一下备忘，方便查询，也供大家参考。查看应用内存占用，耗电信息，启动时间，wakelock，跑monkey的命令在之前的应用性能优化中起了不小的作用。以下adb命令的测试机器为小米3,其中package_name代表包名。
+
+基础脚本:
+
+1、启动adb服务
+
+adb start-server
+
+2、终止adb服务
+
+adb kill-server
+
+3、进入adb运行环境
+
+adb shell
+
+4、获取帮助 里面有adb的各种命令和参数的介绍
+
+adb help
+
+5、查看adb版本
+
+adb version
+
+6、以root权限重启adb
+
+adb root
+
+7、将system分区重新挂在为可读写分区，此命令在操作系统目录时很重要
+
+adb remount
+
+8、重启设备,可选参数进入bootloader(刷机模式)或recovery(恢复模式)
+
+adb reboot [bootloader|recovery]
+
+apk相关:
+
+1、安装apk
+
+adb install test.apk -r 覆盖安装，保留数据和缓存文件  -d 解决低版本version问题  -s 安装apk到sd卡
+
+2、卸载apk
+
+adb uninstall -k <package_name>
+
+可选参数-k的作用为卸载软件但是保留配置和缓存文件
+
+3、查看app相关所有信息，包括action,codepath,version,需要的权限等等信息
+
+adb shell dumpsys package <package_name>
+
+4、查看app的路径
+
+adb shell pm path <package_name>
+
+查看了一个普通app的路径，如下，位于data/app下面的普通app
+package:/data/app/com.tencent.test-1/base.apk
+
+5、查看apk的版本信息
+
+adb shell dumpsys package <package_name> | grepversion
+
+如果你得到的是下图的两个version版本，则为系统app,下面是系统app本身的版本，上面是升级之后的系统app的版本信息
+
+versionCode=8 targetSdk=22  versionName=V0.08 versionCode=6targetSdk=22  versionName=V0.0
+
+6、启动activity
+
+查看：
+
+adb shell dumpsys window | findstr mCurrentFocus  命令查看当前运行的包名和Activity
+
+adb shell am start -n<package_name>/.<activity_class_name>
+
+ 
+
+C:\Users\lenovo>adb shell
+
+venus:/ $ ^C
+
+C:\Users\lenovo>adb shell dumpsys window | findstrmCurrentFocus
+
+ mCurrentFocus=Window{3bd0b18 u0com.android.settings/com.asu.msettings.AsuSettingsActiv
+
+ 
+
+C:\Users\lenovo>adb shell am start -ncom.android.settings/com.asu.msettings.AsuSettingsA
+
+Starting: Intent { cmp=com.android.settings/com.asu.msettings.AsuSettingsActivityAlias}
+
+ 
+
+6.16.
+
+清楚应用数据adb shell pm path <PACKAGE>
+输出安装包的APK路径
+
+adb shell pm clear <PACKAGE>
+删除与包相关的所有数据：清除数据和缓存
+
+ 
+
+7、获得应用的启动时间，可以很方便地获取应用的启动时间
+
+adb shell am start -W<package_name>/.<activity_class_name>
+
+试验结果如下:
+
+adb shell am start -Wcom.cc.test/com.painter.test.PainterMainActivity Starting: Intent {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER]cmp=com.cc.test/com.painter.test.PainterMainActivity } Status: ok Activity:com.cc.test/com.painter.test.PainterMainActivity ThisTime: 355 TotalTime: 355WaitTime: 365 Complete
+
+返回的几个结果，以WaitTime为准，返回的是从startActivity到应用第一帧完全显示的时间。
+
+8、启动service,am的-n参数表示组件，-a参数表示命令，-a后面的参数为manifest中定义的service的action
+
+adb shell am startservice -n<package_name>/.<service_class_name>
+
+也可:
+
+adb shell am startservice -a"android.intent.action.CALL"
+
+9、发送广播
+
+adb shell am broadcast -a"android.intent.action.AdupsFota.WriteCommandReceiver"
+
+广播可以带上不同类型的参数,–es为string参数类型,–ei为int参数类型,–ez为boolean参数类型
+
+adb shell am broadcast -a "android.intent.action.AdupsFota.WriteCommandReceiver"--es test_string "this is test string"
+
+10、查看某个app的进程相关信息
+10.1
+
+adb shell ps <package_name|PID>
+
+例如
+
+adb shell ps com.ma.app:push USER  PID PPID VSIZE RSS WCHAN   PC NAME u0_a116 5483 304 1776564 55112sys_epoll_ 00000000 S com.ma.app:push
+
+小米手机上测试成功，在另外一个设备上，如果ps后面的参数是包名则显示不了进程的详细信息，参见下面的方式获取
+
+10.2
+
+adb shell ps | grep <package_name>
+
+11、杀掉某个进程，一般用于模拟某个bug复现
+
+adb shell kill pidNumber
+
+12、查看某一个app的内存占用
+
+adb shell dumpsys meminfo <package_name|PID>
+
+结果如下，其中的Heap size包括了Dalvik Heap和Native Heap,平时我们所说的内存限制指的是Dalvik Heap。
+
+ Pss PrivatePrivate Swapped  Heap  Heap Heap     Total Dirty CleanDirty  Size Alloc  Free    ------ ------ ------ ------ ------ ------ ------ Native Heap 1895618940  0 4696 44288 21352 22935 Dalvik Heap 60102 60088  0 26192 104486 88285 16201 App Summary      Pss(KB)       ------  Java Heap: 61640   Native Heap:18940     Code:  3356   Stack:  428    Graphics: 16876  Private Other:  3840   System:  2031 ...
+
+13、查看单个应用程序的最大内存限制
+
+adb shell getprop | grep heapgrowthlimit
+
+得到的结果为128M: [dalvik.vm.heapgrowthlimit]: [128m]
+
+这就是说Dalvik Heap size的最大值超过了128M，就很可能发生OOM
+
+14、获取单个应用的电量消耗信息
+Battery Historian是Android 5.0开始引入的，下面的命令为获取单个app的电量消耗信息，获取系统耗电信息见下节
+
+adb shell dumpsys batterystats ><package_name> > xxx.txt
+
+上面的电量信息为原始数据，可以通过google编写的historian.py脚本把数据信息转换为可读性很好的html文件,类似TraceView生成的列表数据，之前在做app性能优化的时候起了很大的作用
+
+python historian.py xxx.txt > xxx.html
+
+15、跑monkey,个人很喜欢这个命令，运行过程中，应用程序会不断切换画面，按照选定的不同级别反馈信息，还可以看到执行过程报告和生成的事件。测试应用的稳定性时很实用。现在studio也有了monkeyrunner的tool
+
+adb shell monkey -v -p <package_name> 500  -p 对象包  -v 反馈信息级别
+
+:Monkey: seed=1493061025112 count=500 :AllowPackage:com.tencent.mm.app:push :IncludeCategory: android.intent.category.LAUNCHER:IncludeCategory: android.intent.category.MONKEY ** No activities found to run,monkey aborted.
+
+系统相关
+
+1、查看设备名称，豌豆荚等应用就是通过此来获得设备的名称
+
+adb shell cat /system/build.prop/
+
+结果:
+
+ro.product.model=MI 3W ro.product.brand=Xiaomi
+
+2、查看手机分辨率有两种方法，第二种方法最为简洁
+2.1
+
+adb shell dumpsys window | grep Surface
+
+grep是一个非常有用的参数,具体含义和用法大家自行google一下,试验结果为1080 * 1920:
+
+Surface: shown=false layer=21000 alpha=1.0rect=(0.0,0.0) 1080.0 x 1920.0
+
+2.2.
+
+adb shell wm size
+
+返回结果为:
+
+Physical size: 1080x1920
+
+3、查看手机sdk版本
+
+adb shell getprop | grep version
+
+运行上面的命令后，列出来的version中[ro.build.version.release]: [6.0.1]即为手机sdk版本
+
+4、查看手机型号信息
+
+adb shell getprop | grep product
+
+运行此命令之后，能看到product,board,brand和cpu等等的型号
+
+5、获取序列号，获取到的序列号即为adb devices列出来的序列号
+
+adb get-serialno
+
+6、查看连接的设备
+
+adb devices
+
+如果有多个设备连接，想对其中的某一设备进行操作，就需要在此命令的后面加参数
+
+adb [-d|-e|-s <serial Number>] <command> 　　 -d:真机(多个设备中只有一个真机时适用) 　　 -e:模拟器(多个设备中只有一个模拟器时适用) 　　 -s:序列号
+
+假如有两个真机连接了我的电脑，adb devices获取到的数据如下
+
+List of devices attached 1b71651 device 12sdfsd device
+
+进入1b71651设备的命令为:
+
+adb -s 1b71651 shell
+
+7、查看wifi密码(需要root权限)
+
+adb shell cat data/misc/wifi/*.conf
+
+8、查看wifi_mac
+
+adb shell cat /sys/class/net/wlan0/address
+
+运行此命令，93:a1:a2:91:d1:c1是小米3的wifi_mac地址
+
+9、查看后台services信息
+
+adb shell service list
+
+运行结果为
+
+Found 126 services: 0 miui.whetstone.net:[miui.whetstone.INetworkService] 1 miui.whetstone.power: [miui.whetstone.power]...
+
+10、查看系统当前内存占用，为综述
+
+adb shell cat /proc/meminfo
+
+运行结果:
+
+MemTotal: 1893504 kB MemFree:   81200 kBBuffers:   14828 kB Cached:   244152 kB SwapCached:  15152 kB Active:   541680 kB Inactive:   575280 kB ...
+
+11、查看各进程详细内存占用和系统的内存占用有几种方法
+
+11.1
+
+adb shell dumpsys meminfo
+
+Total PSS SWAP by process:  97858 kB: 34944 kB: com.android.systemui (pid2769)  ... Total RAM: 1893504 kB (statusnormal) Free RAM: 344212 kB (117992 cached pss + 136016 cached kernel + 90204free)
+
+Total PSS 信息就是你的应用真正占据的内存大小，通过这个信息，可以轻松判别手机中哪些程序占内存比较大。
+
+11.2 查看各进程内存的另一方法 不是所有设备都支持
+
+adb shell procrank
+
+运行结果如下:
+
+PID  Vss  Rss Pss  Uss cmdline 496 1810184K92744K 57607K 48348K system_server 743 1847492K 84492K 52117K 46796Kcom.android.systemui ....       ------------ ------       328259K 261484K TOTALRAM: 2061012K total, 889152K free, 40940K buffers, 612032K cached, 300K shmem,62556K slab
+
+其中
+
+VSS – Virtual Set Size 虚拟耗用内存（包含共享库占用的内存） RSS – Resident Set Size 实际使用物理内存（包含共享库占用的内存） PSS – Proportional Set Size 实际使用的物理内存（比例分配共享库占用的内存） USS – Unique Set Size 进程独自占用的物理内存（不包含共享库占用的内存）
+
+11.3 查看设备上进程的cpu和内存占用情况
+
+adb shell top
+
+12、查看系统耗电情况
+
+adb shell dumpsys batterystats > xxx.txt
+
+13、查看系统设置的闹钟
+
+adb shell dumpsys alarm
+
+14、查看系统的wakelock,不合理的使用wakelock会导致系统耗电加剧
+
+adb shell dumpsys power
+
+返回结果:
+
+Wake Locks: size=2 PARTIAL_WAKE_LOCK    'AudioMix' (uid=1013, pid=236,ws=WorkSource{10018}) PARTIAL_WAKE_LOCK   'Android.media.MediaPlayer' ON_AFTER_RELEASE (uid=10018, pid=24023,ws=null)
+
+文件操作相关:
+
+1、拷贝文件/目录到设备
+
+adb push <local>...<remote>
+
+2、从设备拷贝文件/目录，-a参数保留了文件的时间戳和模式
+
+adb pull [-a] <remote>...<local>
+
+3、查看设备log,和studio和eclipse的logcat相同，可通过参数控制输出的日志
+
+adb logcat  -s 过滤指定参数log  -v time 保留日志时间  >> 追加写  > 覆盖写
+
+下面的命令含义为:打印出log信息中的时间并且包含关键字“Test” 的所有log以覆盖写的方式保存到test文件
+
+adb logcat -v time -s Test > test.txt
+
+4、列出目录下的文件和文件夹，可选参数-al可查看文件和文件夹的详细信息
+
+adb shell ls [-al]
+
+5、进入文件夹
+
+adb shell cd <folder>
+
+6、查看文件
+
+adb shell cat <filename>
+
+7、重命名文件
+
+adb shell rename path/oldfilename path/newfilename
+
+8、删除文件/文件夹
+
+adb shell rm path/filename  -r 可选参数用于删除文件夹及下面的所有文件 eg:adb shell rm -r <folder>
+
+9、移动文件
+
+adb shell mv path/filename newpath/filename
+
+10、拷贝文件
+
+adb shell cp file newpath/file1
+
+11、创建目录
+
+adb shell mkdir path/folder
+
+12、设置文件最高读写权限
+
+adb shell chmod 777 filename
+
+13、手机未root 查看data/data/某一app文件信息
+
+笔者的小米3没有root，但是又想方便地查看data/data/目录下的一些文件，直接进入data会提示没有权限,查看的方式为进入data/data/后,运行下面的命令，就能直接进入你应用的包下了,可通用cp或者mv拷贝或移动到sdcard目录进行其他操作
+
+run-as package_name
+
+数据库相关
+
+数据库的操作和今天的主题关系不大，增删改查操作不再列举。但是平时的开发过程中只是查看数据库中某个表或者某个字段，也无需每次都pull出来之后再查看，用命令行会更加方便快捷,进入到test.db的目录后，运行如下命令
+1、操作db
+
+sqlite3 test.db
+
+ 
+
+操作：
+
+通过adb操作手机UI并不常用，但在有的场景下会非常有用，比如测试自动化，访问在远端服务器上的手机等。
+
+发送keyevent和文本
+命令行
+
+adb shell input keyevent {key_code}
+adb shell input text {text}
+keyevent列表
+
+0 –>  “KEYCODE_UNKNOWN”1 –>  “KEYCODE_MENU”
+2 –>  “KEYCODE_SOFT_RIGHT”
+3 –>  “KEYCODE_HOME”
+4 –>  “KEYCODE_BACK”
+5 –>  “KEYCODE_CALL”
+6 –>  “KEYCODE_ENDCALL”
+7 –>  “KEYCODE_0”
+8 –>  “KEYCODE_1”
+9 –>  “KEYCODE_2”
+10 –>  “KEYCODE_3”
+11 –>  “KEYCODE_4”
+12 –>  “KEYCODE_5”
+13 –>  “KEYCODE_6”
+14 –>  “KEYCODE_7”
+15 –>  “KEYCODE_8”
+16 –>  “KEYCODE_9”
+17 –>  “KEYCODE_STAR”
+18 –>  “KEYCODE_POUND”
+19 –>  “KEYCODE_DPAD_UP”
+20 –>  “KEYCODE_DPAD_DOWN”
+21 –>  “KEYCODE_DPAD_LEFT”
+22 –>  “KEYCODE_DPAD_RIGHT”
+23 –>  “KEYCODE_DPAD_CENTER”
+24 –>  “KEYCODE_VOLUME_UP”
+25 –>  “KEYCODE_VOLUME_DOWN”
+26 –>  “KEYCODE_POWER”
+27 –>  “KEYCODE_CAMERA”
+28 –>  “KEYCODE_CLEAR”
+29 –>  “KEYCODE_A”
+30 –>  “KEYCODE_B”
+31 –>  “KEYCODE_C”
+32 –>  “KEYCODE_D”
+33 –>  “KEYCODE_E”
+34 –>  “KEYCODE_F”
+35 –>  “KEYCODE_G”
+36 –>  “KEYCODE_H”
+37 –>  “KEYCODE_I”
+38 –>  “KEYCODE_J”
+39 –>  “KEYCODE_K”
+40 –>  “KEYCODE_L”
+41 –>  “KEYCODE_M”
+42 –>  “KEYCODE_N”
+43 –>  “KEYCODE_O”
+44 –>  “KEYCODE_P”
+45 –>  “KEYCODE_Q”
+46 –>  “KEYCODE_R”
+47 –>  “KEYCODE_S”
+48 –>  “KEYCODE_T”
+49 –>  “KEYCODE_U”
+50 –>  “KEYCODE_V”
+51 –>  “KEYCODE_W”
+52 –>  “KEYCODE_X”
+53 –>  “KEYCODE_Y”
+54 –>  “KEYCODE_Z”
+55 –>  “KEYCODE_COMMA”
+56 –>  “KEYCODE_PERIOD”
+57 –>  “KEYCODE_ALT_LEFT”
+58 –>  “KEYCODE_ALT_RIGHT”
+59 –>  “KEYCODE_SHIFT_LEFT”
+60 –>  “KEYCODE_SHIFT_RIGHT”
+61 –>  “KEYCODE_TAB”
+62 –>  “KEYCODE_SPACE”
+63 –>  “KEYCODE_SYM”
+64 –>  “KEYCODE_EXPLORER”
+65 –>  “KEYCODE_ENVELOPE”
+66 –>  “KEYCODE_ENTER”
+67 –>  “KEYCODE_DEL”
+68 –>  “KEYCODE_GRAVE”
+69 –>  “KEYCODE_MINUS”
+70 –>  “KEYCODE_EQUALS”
+71 –>  “KEYCODE_LEFT_BRACKET”
+72 –>  “KEYCODE_RIGHT_BRACKET”
+73 –>  “KEYCODE_BACKSLASH”
+74 –>  “KEYCODE_SEMICOLON”
+75 –>  “KEYCODE_APOSTROPHE”
+76 –>  “KEYCODE_SLASH”
+77 –>  “KEYCODE_AT”
+78 –>  “KEYCODE_NUM”
+79 –>  “KEYCODE_HEADSETHOOK”
+80 –>  “KEYCODE_FOCUS”
+81 –>  “KEYCODE_PLUS”
+82 –>  “KEYCODE_MENU”
+83 –>  “KEYCODE_NOTIFICATION”
+84 –>  “KEYCODE_SEARCH”
+85 –>  “TAG_LAST_KEYCODE”
+比如：按Home键：adb shell input keyevent KEYCODE_HOME
+
+滑动屏幕
+命令行
+
+# 
+从(x1, y1)滑动到(x2, y2)
+adb shell input touchscreen swipe {x1} {y1} {x2} {y2}
+点击屏幕
+命令行
+
+# 
+点击屏幕坐标(x, y)
+adb shell input touchscreen tap {x} {y}
+
+ADB 录制屏幕命令
+·       对于Android4.4的上的手机，系统自带了一个命令screenrecord，我们可以很方便的使用。
+
+·       录制命令
+
+·        
+adb shell screenrecord /sdcard/test.mp4
+视频保存目录可以自己指定，如上面的/sdcard/test.mp4，命令执行后会一直录制180s，按下ctrl+c可以提前结束录制 
+输入 –time-limit N，限制视频录制时间为N秒
+
+·       设定视频分辨率
+
+对于高分辨率的手机，录制的视频很大，我们分享又不需要这么大的 
+我们可以设置录制的视频分辨率
+
+adb shell screenrecord --size 848*480 /sdcard/test.mp4
+·       设定视频比特率
+
+默认比特率是4M/s，为了分享方便，我们可以调低比特率为2M
+
+adb shell screenrecord --bit-rate 2000000 /sdcard/test.mp4
+·       获取视频文件
+
+使用adb pull 即可把手机SD卡中视频获取到本地
+
+adb pull /sdcard/test.mp4 .
+设置时间:
+ 
+
+查看内存:
+
+adb shell
+
+df
+
+ 
+
+打电话：adb shell am start -a android.intent.action.CALL -d tel:10086
+
+获取devicesname
+
+cat /system/build.prop | grep "product"
+
+adb shellgetprop ro.product.name
+
+自动填充内存：adb shell ddif=/dev/zero of=/mnt/sdcard/bigfile
+
+dd命令创建文件 可以跟参数，比如创建一个1G的文件....可以根据想创建的大小 更改后边的参数值（bs=xx count=xx）
+
+adb shelldd if=/dev/zero of=/mnt/sdcard   bs=1Mcount=1024
+
+### 常用命令快速查找
+
+android adb 启动activity、service，发送broadcast等操作
+
+1. adb启动activity：
+
+adb shell am start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}
+
+如：启动浏览器
+
+adb shell am start -n com.android.browser/com.android.browser.BrowserActivity
+
+2. adb关闭activity：
+
+adb shell am force-stop ｛包(package)名｝
+
+如：关闭浏览器
+
+adb shell am force-stopcom.android.browser
+
+3. adb启动service：
+
+adb shell am startservice -n｛包(package)名｝/｛包名｝.{服务(service)名称}
+
+如：启动自己应用中一个service
+
+adb shell am startservice -n com.android.traffic/com.android.traffic.maniservice﻿﻿
+
+4. adb卸载应用程序：
+
+adb uninstall｛包(package)名｝
+
+如：卸载浏览器 adb uninstall com.android.browser
+
+5. adb发送broadcast：
+
+adb shellam broadcast -a <广播动作>
+
+如：发送一个网络变化的广播
+
+adb shell am broadcast -a android.net.conn.CONNECTIVITY_CHANGE﻿﻿
+
+6. adb端口转发：
+
+adb shell am broadcast -a NotifyServiceStop
+
+adb forward tcp:12580 tcp:10086
+
+adb shell am broadcast -a NotifyServiceStart
