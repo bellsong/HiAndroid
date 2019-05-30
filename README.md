@@ -25,8 +25,6 @@
 
 ### Map
 
-[Android 知识体系脑图「android篇」](https://juejin.im/entry/5adf719e6fb9a07ab773db0f?utm_source=gold_browser_extension)
-
 [https://blog.stylingandroid.com/](https://blog.stylingandroid.com/)
 
 [Andoroid博客周刊](http://www.androidblog.cn/)

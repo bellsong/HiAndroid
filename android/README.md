@@ -12,6 +12,13 @@
 
 ### Android Map  
 
+![](./res/android_common_knowledge.png)
+
+
+![](./res/android_advanced.png)
+
+![](./res/android_3rd_lib.png)
+
 ### 基础篇
 
 #### [java 基础知识](./android_java.md)
