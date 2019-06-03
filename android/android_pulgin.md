@@ -1041,7 +1041,7 @@ QFix的方式，是取得虚拟机中的某些底层函数，提前resolve所有
 
 [MultiDex工作原理分析和优化方案](https://zhuanlan.zhihu.com/p/24305296)
 
-[ Android中插件开发篇之----类加载器](http://blog.csdn.net/jiangwei0910410003/article/details/41384667)
+[Android中插件开发篇之----类加载器](http://blog.csdn.net/jiangwei0910410003/article/details/41384667)
 
 [怎么将 Android 程序做成插件化的形式？](https://www.zhihu.com/question/19981105)
 
