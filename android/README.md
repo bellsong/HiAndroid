@@ -12,12 +12,15 @@
 
 ### Android Map  
 
-![](./res/android_common_knowledge.png)
+![](./res/android_base.png)
 
+![](./res/android_common_knowledge.png)
 
 ![](./res/android_advanced.png)
 
 ![](./res/android_3rd_lib.png)
+
+![Android Map](./res/android_map.png)
 
 ### 基础篇
 
@@ -94,17 +97,11 @@
 
 [AD SDK](./market/android_4_ad_sdk.md)
 
-### Y OPEN SOURCE
-
-[YOkHttp](./y_open_source/y_ok_http.md)
-
 ### Public
 
 [开放通用Api](https://github.com/MZCretin/RollToolsApi)
 
 [发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-
-![Android Map](./res/android_map.png)
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
 
@@ -117,7 +114,7 @@ Just something markable.
 
 [图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)
 
-[虎三说Handler](./android_handler.md)
+[Handler](./android_handler.md)
 
 1、ListView 中局部刷新Item
 
@@ -133,15 +130,15 @@ Just something markable.
 
 [jsoup爬虫获取数据](http://blog.csdn.net/qq_30379689/article/details/55005796)
 
-Crash搜集
-https://bugly.qq.com
-Bugly，腾讯出品的SDK，对Crash搜集的体验非常赞，能搜集到JNI层的奔溃以及监控线上的ANR问题。
+## Crash搜集
+1. [Bugly](https://bugly.qq.com) 
+    腾讯出品的SDK，对Crash搜集的体验非常赞，能搜集到JNI层的奔溃以及监控线上的ANR问题。
 
-https://try.crashlytics.com/
-Crashlytics，国外的一个SDK，我自己没用过，但是用过的朋友对它的评价颇高。
+2. [Crashlytics](https://try.crashlytics.com/)
+    国外的一个SDK，我自己没用过，但是用过的朋友对它的评价颇高。
 
-https://github.com/ACRA/acra
-ARCA，一个开源的崩溃日志搜集器，轻松让你实现客户端的崩溃日志上传到后台，如果你不喜欢接入别人家的SDK，可以使用它。有一个不足之处，就是它搜集不到JNI层的奔溃。
+3. [ARCA](https://github.com/ACRA/acra)
+    一个开源的崩溃日志搜集器，轻松让你实现客户端的崩溃日志上传到后台，如果你不喜欢接入别人家的SDK，可以使用它。有一个不足之处，就是它搜集不到JNI层的奔溃。
 
 https://github.com/google/android-classyshark
 Classyshark，轻松查看apk内部每个包的方法数，用了哪些开源库，同样拿知乎开刀做例子。
@@ -151,8 +148,6 @@ smali代码调试插件，你以为没有拿到安卓Java源码就不能调试�
 
 https://www.hex-rays.com/products/ida/
 IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试你。
-
-注意，这些用来涨知识就好，别干坏事！
 
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
