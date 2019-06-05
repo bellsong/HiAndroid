@@ -27,8 +27,6 @@
 
 [https://blog.stylingandroid.com/](https://blog.stylingandroid.com/)
 
-[Andoroid博客周刊](http://www.androidblog.cn/)
-
 ### [项目实践](./androidproject/README.md)
 
 ### 优秀 App
@@ -51,6 +49,10 @@
 [永别了Google+：谷歌社交梦碎背后的故事](http://www.ebusinessreview.cn/articledetail-294673.html)
 
 ### [Code OnLine](./codeonline/README.md)
+
+### 业内开发团队
+
+* [微信终端开发团队专栏](https://cloud.tencent.com/developer/column/1362/tag-10216)
 
 ### MORE
 
