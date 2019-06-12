@@ -3,12 +3,16 @@
 ## Y Android 知识点
 
 ### 基础篇
+#### 编码规范
+
 ### 进阶篇
 ### 高级篇
-### 开源项目学习
-### 编码规范
+#### 组件化
+#### 动态化
+#### 性能专项
 ### 案例实践
 ### 源码阅读
+#### 开源项目
 
 ### Android Map  
 
@@ -76,9 +80,14 @@
 
 #### 安全
 
-[Android 逆向](./android_decomplie.md)
+[Android 逆向 反编译](./android_decomplie.md)
 
 [反作弊](./android_anticheat.md)
+
+通过Android API Hook技术，即通过动态代理等方法替换关键节点
+
+[Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
+
 
 ### 高级篇
 
@@ -105,6 +114,8 @@
 
 [From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
 
+[jsoup爬虫获取数据](http://blog.csdn.net/qq_30379689/article/details/55005796)
+
 ### 支付
 
 [Android快速集成微信支付](http://sunzq1993.com/2017/02/17/Android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/)
@@ -128,7 +139,6 @@ Just something markable.
 
 [Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
 
-[jsoup爬虫获取数据](http://blog.csdn.net/qq_30379689/article/details/55005796)
 
 ## Crash搜集
 1. [Bugly](https://bugly.qq.com) 
@@ -152,17 +162,8 @@ IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试
 https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
-* [反编译](./android_decomplie.md)
-
-通过Android API Hook技术，即通过动态代理等方法替换关键节点
-
-[Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
-
-[Android逆向从未如此简单](https://juejin.im/post/58cc92a1b123db00532757cc?utm_source=gold_browser_extension)
 
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
-
-[Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
 [提高代码质量－工具篇](http://www.atatech.org/articles/58486)
 
@@ -319,6 +320,17 @@ JSPatch
 
 [Android 模块化探索与实践](http://baronzhang.com/blog/Framework/Android-%E6%A8%A1%E5%9D%97%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5/)
 
+[Android事件分发机制源码解析](http://allenfeng.com/2017/02/22/android-touch-event-transfer-mechanism/)
+
+[2017年Android百大框架排行榜](http://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
+
+[花了 6 个月整理了 100 篇 Android 干货文章](https://juejin.im/post/598d1a0d6fb9a03c350a64c8?utm_source=gold_browser_extension)
+
+[Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
+如何准确的描述一个问题。搜索。有用资讯。决策。
+
+[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
+
 ### 其他
 StackTraceElement
 利用线程运行栈StackTraceElement设计Android日志模块
@@ -394,17 +406,6 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 
 [Android 架构之长连接技术](http://wingjay.com/)
 
-[Android事件分发机制源码解析](http://allenfeng.com/2017/02/22/android-touch-event-transfer-mechanism/)
-
-[2017年Android百大框架排行榜](http://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
-
-[花了 6 个月整理了 100 篇 Android 干货文章](https://juejin.im/post/598d1a0d6fb9a03c350a64c8?utm_source=gold_browser_extension)
-
-[Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
-如何准确的描述一个问题。搜索。有用资讯。决策。
-
-[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
-
 [腾讯移动推送](https://xg.qq.com/xg)
 
 [极光推送](https://www.jiguang.cn/)
@@ -422,31 +423,6 @@ skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 
 推荐引擎 作用？实现？
 
 ![](./res/android_path.png)
-
-### More 
-
-一个需求生命周期
-
-考虑点 输入 输出
-
-输入包括：
-
-1、物理键 
-2、插电拔电 网络切换的系统各种广播
-3、用户行为 滑动、点击、触摸
-
-ASR 版本 ndk 16
-
-NDK开发
-
-自由的创作，肆意的挥洒
-
-文字的国度里面自由翱翔。
-
-简洁高效的写作和文字编辑能力可以带来简洁高效的代码，设计，邮件，沟通，即时信息以及更多。
-
-条理清晰的头脑。
-
 
 ---
 READ MORE，
