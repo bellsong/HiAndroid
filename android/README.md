@@ -66,6 +66,8 @@
 
 ### [Andorid数据存储](./android_data.md)
 
+### [Android异常处理](./andorid_exception.md)
+
 ### 进阶篇
 
 #### [性能优化专项](./android_optimize.md)
@@ -91,9 +93,7 @@
 
 ### 高级篇
 
-[Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
-
-[OpenGL](./android_3_opengl.md)
+[OpenGL](./android_opengl.md)
 
 ### [Programmer](./programmer.md)
 
@@ -140,16 +140,6 @@ Just something markable.
 [Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
 
 
-## Crash搜集
-1. [Bugly](https://bugly.qq.com) 
-    腾讯出品的SDK，对Crash搜集的体验非常赞，能搜集到JNI层的奔溃以及监控线上的ANR问题。
-
-2. [Crashlytics](https://try.crashlytics.com/)
-    国外的一个SDK，我自己没用过，但是用过的朋友对它的评价颇高。
-
-3. [ARCA](https://github.com/ACRA/acra)
-    一个开源的崩溃日志搜集器，轻松让你实现客户端的崩溃日志上传到后台，如果你不喜欢接入别人家的SDK，可以使用它。有一个不足之处，就是它搜集不到JNI层的奔溃。
-
 https://github.com/google/android-classyshark
 Classyshark，轻松查看apk内部每个包的方法数，用了哪些开源库，同样拿知乎开刀做例子。
 
@@ -193,11 +183,11 @@ https://github.com/zzz40500/GsonFormat
 
 [DumpTool----操作Android app 私有文件的利器！](http://www.atatech.org/articles/55926)
 
+[Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
+
 [Android Plugin](./android_pulgin.md)
 
 [Android Accessibility](./Accessibility/android_accessibility.md)
-
-[异常处理](http://geek.csdn.net/news/detail/50839)
 
 [高斯模糊](./andorid_blur.md)
 
