@@ -27,7 +27,7 @@
 
 [https://blog.stylingandroid.com/](https://blog.stylingandroid.com/)
 
-### [项目实践](./androidproject/README.md)
+### [项目实践](./project/README.md)
 
 ### 优秀 App
 
