@@ -14,7 +14,7 @@
 
 ### [流程规范](./standard/README.md)
 
-### [Andorid 面试大全](./interview/READMD.md)
+### [Andorid 面试大全](./interview/README.md)
 
 ### 思想
 面向接口编程
