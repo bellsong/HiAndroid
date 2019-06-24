@@ -8,7 +8,7 @@
 
 ### [Gralde](./Gradle/README.md)
 
-### [Android Jetpack](./AndroidJetpack/.README.md)
+### [Android Jetpack](./AndroidJetpack/README.md)
 
 ### [Android 源码](./SOURCE/README.md)
 
