@@ -6,6 +6,8 @@
 
 ### [Gralde](./Gradle/README.md)
 
+### [Android Jetpack](./AndroidJetpack/.README.md)
+
 ### [Android 源码](./SOURCE/README.md)
 
 ### [Android NDK](./ndk/README.md)
@@ -14,6 +16,8 @@
 
 ### 思想
 面向接口编程
+
+[设计模式](./designpattern/README.md)
 
 ### 行业资讯
 

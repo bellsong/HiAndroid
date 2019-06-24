@@ -341,10 +341,6 @@ Talk is cheap,show me the code.
 [随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
 [android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
 
-[设计模式](http://blog.csdn.net/hguisu/article/category/1133340)
-
-[设计模式](http://www.tutorialspoint.com/design_pattern/builder_pattern.htm)
-
 错题集
 
 android.os.BadParcelableException: ClassNotFoundException when unmarshalling
