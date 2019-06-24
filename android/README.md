@@ -327,9 +327,9 @@ StackTraceElement
 
 [[Android]动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
-### [异常处理相关](./UncaughtExceptionHandler.md)
+### [Android异常处理相关知识](./UncaughtExceptionHandler.md)
 
-### [网络模块](./andorid_internet.md)
+### [Android网络相关知识](./network/README.md)
 
 ### [Resource](./android_resource.md)
 
