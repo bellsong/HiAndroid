@@ -218,3 +218,42 @@ volatile 本质是在告诉jvm 当前变量在寄存器（工作内存）中的�
 2）volatile 仅能实现变量的修改可见性，并不能保证原子性；synchronized 则可以保证变量的修改可见性和原子性
 3）volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。
 4）volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化
+
+
+IEG Round 1
+
+1. 自我介绍 
+
+2. 项目经验
+
+3. Android 基础
+
+3. 算法
+
+4. Java基础
+
+5. 自己做过东西的亮点
+
+Android基础：
+
+1. 事件分发机制， U字型
+
+2. 动画的实现方式
+
+3. Activity的启动模式 SingTask SingTop SingleInstance Standard
+
+Java
+
+1. 双亲委托模式
+
+2. JVM的内存模型
+
+3. volite字段使用
+
+4. 
+
+算法
+
+1. 输入一个数字，输出读法，例如1234，输出一千二百三十四
+
+2. 
