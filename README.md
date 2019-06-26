@@ -23,6 +23,12 @@
 
 [设计模式](./designpattern/README.md)
 
+### 行业趋势
+
+* [小程序](./miniprogram/README.md)
+
+* 人工智能
+
 ### 行业资讯
 
 * 掘金
