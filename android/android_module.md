@@ -71,3 +71,5 @@ Hermes.connect()本质上还是 bindService()的方式，那同样存在上面�
 [Android组件化开发案例](https://juejin.im/post/5cc5a98fe51d456e3f2fb796)
 
 [微信 Android模块化架构重构实践](https://cloud.tencent.com/developer/article/1005631)
+
+[Android组件化方案](https://blog.csdn.net/guiying712/article/details/55213884)

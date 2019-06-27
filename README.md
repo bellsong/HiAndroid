@@ -68,6 +68,12 @@
 
 * [微信终端开发团队专栏](https://cloud.tencent.com/developer/column/1362/tag-10216)
 
+* 淘宝
+
+* 美团
+
+* QQ
+
 ### MORE
 
 [RESTFUL API](https://www.restapitutorial.com/)

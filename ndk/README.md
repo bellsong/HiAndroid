@@ -107,3 +107,5 @@ https://www.jianshu.com/p/0261e6cceb3e
 [JNI学习积累之一 ---- 常用函数大全](https://blog.csdn.net/qinjuning/article/details/7595104)
 
 [JNI相关](./jni.md)
+
+[JNI和NDK编程-使用AndroidStudio进行NDK开发](https://blog.csdn.net/guiying712/article/details/75452193)

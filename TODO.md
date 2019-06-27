@@ -16,8 +16,6 @@
 
 各种方式优缺点
 
-自定义Gradle插件 https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension
-
 ## 一个最优雅的抢红包App
 ### 基本功能：
 1. 打开后可以监听当前群聊天进行抢红包；
