@@ -14,6 +14,9 @@
 ### 源码阅读
 #### 开源项目 
 
+### 引言
+[自学入门](http://gityuan.com/2016/04/24/how-to-study-android/)
+
 ### Android Map  
 
 ![](./res/android_base.png)
@@ -48,7 +51,7 @@
 
 #### [Android Permission 权限管理](./android_systempermissions.md)
 
-#### [数据格式处理](./android_2_data.md)
+#### [数据格式处理](./android_data.md)
 
 ### [多线程](./android_thread.md)
 
@@ -386,6 +389,8 @@ WebSocket
 [Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)
 
 Android程序log追踪工具_cooker-tracer
+
+[Android打印Trace堆栈](http://gityuan.com/2017/07/09/android_debug/)
 
 skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
 [Wire Swiss GmbH](https://github.com/wireapp)

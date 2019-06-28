@@ -74,6 +74,8 @@
 
 * QQ
 
+* [Gityuan Android技术架构演进与未来](https://mp.weixin.qq.com/s/W38aauoCEEUbL8KvUkb_Rw)
+
 ### MORE
 
 [RESTFUL API](https://www.restapitutorial.com/)
