@@ -1,4 +1,8 @@
-#Activity启动分析
+# Activity的启动模式了解
+
+## Activity四种启动模式
+
+## Activity启动分析
 
 1. 入口。
 
@@ -492,3 +496,6 @@ Activity由ActivityThread负责启动。
     
         
 总结：至此，从客户端的角度讲，已经完成了窗口创建的全部工作。
+
+## 参考
+[Android：launchmode（Activity的四种启动模式介绍）](https://blog.csdn.net/u012538947/article/details/39647119)
