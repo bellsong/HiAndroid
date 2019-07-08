@@ -1,4 +1,4 @@
-### 虎三说Handler
+### Andorid Handler
 
 	Android UI操作并不是线程安全的并且这些操作必须在UI线程中执行。Android利用Handler来实现UI线程的更新的。
 
@@ -42,6 +42,8 @@ postDelayed( Runnable, long )
 	向Handler对象发送类似new Message ()形式的空Message可以达到清空Message的目的，这种做法与getLooper().quit()的做法是一样的。如果利用的资源较多，应及时清理。
 
 
+# 参考
 
 [Handler源码分析 - Java层](http://www.jianshu.com/p/1bd6e015653f)
+
 [Android 消息机制学习](http://www.jianshu.com/p/1e5640e6bef9#)

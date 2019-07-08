@@ -13,6 +13,7 @@ congratulations, you have a lot of code.
 现象：无法正常安装apk。
 
 ##Why？
+
 这个错误是Android应用的方法总数限制造成的。Android平台的Java虚拟机Dalvik在执行DEX格式的Java应用程序时，使用原生类型short来索引DEX文件中的方法。这意味着单个DEX文件可被引用的方法总数被限制为65536。通常APK包含一个classes.dex文件，因此Android应用的方法总数不能超过这个数量，这包括Android框架、类库和你自己开发的代码。
 
 ##How?
@@ -75,11 +76,12 @@ Android 5.0和更高版本使用名为ART的运行时，它原生支持从APK文
 But，并不优雅。
 SO
 
-##Advice
+## Advice
 
 虽然Google解决了应用总方法数限制的问题，但并不意味着开发者可以任意扩大项目规模。Multidex仍有一些限制：
 
-####multidex存在的问题
+#### multidex存在的问题
+
 1、应用启动速度会降低，由于用用启动时会加载额外的dex文件，将会造成启动速度降低，而且有可能会造成ANR,所以尽可能的第二个dex不要太大。此时应该使用ProGuard减小DEX文件的大小。
 
 2、由于dalvik LinearAlloc的bug，这可能会导致multidex的应用无法在android4.0之前的手机上运行。
@@ -97,6 +99,7 @@ Multidex构建工具还不支持指定哪些类必须包含在首个DEX文件中
 尽量使用专为移动应用设计的Lite/Android版本类库，或者使用小类库替换大类库，例如用Google-gson替换Jackson JSON。而对于Google Protocol Buffers这样的数据交换格式，其标准实现会自动生成大量的方法。采用Square Wire的实现则可以很好地解决此问题。
 
 ##Other
+
 Mihai Parparita的开源项目[dex-method-counts](https://github.com/mihaip/dex-method-counts)可以用于统计APK中每个包的方法数量。
 
 ##参考

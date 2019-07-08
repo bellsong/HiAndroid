@@ -1,3 +1,5 @@
+Android BroadcastReceiver 广播了解
+
 [动态注册广播源码分析](http://my.oschina.net/winHerson/blog/90336)
 
 ### Android应用在未启动的情况下无法收到指定广播的问题总结

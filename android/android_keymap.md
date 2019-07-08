@@ -1,3 +1,5 @@
+# AndroidStudio 快捷键
+
 Mac下快捷键的符号所对应的按键
 
 ⌥—> option|alt
@@ -43,9 +45,6 @@ Android Studio 常用快捷键 for mac
 ⇧⌘F7: 快速，高亮显示变量在当前文件中的引用情况,使用⌘G和⇧⌘G快捷键 可以前往跳到下一个/上一个高亮的变量，按⎋移除高亮显示 | 对应window中的Ctrl + Shift + F7
 
 F1: 查看类／方法的注释文档
-
-
-
 
 
 控制操作相关

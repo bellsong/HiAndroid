@@ -2,6 +2,14 @@
 
 ## Activity四种启动模式
 
+Standard
+
+SingleTask
+
+SingTop
+
+SingInstance
+
 ## Activity启动分析
 
 1. 入口。

@@ -1,4 +1,4 @@
-### 动态更换应用Icon
+# Android 动态更换应用Icon
 
 ####原理1——activity-alias
 在AndroidMainifest中，有两个属性：

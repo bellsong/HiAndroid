@@ -1,4 +1,5 @@
-### 高斯模糊 （Gaussian blur）
+### Android 高斯模糊 （Gaussian blur）
+
 自从iOS系统引入了Blur效果，也就是所谓的毛玻璃、模糊化效果，磨砂效果，各大系统就开始竞相模仿
 
 实现Blur效果主要有两种方式，

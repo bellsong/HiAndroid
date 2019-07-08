@@ -9,11 +9,11 @@ Android面试相关的总结，包含两部分
 
 一个 Activity 绑定 Service 后，在 startService ，然后在 stopService，此时 Service 是否还需要解绑
 
-Webview优化 提前初始化
+Webview优化 提前初始化 缓存js 内核做什么，外壳可以做什么，webview内存优化
 
 Binder的大体设计模式
 
-图片压缩不失真的情况下能压缩多少倍？Android中线程能开多少个？
+图片压缩不失真的情况下能压缩多少倍？
 
 Handler为什么会发生内存泄漏
 
@@ -64,6 +64,20 @@ Handler为什么会发生内存泄漏
 
 1. 线程如何实现
 
+1. Android中线程能开多少个？
+
+1. synchronized 和volatile 关键字的区别？
+
+synchronized 和volatile的作用：
+1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
+2）禁止进行指令重排序。
+volatile 本质是在告诉jvm 当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取；synchronized 则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。
+区别：
+1）volatile 仅能使用在变量级别；synchronized 则可以使用在变量、方法、和类级别的
+2）volatile 仅能实现变量的修改可见性，并不能保证原子性；synchronized 则可以保证变量的修改可见性和原子性
+3）volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。
+4）volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化
+
 ### 工程
 
 APK 包含了哪些东西，打包过程是什么；
@@ -85,7 +99,6 @@ Android 音频控件如何使用，底层原理
 2. 快速排序 
 
 外排序有哪些，与内部排序的区别
-
 
 ### 使用案例
 
@@ -208,30 +221,6 @@ Picasso||1.图片质量高，但加载速度一般2.Picasso体积比起Glide小|
 * 知识点内存缓存 
 
 * 图片下载时请求转发
-
-
-> 什么是ANR 如何避免它？
-
-在Android 上，如果你的应用程序有一段时间响应不够灵敏，系统会向用户显示一个对话框，这个对话框称作应
-用程序无响应（ANR：Application Not Responding）对话框。用户可以选择让程序继续运行，但是，他们在使用你的应用程序时，并不希望每次都要处理这个对话框。因此，在程序里对响应性能的设计很重要，这样，系统不会显示ANR 给用户。
-不同的组件发生ANR 的时间不一样，主线程（Activity、Service）是 5 秒，BroadCastReceiver 是 10 秒。
-
-**解决方案：**
-将所有耗时操作，比如访问网络，Socket 通信，查询大量SQL 语句，复杂逻辑计算等都放在子线程中去，然后通过handler.sendMessage、runonUITread、AsyncTask 等方式更新UI。无论如何都要确保用户界面操作的流畅度。
-如果耗时操作需要让用户等待，那么可以在界面上显示进度条。
-
-
-> synchronized 和volatile 关键字的区别？
-
-synchronized 和volatile的作用：
-1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
-2）禁止进行指令重排序。
-volatile 本质是在告诉jvm 当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取；synchronized 则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。
-区别：
-1）volatile 仅能使用在变量级别；synchronized 则可以使用在变量、方法、和类级别的
-2）volatile 仅能实现变量的修改可见性，并不能保证原子性；synchronized 则可以保证变量的修改可见性和原子性
-3）volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。
-4）volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化
 
 
 IEG Round 1
@@ -372,12 +361,14 @@ Java知识
     12、SpareArray原理？
 
 架构相关
+
     1、组件化 
     2、插件化 
     3、热修复 
     4、换肤原理
 
 View相关
+
     1、View工作原理？ 
     2、View的事件体系？ 
     3、SurfaceView和TextureView的区别？

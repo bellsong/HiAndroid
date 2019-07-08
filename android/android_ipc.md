@@ -1,4 +1,7 @@
-## Android进程间通信
+# Android进程间通信
+
+## 参考
+
 [Android进程间通信（IPC）机制Binder简要介绍和学习计划](http://blog.csdn.net/luoshengyang/article/details/6618363)
 
 [Android 进程间通信机制 Binder 应用层分析](http://mouxuejie.com/blog/2016-04-10/android-ipc-binder-app-layer-analysis/)
@@ -9,7 +12,7 @@
 
 [Binder service入门](http://www.cloudchou.com/android/post-332.html)
 
-[ Android 基于Message的进程间通信](http://blog.csdn.net/lmj623565791/article/details/47017485)
+[Android 基于Message的进程间通信](http://blog.csdn.net/lmj623565791/article/details/47017485)
 
 [Android实战技术：IPC方式简介教程](http://blog.csdn.net/hitlion2008/article/details/9773251)
 
@@ -25,9 +28,7 @@
 
 [Android实战技术：深入理解Android的RPC方式与AIDL](http://blog.csdn.net/hitlion2008/article/details/9824009)
 
-
 [图解Android - Binder 和 Service](http://blog.csdn.net/zhgxhuaa/article/details/23617557)
-
 
 [Android开发：什么是IBinder](http://www.2cto.com/kf/201202/118415.html)
 
@@ -35,10 +36,9 @@
 
 [深入理解Android的startservice和bindservice](http://www.cnblogs.com/yejiurui/archive/2013/11/18/3429451.html)
 
-
 [Android BindService中遇到的一个小问题](http://www.cnblogs.com/linjzong/p/3361634.html)
-[图解Android - Binder 和 Service](http://www.cnblogs.com/samchen2009/p/3316001.html)
 
+[图解Android - Binder 和 Service](http://www.cnblogs.com/samchen2009/p/3316001.html)
 
 [Android Service学习之AIDL, Parcelable和远程服务](http://android.blog.51cto.com/268543/537684/)
 
