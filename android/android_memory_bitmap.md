@@ -10,6 +10,17 @@
 
 #### 优化指南
 
+1. 统一的bitmap加载器，选择Glide、Fresco、Picasso中的一个作为图片加载框架。实际开发中加载到view的图片的大小不应该超过view的大小，图片加载框架默认会对图片进行缓存，按view实际大小加载。在开发中为了减少apk的大小，一般只放一套3X图片，但是这些图片在小分辨率的手机上直接加载就会出现内存浪费。统一的bitmap加载器就可以很好的解决该问题。
+
+2. 图片存在像素浪费，对于.9图，美工可能在出图时在拉伸与非拉伸区域都有大量的像素重复。而这些图片是可以缩小，但并不影响显示效果。
+
+3. inSampleSize:缩放比例，在把图片载入内存之前，我们需要计算一个合适的缩放比例，避免不必要的大图载入。
+
+4. 选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存在很大差异。
+
+5. inBitmap：这个参数用来实现Bitmap内存的复用，但复用存在一些限制，具体体现在：在Android 4.4之前只能重用相同大小的Bitmap的内存，而Android 4.4及以后版本则只要后来的Bitmap比之前的小即可。使用inBitmap参数前，每创建一个Bitmap对象都会分配一块内存供其使用，而使用了inBitmap参数后，多个Bitmap可以复用一块内存，这样可以提高性能。
+
+
 ##### 高效加载大图片
 我们在编写Android程序的时候经常要用到许多图片，不同图片总是会有不同的形状、不同的大小，但在大多数情况下，这些图片都会大于我们程序所需要的大小。比如说系统图片库里展示的图片大都是用手机摄像头拍出来的，这些图片的分辨率会比我们手机屏幕的分辨率高得多。大家应该知道，我们编写的应用程序都是有一定内存限制的，程序占用了过高的内存就容易出现OOM(OutOfMemory)异常。我们可以通过下面的代码看出每个应用程序最高可用内存是多少。
 > 	int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);  Log.d("TAG", "Max memory is " + maxMemory + "KB");
@@ -76,6 +87,10 @@ public static Bitmap decodeSampledBitmapFromResource
     return BitmapFactory.decodeResource(res, resId, options);  
 }
 ```
+
+#### 线上监控
+
+线上的内存监控一般都是一些大公司在做，例如美团的Probe还有微信最近开源的Matrix
 
 #### 参考
 

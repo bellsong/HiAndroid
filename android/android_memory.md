@@ -84,6 +84,8 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 
 ### 参考
 
+[浅谈Android内存优化](https://juejin.im/post/5c978bc4e51d45101a372077)
+
 [腾讯bugly Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
 
 [Android性能优化：全面带你了解 内存优化 & 解决方案](https://juejin.im/entry/5aea6d08f265da0b8f62601f)

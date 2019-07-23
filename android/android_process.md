@@ -189,3 +189,8 @@ public class TempService extends Service {
 * [几种进程通信方式的对比总结](http://blog.csdn.net/u011240877/article/details/72863432)
 
 [Android 中 AIDL 的使用与理解](https://juejin.im/entry/5721f9c879bc440066c5a832)
+
+[进程间通信IPC (InterProcess Communication)](https://www.jianshu.com/p/c1015f5ffa74)
+
+
+http://usertrack.alibaba-inc.com/validate/verify?debugKey=26062527

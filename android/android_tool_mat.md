@@ -14,11 +14,9 @@ MAT(Memory Analyzer Tool)，一个基于Eclipse的内存分析工具，是一个
 
 ### 参考
 
-[MAT使用指南](http://androidperformance.com/2015/04/11/AndroidMemory-Usage-Of-MAT.html)
+[MAT使用指南](https://www.androidperformance.com/2015/04/11/AndroidMemory-Usage-Of-MAT)
 
 [通过MAT查看内存占用](https://blog.csdn.net/xiaanming/article/details/42396507)
-
-[MAT使用指南](http://androidperformance.com/2015/04/11/AndroidMemory-Usage-Of-MAT.html)
 
 [MAT使用指南](http://www.importnew.com/2433.html)
 
