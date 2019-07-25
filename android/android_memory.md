@@ -88,6 +88,8 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 
 [腾讯bugly Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
 
+[Android 开发，跳不过的内存管理](https://mp.weixin.qq.com/s?__biz=MzIxNjc0ODExMA==&mid=2247484311&idx=1&sn=1fe0416bed4137dd45c6e9c153bb14f4&chksm=97851ab6a0f293a0cde28ff6d1091b2232e1758e9845a05549d01c62f412def742985d642630&scene=21#wechat_redirect)
+
 [Android性能优化：全面带你了解 内存优化 & 解决方案](https://juejin.im/entry/5aea6d08f265da0b8f62601f)
 
 [Google官方andorid性能优化](https://www.kancloud.cn/alex_wsc/better/202711)
@@ -95,3 +97,5 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 [Android 系统不释放内存么？](https://juejin.im/entry/5b9af2de6fb9a05cdd2cf457?utm_source=gold_browser_extension)
 
 [Android 内存泄漏 - 做一个有“洁癖”的开发者](https://www.jianshu.com/p/44d26d355a56)
+
+[Bitmap 比你想的更费内存 | 吊打 OOM](https://mp.weixin.qq.com/s?__biz=MzIxNjc0ODExMA==&mid=2247484679&idx=1&sn=d738f5ec092c8490484b66cb1ab80eab&chksm=97851c26a0f29530c2359cec1bbe74d93b90e4a1ba8df751dd6469734c8e58280fb265442d0c&scene=21#wechat_redirect)
