@@ -651,3 +651,5 @@ classes2.dex.zip文件大小约为2.28M
 ## 参考
 
 [Android 启动速度优化](https://juejin.im/entry/582adaad570c35006cdcb615)
+
+[Android性能优化笔记（一）——启动优化](https://juejin.im/post/5c21ea325188254eaa5c45b1)

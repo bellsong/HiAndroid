@@ -99,3 +99,11 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 [Android 内存泄漏 - 做一个有“洁癖”的开发者](https://www.jianshu.com/p/44d26d355a56)
 
 [Bitmap 比你想的更费内存 | 吊打 OOM](https://mp.weixin.qq.com/s?__biz=MzIxNjc0ODExMA==&mid=2247484679&idx=1&sn=d738f5ec092c8490484b66cb1ab80eab&chksm=97851c26a0f29530c2359cec1bbe74d93b90e4a1ba8df751dd6469734c8e58280fb265442d0c&scene=21#wechat_redirect)
+
+[Android内存分析和调优](https://blog.csdn.net/zhongnanjun_3/article/details/49330735)
+
+[Android性能优化-内存篇](https://www.jianshu.com/p/829477754c19)
+
+[Android内存调试工具总结](https://wertherzhang.com/android-memory-debug/)
+
+[调查 RAM 使用情况](https://developer.android.com/studio/profile/investigate-ram?hl=zh-cn)

@@ -24,3 +24,8 @@
 
 [android图片加载库Glide](https://yq.aliyun.com/articles/63689/)
 
+[Glide使用中的踩坑和填坑](http://www.zwdroid.top/2016/10/16/issues%20in%20using%20Glide/)
+
+[探索Bitmap使用姿势](https://juejin.im/post/5c56bd57f265da2dc5388f33)
+
+[Android中一张图片占据的内存大小是如何计算](https://juejin.im/post/5bc406b9f265da0aa664ea1e)

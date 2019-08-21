@@ -10,6 +10,8 @@ SingTop
 
 SingInstance
 
+[Android中Activity四种启动模式和taskAffinity属性详解](https://blog.csdn.net/zhangjg_blog/article/details/10923643)
+
 ## Activity启动分析
 
 1. 入口。
