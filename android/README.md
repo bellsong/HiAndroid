@@ -349,8 +349,6 @@ Talk is cheap,show me the code.
 android.os.BadParcelableException: ClassNotFoundException when unmarshalling
 http://blog.csdn.net/lincyang/article/details/7095417
 
-[TODO](./todo.md)
-
 [ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
 
 ### 案例实践
