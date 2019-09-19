@@ -3,8 +3,10 @@
 组件化要解决的问题
 
 1. 路由跳转，页面跳转
-    * 阿里ARouter
+    * 阿里ARouter [ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
+
     * 天猫的统一跳转协议
+    
     * Airbnb的DeepLinkDispatch
 
 2. 多进程架构通信组件框架

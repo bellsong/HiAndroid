@@ -84,6 +84,8 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 
 ### 参考
 
+[实践App内存优化：如何有序地做内存分析与优化](https://juejin.im/post/5b1b5e29f265da6e01174b84)
+
 [浅谈Android内存优化](https://juejin.im/post/5c978bc4e51d45101a372077)
 
 [腾讯bugly Andoird内存优化](https://mp.weixin.qq.com/s/2MsEAR9pQfMr1Sfs7cPdWQ)
@@ -107,3 +109,5 @@ decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8，存�
 [Android内存调试工具总结](https://wertherzhang.com/android-memory-debug/)
 
 [调查 RAM 使用情况](https://developer.android.com/studio/profile/investigate-ram?hl=zh-cn)
+
+[我这样减少了26.5M Java内存！](https://wetest.qq.com/lab/view/359.html)

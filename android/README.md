@@ -69,7 +69,7 @@
 
 ### [Andorid数据存储](./android_data.md)
 
-### [Android异常处理](./andorid_exception.md)
+### [Android 稳定性 异常处理](./andorid_exception.md)
 
 ### 进阶篇
 
@@ -78,6 +78,8 @@
 #### [插件化](./android_pulgin.md)
 
 #### [组件化](./android_module.md)
+
+#### [Android 路由](./android_route.md)
 
 #### [网络库](./android_network.md)
 
@@ -159,8 +161,6 @@ https://github.com/zzz40500/GsonFormat
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
 
 [提高代码质量－工具篇](http://www.atatech.org/articles/58486)
-
-[Android上如何在发生崩溃时抓取日志](http://www.atatech.org/articles/58418)
 
 [章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
 
@@ -330,8 +330,6 @@ StackTraceElement
 
 [[Android]动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
-### [Android异常处理相关知识](./UncaughtExceptionHandler.md)
-
 ### [Android网络相关知识](./network/README.md)
 
 ### [Resource](./android_resource.md)
@@ -343,13 +341,6 @@ Talk is cheap,show me the code.
 ### 总结归纳
 [随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
 [android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
-
-错题集
-
-android.os.BadParcelableException: ClassNotFoundException when unmarshalling
-http://blog.csdn.net/lincyang/article/details/7095417
-
-[ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
 
 ### 案例实践
 [图片颜色提取 Android Palette](./android_case.md)

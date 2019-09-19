@@ -131,3 +131,12 @@ void CrashSaver_install()
     一个开源的崩溃日志搜集器，轻松让你实现客户端的崩溃日志上传到后台，如果你不喜欢接入别人家的SDK，可以使用它。有一个不足之处，就是它搜集不到JNI层的奔溃。
 
 4. [异常处理](http://geek.csdn.net/news/detail/50839)
+
+
+## 参考
+
+[Android上如何在发生崩溃时抓取日志](http://www.atatech.org/articles/58418)
+
+android.os.BadParcelableException: ClassNotFoundException when unmarshalling
+http://blog.csdn.net/lincyang/article/details/7095417
+
