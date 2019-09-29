@@ -65,9 +65,9 @@
 
 ### [RecyclerView](./android_recyclerview.md)
 
-### [Andorid事件分发机制](./android_event.md)
+### [Andorid 事件分发机制](./android_event.md)
 
-### [Andorid数据存储](./android_data.md)
+### [Andorid 数据存储](./android_data.md)
 
 ### [Android 稳定性 异常处理](./andorid_exception.md)
 
