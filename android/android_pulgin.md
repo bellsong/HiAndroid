@@ -1053,3 +1053,7 @@ QFix的方式，是取得虚拟机中的某些底层函数，提前resolve所有
 
 [热修复入门：Android 中的 ClassLoader](http://jaeger.itscoder.com/android/2016/08/27/android-classloader.html)
 
+
+[Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
+
+[章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)

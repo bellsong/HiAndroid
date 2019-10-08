@@ -471,3 +471,19 @@ http://code.google.com/p/onekey-decompile-apk/
 
 
 [Android逆向从未如此简单](https://juejin.im/post/58cc92a1b123db00532757cc?utm_source=gold_browser_extension)
+
+
+通过Android API Hook技术，即通过动态代理等方法替换关键节点
+
+https://github.com/google/android-classyshark
+Classyshark，轻松查看apk内部每个包的方法数，用了哪些开源库，同样拿知乎开刀做例子。
+
+https://github.com/JesusFreke/smali/wiki/smalidea
+smali代码调试插件，你以为没有拿到安卓Java源码就不能调试了吗？图样图森破了吧。
+
+https://www.hex-rays.com/products/ida/
+IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试你。
+
+
+### 反编译
+[Android apk 的反编译及保护杂谈](http://www.jianshu.com/p/caee73ca8963)

@@ -29,3 +29,5 @@
 [探索Bitmap使用姿势](https://juejin.im/post/5c56bd57f265da2dc5388f33)
 
 [Android中一张图片占据的内存大小是如何计算](https://juejin.im/post/5bc406b9f265da0aa664ea1e)
+
+[图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)

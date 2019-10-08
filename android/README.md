@@ -71,11 +71,15 @@
 
 ### [Android 稳定性 异常处理](./andorid_exception.md)
 
+### [Handler](./android_handler.md)
+
 ### 进阶篇
 
 #### [性能优化专项](./android_optimize.md)
 
 #### [插件化](./android_pulgin.md)
+
+### [动态加载](./hotfix/README.md)
 
 #### [组件化](./android_module.md)
 
@@ -85,16 +89,13 @@
 
 #### [图片加载框架](./andorid_imageloader.md)
 
+#### [推动](./android_push.md)
+
 #### 安全
 
 [Android 逆向 反编译](./android_decomplie.md)
 
 [反作弊](./android_anticheat.md)
-
-通过Android API Hook技术，即通过动态代理等方法替换关键节点
-
-[Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
-
 
 ### 高级篇
 
@@ -105,6 +106,8 @@
 ### 其他
 
 #### [视屏播放相关](./android_video.md)
+
+#### [拍摄相关](./android_camera.md)
 
 #### 黑科技
 [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
@@ -126,13 +129,6 @@
 [Android快速集成微信支付](http://sunzq1993.com/2017/02/17/Android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/)
 
 # Doc
-Just something markable.
-
-[图集功能，查看大图，进行手势缩放](https://github.com/crazyandcoder/ImageZoom)
-
-[Handler](./android_handler.md)
-
-1、ListView 中局部刷新Item
 
 [国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
 
@@ -140,29 +136,11 @@ Just something markable.
 
 [Android消息机制—sdk源码解读之旅](https://zhuanlan.zhihu.com/p/25222485?utm_source=gank.io&utm_medium=email&refer=levent-j)
 
-[【FreeBuf年终策划】2017年最好用的Android渗透工具合集](http://www.freebuf.com/sectool/124507.html)
-
-[Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
-
-
-https://github.com/google/android-classyshark
-Classyshark，轻松查看apk内部每个包的方法数，用了哪些开源库，同样拿知乎开刀做例子。
-
-https://github.com/JesusFreke/smali/wiki/smalidea
-smali代码调试插件，你以为没有拿到安卓Java源码就不能调试了吗？图样图森破了吧。
-
-https://www.hex-rays.com/products/ida/
-IDA Pro，逆向大利器，不管你是smali还是so文件，照样动态调试你。
-
-https://github.com/zzz40500/GsonFormat
-根据JSON数据快速生成Java实体类，又一波解放生产力。
-
 
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
 
 [提高代码质量－工具篇](http://www.atatech.org/articles/58486)
 
-[章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
 
 [EasyAdapter for Android 高效列表开发解决方案](http://www.atatech.org/articles/57535)
 
@@ -176,13 +154,11 @@ https://github.com/zzz40500/GsonFormat
 
 [Android 方法数杂谈](http://www.atatech.org/articles/56219)
 
+[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
+
 [Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
 
 [无痕换肤的实现方案 for Android](http://www.atatech.org/articles/24389)
-
-[浮窗系列之越过授权使用浮窗](http://www.atatech.org/articles/55874)
-
-[浮窗系列之窗口层级](http://www.atatech.org/articles/55780)
 
 [DumpTool----操作Android app 私有文件的利器！](http://www.atatech.org/articles/55926)
 
@@ -201,6 +177,13 @@ https://github.com/zzz40500/GsonFormat
 * [adb](./android_adb.md)
 * [Android 工具](http://www.androiddevtools.cn/)
 
+[【FreeBuf年终策划】2017年最好用的Android渗透工具合集](http://www.freebuf.com/sectool/124507.html)
+
+[Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
+
+https://github.com/zzz40500/GsonFormat
+根据JSON数据快速生成Java实体类，又一波解放生产力。
+
 ### android SDK
 https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
 
@@ -216,42 +199,8 @@ WellSupport
 
 SuperToasts
 
-#### 问题
-Sdk日志跟服务器上不一致
-
-#### 不重复发明轮子
-引进一个新的日志收集模块
-* 方案一：使用成熟的日志收集模块，PP使用的
-* 方案二：重新写一套
-
-考虑因素
-* 实现成本（时间和人力）
-* 稳定性
-
-决定使用方案一 使用现有的
-
-引入日志模块时候问题：
-1、大量使用全局变量 Application获取context，在Library中却无法直接访问Application，为了解耦，应该当成参数传进来
-
-#### 大量使用Application中Context在项目移动，代码复用的时候就是一场灾难，要一直改Context，所以，为了保持代码解耦，通过传参的方式
-
-通过AndroidStudio可以将不同的模块组合使用，尽量保持解耦。
-
-
-### 如何实现一个日志模块
-
-#### 数据收集
-#### 数据保存 本地持久化
-#### 数据上传
-
-JSPatch
-
 拥有的不过是岁月留下来的经验，而不是智慧。
 
-### [动态加载](./hotfix/README.md)
-
-### 拍照
-[你需要知道的Android拍照适配方案](http://www.jianshu.com/p/f269bcda335f)
 
 ### 分辨率适配
 [（全解析）屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
@@ -261,9 +210,6 @@ JSPatch
 
 ### 工具
 [ADB](./awesome_adb/README.md)
-
-### 反编译
-[Android apk 的反编译及保护杂谈](http://www.jianshu.com/p/caee73ca8963)
 
 ### 发布
 [发布Android studio项目到本地Maven仓库](http://www.jianshu.com/p/8d7d0cc8fcc3)
@@ -322,11 +268,8 @@ JSPatch
 [Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
 如何准确的描述一个问题。搜索。有用资讯。决策。
 
-[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
 
 ### 其他
-StackTraceElement
-利用线程运行栈StackTraceElement设计Android日志模块
 
 [[Android]动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
@@ -334,7 +277,7 @@ StackTraceElement
 
 ### [Resource](./android_resource.md)
 
-Talk is cheap,show me the code.
+[ButterKnife](http://jakewharton.github.io/butterknife/)
 
 ![](./res/android_tool_2015.jpg)
 
@@ -356,41 +299,11 @@ Talk is cheap,show me the code.
 # 主题切换
 [Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)
 
-## 其他
-[ButterKnife](http://jakewharton.github.io/butterknife/)
-
 ## 常见问题通用解决方案
 
-### 埋点
-[JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
+### [日志](./android_log.md)
 
-[Android无埋点数据收集SDK关键技术](https://www.jianshu.com/p/b5ffe845fe2d)
-
-### 悬浮窗
-[Android仿微信文章悬浮窗效果](https://juejin.im/post/5bbc564df265da0aea69962a?utm_source=gold_browser_extension)
-
-### 消息推送
-
-WebSocket 
-优点：开发成本低，数据安全，对于服务器压力较小（相对轮询）
-缺点：耗电量高，容易被系统kill，需要一定的技术
-
-[Android通过Okhttp3实现socket长连接](https://blog.csdn.net/lhy349/article/details/79699394)
-
-Android程序log追踪工具_cooker-tracer
-
-[Android打印Trace堆栈](http://gityuan.com/2017/07/09/android_debug/)
-
-skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
-[Wire Swiss GmbH](https://github.com/wireapp)
-
-[Android 架构之长连接技术](http://wingjay.com/)
-
-[腾讯移动推送](https://xg.qq.com/xg)
-
-[极光推送](https://www.jiguang.cn/)
-
-[android 资源](http://p.codekk.com/)
+### [悬浮窗](./android_floatwindow.md)
 
 ### 生产效能
 
@@ -409,3 +322,6 @@ READ MORE，
 WRITE MORE，
 THINK MORE，
 THEN TEACH.
+
+Talk is cheap,show me the code.
+

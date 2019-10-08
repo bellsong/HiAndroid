@@ -603,15 +603,21 @@ pomelo-androidclient这是一个用于java和android的pomelo socket.io客户端
 
 ## 六、华为（待发掘。。）
 
-##七、小米（待发掘。。）
+## 七、小米（待发掘。。）
 
-##八、360（待发掘。。）
+## 八、360（待发掘。。）
 
 
 思考
 实践
 扩展
 总结
+
+
+skype 团队出的一款新型社交 APP Wire，iOS、Android、桌面端、Mac 端、webapp 全部开源了
+[Wire Swiss GmbH](https://github.com/wireapp)
+
+[android 资源](http://p.codekk.com/)
 
 
 

@@ -1,3 +1,47 @@
+# Android日志收集
+
+
+### 埋点
+[JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
+
+[Android无埋点数据收集SDK关键技术](https://www.jianshu.com/p/b5ffe845fe2d)
+
+
+Android程序log追踪工具_cooker-tracer
+
+[Android打印Trace堆栈](http://gityuan.com/2017/07/09/android_debug/)
+
+#### 问题
+Sdk日志跟服务器上不一致
+
+#### 不重复发明轮子
+引进一个新的日志收集模块
+* 方案一：使用成熟的日志收集模块，PP使用的
+* 方案二：重新写一套
+
+考虑因素
+* 实现成本（时间和人力）
+* 稳定性
+
+决定使用方案一 使用现有的
+
+引入日志模块时候问题：
+1、大量使用全局变量 Application获取context，在Library中却无法直接访问Application，为了解耦，应该当成参数传进来
+
+#### 大量使用Application中Context在项目移动，代码复用的时候就是一场灾难，要一直改Context，所以，为了保持代码解耦，通过传参的方式
+
+通过AndroidStudio可以将不同的模块组合使用，尽量保持解耦。
+
+StackTraceElement
+利用线程运行栈StackTraceElement设计Android日志模块
+
+### 如何实现一个日志模块
+
+#### 数据收集
+#### 数据保存 本地持久化
+#### 数据上传
+
+
 android:分享 一个很强大的LOG开关---Log.isLoggable
 
 ### [Log.isLogggable](https://developer.android.com/reference/android/util/Log.html)
