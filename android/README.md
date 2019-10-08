@@ -17,18 +17,6 @@
 ### 引言
 [自学入门](http://gityuan.com/2016/04/24/how-to-study-android/)
 
-### Android Map  
-
-![](./res/android_base.png)
-
-![](./res/android_common_knowledge.png)
-
-![](./res/android_advanced.png)
-
-![](./res/android_3rd_lib.png)
-
-![Android Map](./res/android_map.png)
-
 ### [基础篇](./java/README.md)
 
 #### [java 基础知识](./android_java.md)
@@ -103,27 +91,24 @@
 
 [OpenGL](./android_opengl.md)
 
+### [Android Architecture 架构](./Architecture/README.md)
+
 ### [Programmer](./programmer.md)
-
-### 其他
-
-#### [视屏播放相关](./android_video.md)
-
-#### [拍摄相关](./android_camera.md)
 
 ### 编码规范
 * [编码规范](./android_style.md)
 
 ### 工具
+
 * [adb](./android_adb.md)
 * [Android 工具](http://www.androiddevtools.cn/)
+* [android studio快捷键盘](./android_keymap.md)
 
 ### 单元测试
+
 [在Android Studio中进行单元测试和UI测试](http://www.jianshu.com/p/03118c11c199)
 
 ### [发布](./android_publish.md)
-
-### [Android Architecture 架构](./Architecture/README.md)
 
 ### [开源项目](./android_open_source.md)
 
@@ -137,45 +122,51 @@
 
 ## 常见问题通用解决方案
 
-### [Android Accessibility](./Accessibility/android_accessibility.md)
+#### [Android Accessibility](./Accessibility/android_accessibility.md)
 
-### [高斯模糊](./andorid_blur.md)
+#### [高斯模糊](./andorid_blur.md)
 
-### [主题切换](./android_theme.md)
+#### [主题切换](./android_theme.md)
 
-### [Android Resource获取](./android_resource.md)
 
-### [日志](./android_log.md)
+#### [动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
-### [悬浮窗](./android_floatwindow.md)
+#### [Android Resource获取](./android_resource.md)
 
-### [图片颜色提取 Android Palette](./android_case.md)
+#### [日志](./android_log.md)
 
-### 分辨率适配
-[（全解析）屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
+#### [悬浮窗](./android_floatwindow.md)
 
-[[Android]动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
+#### [图片颜色提取 Android Palette](./android_case.md)
 
-### [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
+#### [分辨率适配](./android_ui_adapter.md)
 
-### [AD SDK](./market/android_4_ad_sdk.md)
+#### [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
-### android SDK
-https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
+#### [AD SDK](./market/android_4_ad_sdk.md)
 
-## 生产效能
+#### [视屏播放相关](./android_video.md)
 
-#### [android studio快捷键盘](./android_keymap.md)
+#### [拍摄相关](./android_camera.md)
 
-### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
+#### [音频相关](./android_media.md)
+
+## Android Map  
+
 
 ![](./res/android_tool_2015.jpg)
 
-### 总结归纳
-[随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
-[android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
-
 ![](./res/android_path.png)
+
+![](./res/android_base.png)
+
+![](./res/android_common_knowledge.png)
+
+![](./res/android_advanced.png)
+
+![](./res/android_3rd_lib.png)
+
+![Android Map](./res/android_map.png)
 
 ---
 READ MORE，
@@ -184,4 +175,3 @@ THINK MORE，
 THEN TEACH.
 
 Talk is cheap,show me the code.
-

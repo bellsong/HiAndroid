@@ -628,3 +628,11 @@ IDFA (iOS) 或广告编号 (Android) 不可用或不能用于广告投放
 * 方案二 将资源相关的统计加到外壳里面，然后动态下发jar代码，通过代理的方式去调用jar里面的代码逻辑；
 
 * 方案三 客户端直接接入 成本低，无法较少size；
+
+https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
+
+
+
+### 总结归纳
+[随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
+[android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
