@@ -8,7 +8,7 @@
 
 #### 现象
 
-用户接触App第一印象肯定是启动速度，如果启动速度慢则严重影响到App在用户心中的形象。因此手机启动速度是至关重要的，要求越快越好。
+启动时间是APP一个重要的用户体验环节。用户接触App第一印象肯定是启动速度，如果启动速度慢则严重影响到App在用户心中的形象。因此手机启动速度是至关重要的，要求越快越好。
 
 在CPU、内存以及IO的限制下，启动常见的问题有
 
@@ -138,67 +138,9 @@ CPU负责把UI组件计算成Polygons，Texture纹理，然后交给GPU进行栅
 
 除了clipRect方法之外，我们还可以使用canvas.quickreject()来判断是否没和某个矩形相交，从而跳过那些非矩形区域内的绘制操作。做了那些优化之后，我们可以通过上面介绍的Show GPU Overdraw来查看效果。
 
-8)Memory Churn and performance
-虽然Android有自动管理内存的机制，但是对内存的不恰当使用仍然容易引起严重的性能问题。在同一帧里面创建过多的对象是件需要特别引起注意的事情。
-
-Android系统里面有一个Generational Heap Memory的模型，系统会根据内存中不同 的内存数据类型分别执行不同的GC操作。例如，最近刚分配的对象会放在Young Generation区域，这个区域的对象通常都是会快速被创建并且很快被销毁回收的，同时这个区域的GC操作速度也是比Old Generation区域的GC操作速度更快的。
-
-除了速度差异之外，执行GC操作的时候，任何线程的任何操作都会需要暂停，等待GC操作完成之后，其他操作才能够继续运行。
-
-通常来说，单个的GC并不会占用太多时间，但是大量不停的GC操作则会显著占用帧间隔时间(16ms)。如果在帧间隔时间里面做了过多的GC操作，那么自然其他类似计算，渲染等操作的可用时间就变得少了。
-
-导致GC频繁执行有两个原因：
-
-Memory Churn内存抖动，内存抖动是因为大量的对象被创建又在短时间内马上被释放。
-
-瞬间产生大量的对象会严重占用Young Generation的内存区域，当达到阀值，剩余空间不够的时候，也会触发GC。即使每次分配的对象占用了很少的内存，但是他们叠加在一起会增加 Heap的压力，从而触发更多其他类型的GC。这个操作有可能会影响到帧率，并使得用户感知到性能问题。
-screenshot.png
-
-解决上面的问题有简洁直观方法，如果你在Memory Monitor里面查看到短时间发生了多次内存的涨跌，这意味着很有可能发生了内存抖动。
-
-同时我们还可以通过Allocation Tracker来查看在短时间内，同一个栈中不断进出的相同对象。这是内存抖动的典型信号之一。
-
-当你大致定位问题之后，接下去的问题修复也就显得相对直接简单了。例如，你需要避免在for循环里面分配对象占用内存，需要尝试把对象的创建移到循 环体之外，自定义View中的onDraw方法也需要引起注意，每次屏幕发生绘制以及动画执行过程中，onDraw方法都会被调用到，避免在onDraw 方法里面执行复杂的操作，避免创建对象。对于那些无法避免需要创建对象的情况，我们可以考虑对象池模型，通过对象池来解决频繁创建与销毁的问题，但是这里 需要注意结束使用之后，需要手动释放对象池中的对象。
-
-9)Garbage Collection in Android
-JVM的回收机制给开发人员带来很大的好处，不用时刻处理对象的分配与回收，可以更加专注于更加高级的代码实现。相比起Java，C与C++等语言 具备更高的执行效率，他们需要开发人员自己关注对象的分配与回收，但是在一个庞大的系统当中，还是免不了经常发生部分对象忘记回收的情况，这就是内存泄 漏。
-
-原始JVM中的GC机制在Android中得到了很大程度上的优化。Android里面是一个三级Generation的内存模型，最近分配的对象 会存放在Young Generation区域，当这个对象在这个区域停留的时间达到一定程度，它会被移动到Old Generation，最后到Permanent Generation区域。
-
-每一个级别的内存区域都有固定的大小，此后不断有新的对象被分配到此区域，当这些对象总的大小快达到这一级别内存区域的阀值时，会触发GC的操作，以便腾出空间来存放其他新的对象。
-screenshot.png
-
-前面提到过每次GC发生的时候，所有的线程都是暂停状态的。GC所占用的时间和它是哪一个Generation也有关系，Young Generation的每次GC操作时间是最短的，Old Generation其次，Permanent Generation最长。执行时间的长短也和当前Generation中的对象数量有关，遍历查找20000个对象比起遍历50个对象自然是要慢很多 的。
-
-虽然Google的工程师在尽量缩短每次GC所花费的时间，但是特别注意GC引起的性能问题还是很有必要。如果不小心在最小的for循环单元里面执 行了创建对象的操作，这将很容易引起GC并导致性能问题。通过Memory Monitor我们可以查看到内存的占用情况，每一次瞬间的内存降低都是因为此时发生了GC操作，如果在短时间内发生大量的内存上涨与降低的事件，这说明 很有可能这里有性能问题。我们还可以通过Heap and Allocation Tracker工具来查看此时内存中分配的到底有哪些对象。
-
-10)Performance Cost of Memory Leaks
-虽然Java有自动回收的机制，可是这不意味着Java中不存在内存泄漏的问题，而内存泄漏会很容易导致严重的性能问题。
-
-内存泄漏指的是那些程序不再使用的对象无法被GC识别，这样就导致这个对象一直留在内存当中，占用了宝贵的内存空间。显然，这还使得每级Generation的内存区域可用空间变小，GC就会更容易被触发，从而引起性能问题。
-
-寻找内存泄漏并修复这个漏洞是件很棘手的事情，你需要对执行的代码很熟悉，清楚的知道在特定环境下是如何运行的，然后仔细排查。例如，你想知道程序 中的某个activity退出的时候，它之前所占用的内存是否有完整的释放干净了？首先你需要在activity处于前台的时候使用Heap Tool获取一份当前状态的内存快照，然后你需要创建一个几乎不这么占用内存的空白activity用来给前一个Activity进行跳转，其次在跳转到 这个空白的activity的时候主动调用System.gc()方法来确保触发一个GC操作。最后，如果前面这个activity的内存都有全部正确释 放，那么在空白activity被启动之后的内存快照中应该不会有前面那个activity中的任何对象了。
-screenshot.png
-
-如果你发现在空白activity的内存快照中有一些可疑的没有被释放的对象存在，那么接下去就应该使用Alocation Track Tool来仔细查找具体的可疑对象。我们可以从空白activity开始监听，启动到观察activity，然后再回到空白activity结束监听。这样操作以后，我们可以仔细观察那些对象，找出内存泄漏的真凶。
-screenshot.png
-
-11)Memory Performance
-通常来说，Android对GC做了大量的优化操作，虽然执行GC操作的时候会暂停其他任务，可是大多数情况下，GC操作还是相对很安静并且高效的。但是如果我们对内存的使用不恰当，导致GC频繁执行，这样就会引起不小的性能问题。
-
-为了寻找内存的性能问题，Android Studio提供了工具来帮助开发者。
-
-Memory Monitor：查看整个app所占用的内存，以及发生GC的时刻，短时间内发生大量的GC操作是一个危险的信号。
-
-Allocation Tracker：使用此工具来追踪内存的分配，前面有提到过。
-
-Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能是泄漏了的，请参考前面的Case。
-
-12)Tool – Memory Monitor
-Android Studio中的Memory Monitor可以很好的帮组我们查看程序的内存使用情况。
-
-
 #### 工具
+
+用vmstat采集的启动场景线程情况，线程数量和java线程切换的频率
 
 #### 方法
 
@@ -209,6 +151,8 @@ Android Studio中的Memory Monitor可以很好的帮组我们查看程序的内�
 注意点：
 整体的Trace，观察整个时间段情况。找出明显点耗时。
 分小段，多次。因为时间过长容易把耗时占比高的稀释掉。加上线程启动时间差等叠加原因都会对性能产生影响。
+
+推荐选择打点位置：开始：Application attachBaseContext，结束：核心View的dispatchDraw结束。
 
 2. 优化思路
 
@@ -278,6 +222,8 @@ SP优化
 
 7. 优化dex加载
 
+8. Java类加载过程
+
 #### 原则
 
 提高app的启动速度，加快Application的执行时间也是一个很重要的方面，这里总结了几条原则：
@@ -305,17 +251,31 @@ SP优化
 
 ## 参考
 
-[Android 启动速度优化](https://juejin.im/entry/582adaad570c35006cdcb615)
+### 启动时间统计
 
-[Android性能优化笔记（一）——启动优化](https://juejin.im/post/5c21ea325188254eaa5c45b1)
+[如何统计Android App启动时间](https://www.jianshu.com/p/59a2ca7df681)
 
-[Android 性能优化之启动优化](https://juejin.im/post/5d82020cf265da03d21176cb?utm_source=gold_browser_extension)
+[Android 开发之 App 启动时间统计](https://www.jianshu.com/p/c967653a9468)
+
+[应用启动速度(Launch-Time)的优化](https://www.jianshu.com/p/56971f2cf0ec)
+
+[Android踩坑经验--App启动时间正确统计姿势](https://blog.csdn.net/longlong2015/article/details/88825956)
 
 [Android：获取APP启动时间的踩坑经历](https://www.jianshu.com/p/c20743a0650e)
 
 [App启动时间（翻译）](https://juejin.im/post/5bb082675188255ca1538e0e)
 
 [【Android端 APP 启动时长获取】启动时长获取方案及具体实施](https://www.cnblogs.com/keke-xiaoxiami/p/6180563.html)
+
+[Activity到底是什么时候显示到屏幕上的呢？](http://blog.desmondyao.com/android-show-time/)
+
+### 启动优化方法
+
+[Android 启动速度优化](https://juejin.im/entry/582adaad570c35006cdcb615)
+
+[Android性能优化笔记（一）——启动优化](https://juejin.im/post/5c21ea325188254eaa5c45b1)
+
+[Android 性能优化之启动优化](https://juejin.im/post/5d82020cf265da03d21176cb?utm_source=gold_browser_extension)
 
 [Android应用或界面启动时间性能](https://blog.csdn.net/hdandan2015/article/details/78519797)
 
@@ -327,32 +287,19 @@ SP优化
 
 [【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
-
-[Android 开发之 App 启动时间统计](https://www.jianshu.com/p/c967653a9468)
-
-[应用启动速度(Launch-Time)的优化](https://www.jianshu.com/p/56971f2cf0ec)
-
 性能优化
 http://hukai.me/
 [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。]()
 
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
 https://hujiaweibujidao.github.io/
 Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
 
 [一触即发 App启动优化最佳实践](https://zhuanlan.zhihu.com/p/23442027)
 
 [android面试题-App应用启动分析与优化](https://www.jianshu.com/p/f0f73fefdd43)
 
-[Activity到底是什么时候显示到屏幕上的呢？](http://blog.desmondyao.com/android-show-time/)
 
 [Android性能优化典范 - 第6季](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578016&idx=1&sn=d997d1142bac09e3764c075392468ae5&chksm=84b3b127b3c4383197c7d1cf15ecec44d66a1119b033ae383f9e2126bb1be0abc93416622dc0&scene=21#wechat_redirect)
-
 
 [写启动界面Splash的正确姿势,解决启动白屏](http://www.jianshu.com/p/cd6ef8d3d74d)
 
@@ -368,8 +315,3 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [Android应用启动界面分析（Starting Window）](http://blog.csdn.net/xueshanhaizi/article/details/51262528)
 [Android冷启动白屏解析，带你一步步分析和解决问题](http://blog.csdn.net/guolin_blog/article/details/51019856)
 [Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
-
-
-支付宝安卓客户端启动速度的优化工作 《垃圾回收篇》https://www.atatech.org/articles/62980
-
-通过优化Davild，抑制GC
