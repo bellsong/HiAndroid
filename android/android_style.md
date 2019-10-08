@@ -89,6 +89,129 @@ volatile关键字：
 行进行赋值操作，然后再写入主存当中）
 相关链接：http://www.cnblogs.com/dolphin0520/p/3920373.html
 
+
+Android性能优化Tips整理
+如何优化
+优化本身是一个很大的主题，对于Android平台优化可以为以下几部分：
+一是JAVA语法层次通用的优化，如尽量使用局部变量（栈变量），IO缓冲等。
+二是通用的Android性能优化，如同步改异步，各种缓存的使用等
+三是应用程序内部的性能优化，如内部逻辑、数据插入及查找、数据结构的安排与组织等
+
+一、JAVA语法层次的优化
+1. 类和对象使用技巧
+1.  尽量少用new生成新对象
+2.  使用clone方法生成新对象
+3.  尽量使用局部变量栈变量
+4.  减少方法调用
+5.  使用final类和final/static/private方法
+6.  让访问实例内变量的 getter/setter 方法变成final  
+7.  避免不需要的 instanceof 操作  
+8.  避免不需要的造型操作  
+9.  尽量重用对象
+10. 不要重复初始化变量  
+11. 不要过分创建对象
+2. Java IO技巧
+1.  使用缓冲提高IO性能
+2.  lnputStream比Reader高效，OutputStream比Writer高效
+3   在适当的时候用byte替代char
+4.  有缓冲的块操作IO要比缓冲的流字符IO快
+5.  序列化时使用原子类型
+6.  在finally块中关闭stream 
+7.  SQL语句
+8.  尽早释放资源
+3. 异常Exceptions使用技巧
+1.  避免使用异常来控制程序流程
+2.  尽可能重用异常
+3.  将trycatch 块移出循环  
+4. 线程使用技巧
+1.  在使用大量线程Threading的场合使用线程池管理
+2.  防止过多的同步
+3.  同步方法而不要同步整个代码段
+4.  在追求速度的场合用ArrayList和HashMap代替Vector和Hashtable
+5.  使用notify而不是notifyAll
+6.  不要在循环中调用 synchronized同步方法   
+7.  单线程应尽量使用 HashMap，ArrayList
+5. 其它常用技巧
+*   使用移位操作替代乘除法操作可以极大地提高性能
+*   对Vector中最后位置的添加删除操作要远远快于埘第一个元素的添加删除操作
+*   当复制数组时使用System.arraycop方法
+*   使用复合赋值运算符
+*   用int而不用其它基本类型
+*   在进行数据库连接和网络连接时使用连接池
+*   用压缩加快网络传输速度一种常用方法是把相关文件打包到一个jar文件中
+*   在数据库应用程序中使用批处理功能
+*   消除循环体中不必要的代码
+*   为vectors 和 hashtables定义初始大小  
+*   如果只是查找单个字符的话用charat代替startswith
+*   在字符串相加的时候使用 charat()代替startswith() 如果该字符串只有一个字符的话  
+*   对于 boolean 值避免不必要的等式判断  
+*   对于常量字符串用string 代替 stringbuffer   
+*   用stringtokenizer 代替 indexof 和substring  
+*   使用条件操作符替代if cond else  结构 
+*   不要在循环体中实例化变量  
+*   确定 stringbuffer的容量  
+*   不要总是使用取反操作符  
+*   与一个接口 进行instanceof 操作  
+*   采用在需要的时候才开始创建的策略  
+*   通过 StringBuffer 的构造函数来设定他的初始化容量可以明显提升性能  
+*   合理使用 javautilVector
+*   不要将数组声明为public static final
+*   HaspMap 的遍历
+*   array数组和 ArrayList 的使用  
+*   StringBufferStringBuilder 的区别
+*   尽量使用基本数据类型代替对象   
+*   用简单的数值计算代替复杂的函数计算比如查表方式解决三角函数问题  
+*   使用具体类比使用接口效率高但结构弹性降低了但现代 IDE都可以解决这个问题 
+*   考虑使用静态方法
+*   应尽可能避免使用内在的GET/SET 方法 
+*   避免枚举浮点数的使用   
+*   二维数组比一维数组占用更多的内存空间大概是 10倍计算 
+*   SQLite
+*   奇偶判断
+
+二、通用Android性能优化
+布局优化
+（原文参考：ImprovingLayout Performance）
+• 尽量减少Android程序布局中View的层次，View层次越多，效率就越低
+• 使用<include/>复用布局
+• 使用ViewStub懒加载布局 (TODO:Android布局技巧：使用ViewStub提高UI性能)
+• 使用ViewHolder、Thread使ListView滚动更加流畅
+其它优化点
+• 合理使用异步操作
+• 懒加载：当前不需要的数据，不要加载，即按需加载。懒加载的范围是广泛的，可以是数据，可以是View，或者其它
+• 使用缓存
+• 图片缓存：包括MemoryCache和DiskCache，推荐使用官方DEMO中的Cache
+参考：DisplayingBitmaps Efficiently
+• 单例数据缓存：建立一个管理数据的类，管理所有数据，当主界面消失后，由于Application本身没有实际退出，因此，数据本身也没有释放掉，下次启动时，省去了加载数据的时间，当然，这并不是一个好的行为。
+• 使用ListView、GridView的View缓存
+• 使用Message自身的缓存，避免重复创建Message实例
+• 线程池
+• 数据池（可参考Message Pool的实现方式）
+• ……
+• 数据库优化
+• SQL优化
+• 建立索引
+• 使用事务
+• …...
+• 算法优化
+• 用快速排序代替冒泡排序
+• 用二分查找代替线性查找
+• ……
+• 数据结构使用
+• 不要全部使用ArrayList，合理使用LinkedList等易于插入和删除的集合
+• 合理使用HashMap、HashSet来提高查找性能
+• 使用SparseArray、SparseIntArray、SparseBooleanArray来替代某些特定的HashMap
+• ……
+• 其它策略
+• 可以考虑延迟处理，避免在同一时间干过多的事情
+三、应用程序内部的性能优化
+该部分的优化应该是依据程序的不同而不同，没有万般皆准的法则，实际上，上述的性能优化点基本上已经能够解决很多性能问题了。
+主要的优化手段有：
+
+• 程序逻辑简化：分析代码，去掉冗余逻辑
+• 数据结构的优化：对集合类的灵活使用，特别是HashMap的使用，极大的提高查找性能。
+• 批量处理原则：对于需要循环调用地方，采用批量处理
+
 ## 参考
 
 * 阿里巴巴编码规范

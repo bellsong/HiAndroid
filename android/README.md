@@ -2,18 +2,6 @@
 
 ## Y Android 知识点
 
-### 基础篇
-#### 编码规范
-
-### 进阶篇
-### 高级篇
-#### 组件化
-#### 动态化
-#### 性能专项
-### 案例实践
-### 源码阅读
-#### 开源项目 
-
 ### 引言
 [自学入门](http://gityuan.com/2016/04/24/how-to-study-android/)
 
@@ -41,27 +29,27 @@
 
 #### [数据格式处理](./android_data.md)
 
-### [多线程](./android_thread.md)
+#### [多线程](./android_thread.md)
 
-### [进程](./android_process.md)
+#### [进程](./android_process.md)
 
-### [Android Fragment](./android_fragment.md) 
+#### [Android Fragment](./android_fragment.md) 
 
-### [动画](./android_animation.md)
+#### [动画](./android_animation.md)
 
-### [ViewPager](./android_viewpager.md)
+#### [ViewPager](./android_viewpager.md)
 
-### [RecyclerView](./android_recyclerview.md)
+#### [RecyclerView](./android_recyclerview.md)
 
-### [Andorid 事件分发机制](./android_event.md)
+#### [Andorid 事件分发机制](./android_event.md)
 
-### [Andorid 数据存储](./android_data.md)
+#### [Andorid 数据存储](./android_data.md)
 
-### [Android 稳定性 异常处理](./andorid_exception.md)
+#### [Android 稳定性 异常处理](./andorid_exception.md)
 
-### [Handler](./android_handler.md)
+#### [Handler](./android_handler.md)
 
-### [Android网络相关知识](./network/README.md)
+#### [Android网络相关知识](./network/README.md)
 
 ### 进阶篇
 
@@ -69,7 +57,7 @@
 
 #### [插件化](./android_pulgin.md)
 
-### [动态加载](./hotfix/README.md)
+#### [动态加载](./hotfix/README.md)
 
 #### [组件化](./android_module.md)
 
@@ -92,8 +80,6 @@
 [OpenGL](./android_opengl.md)
 
 ### [Android Architecture 架构](./Architecture/README.md)
-
-### [Programmer](./programmer.md)
 
 ### 编码规范
 * [编码规范](./android_style.md)
@@ -128,7 +114,6 @@
 
 #### [主题切换](./android_theme.md)
 
-
 #### [动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
 #### [Android Resource获取](./android_resource.md)
@@ -151,8 +136,9 @@
 
 #### [音频相关](./android_media.md)
 
-## Android Map  
+### [Programmer](./programmer.md)
 
+## Android Map  
 
 ![](./res/android_tool_2015.jpg)
 
@@ -173,5 +159,3 @@ READ MORE，
 WRITE MORE，
 THINK MORE，
 THEN TEACH.
-
-Talk is cheap,show me the code.

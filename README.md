@@ -19,7 +19,9 @@
 ### [Andorid 面试大全](./interview/README.md)
 
 ### 思想
-面向接口编程
+
+* 面向接口编程
+* 面向服务编程
 
 [设计模式](./designpattern/README.md)
 

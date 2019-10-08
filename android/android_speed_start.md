@@ -1,4 +1,4 @@
-## 启动速度优化专项
+## Android启动速度优化实战
 
 #### 现象
 #### 原理
@@ -7,92 +7,42 @@
 #### 原则
 
 #### 现象
-一般Android启动白屏
 
-在手指按下桌面图标的时候，先"静止"一段时间，然后再启动，而且中间一点白色的间隙也没有，又是为什么？
+用户接触App第一印象肯定是启动速度，如果启动速度慢则严重影响到App在用户心中的形象。因此手机启动速度是至关重要的，要求越快越好。
 
-启动分两种：冷启动 热启动
->
-1、冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用，这个启动方式就是冷启动。
+在CPU、内存以及IO的限制下，启动常见的问题有
 
-特点：冷启动因为系统会重新创建一个新的进程分配给它，所以会先创建和初始化application类，再创建和初始化MainActivity类（包括一系列的测量、布局、绘制），最后显示在界面上。
+1. 启动界面卡太久
 
-2、热启动：当启动应用时，后台已有该应用的进程（例：按back键、home键，应用虽然会退出，但是该应用的进程是依然会保留在后台，可进入任务列表查看），所以在已有进程的情况下，这种启动会从已有的进程中来启动应用，这个方式叫热启动。
+2. 点击App图标后进入首页白屏
 
-特点：热启动因为会从已有的进程中来启动，所以热启动就不会走application这步了，而是直接走MainActivity（包括一系列的测量、布局、绘制），所以热启动的过程只需要创建和初始化一个MainActivity就行了，而不必创建和初始化application，因为一个应用从新进程的创建到进程的销毁，application只会初始化一次。
+3. 从手指按下桌面图标开始，先"静止"一段时间，然后再启动，中间一点白色的间隙也没有
 
-既然上述问题不是出在application，那么肯定就是在Activity了，我是这么想的，然后我就想着是不是SetContentView的时候花了很多时间呢？然后我又测试了一遍：
+这其中的原因分别是什么呢？
 
----
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    long startTime = System.currentTimeMillis();
-    setContentView(R.layout.activity_start);
-    Log.d(TAG, "time===" + (System.currentTimeMillis() - startTime));
-}
+#### 原理
 
+App启动分两种：冷启动 热启动
 
-然后打印出来的时间是：
-time = 210
+1. 冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用，这个启动方式就是冷启动。
 
-果真是setContentView导致的，那就很好解决了,我们不要setContentView就好了，可能还有人要问了，你不要setContentView你咋加载布局呢？别急，别忘了还有theme这个好东西啊！我们可以定义一个theme，然后给theme设置背景就好了：
+    特点：冷启动因为系统会重新创建一个新的进程分配给它，所以会先创建和初始化application类，再创建和初始化MainActivity类（包括一系列的测量、布局、绘制），最后显示在界面上。
+
+2. 热启动：当启动应用时，后台已有该应用的进程（例：按back键、home键，应用虽然会退出，但是该应用的进程是依然会保留在后台，可进入任务列表查看），所以在已有进程的情况下，这种启动会从已有的进程中来启动应用，这个方式叫热启动。
+
+    特点：热启动因为会从已有的进程中来启动，所以热启动就不会走application这步了，而是直接走MainActivity（包括一系列的测量、布局、绘制），所以热启动的过程只需要创建和初始化一个MainActivity就行了，而不必创建和初始化application，因为一个应用从新进程的创建到进程的销毁，application只会初始化一次。
+
+上面说到的白屏或者“静止”的原因在于Activity的setContentView，可以通过定义一个theme，然后给theme设置背景解决。
+
+```java
 <style name="StartTheme" parent="AppTheme">
     <item name="android:windowBackground">@mipmap/icon_splash</item>
 </style>
+```
 
-注：setContentView的内部原理有兴趣的同学可以自己去百度看看，看看在哪里耗时了
+注：setContentView的内部原理有兴趣的可以去看一下源码，看看在哪里耗时了。
 
-提个建议：当初我也尝试过是这么做的，但有个问题，图片的内存会释放不掉，所以放在activity的super调用前，用流资源方式加载图片，设置到window的背景中去就好了
-
-* [胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
-
-#### 原理
-[Android 官方关于启动说明](https://developer.android.com/topic/performance/vitals/launch-time)
-[Android应用启动界面分析（Starting Window）](http://blog.csdn.net/xueshanhaizi/article/details/51262528)
-[Android冷启动白屏解析，带你一步步分析和解决问题](http://blog.csdn.net/guolin_blog/article/details/51019856)
-[Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
-
-#### 原则
-所以提高app的启动速度，加快Application的执行时间也是一个很重要的方面，这里我暂时总结了几条原则：
-
-* 尽量不将一些业务逻辑放于Application中；
-
-* Application尽量不以静态变量的方式保存应用数据；
-
-* 若App的大小不是特别大无需使用dex分包方案；
-
-* 在Application中关于文件，数据库的操作尽量
-
-### 参考
-
-#### 解决方案
-[写启动界面Splash的正确姿势,解决启动白屏](http://www.jianshu.com/p/cd6ef8d3d74d)
-
-[Android开发之解决APP启动白屏或者黑屏闪现的问题](http://blog.csdn.net/minimicall/article/details/39854969)
-
-[Android app启动时黑屏或者白屏的原因及解决办法](http://www.manongjc.com/article/1221.html)
-
-[Android 启动APP时黑屏白屏的三个解决方案](http://www.cnblogs.com/liqw/p/4263418.html)
-
-  * [冷启动秒开](http://www.jianshu.com/p/03c0fd3fc245)
-
-
-## 启动速度优化
-
-#### 原理
-#### 工具
-#### 方法
-#### 案例
-
-#### Android性能优化典范专题
-介绍了Android性能问题的底层工作原理，以及如何通过工具来找出性能问题和提升建议。
+《Android性能优化典范专题》介绍了Android性能问题的底层工作原理，以及如何通过工具来找出性能问题和提升建议。
 主要从三方面展开：Andorid的渲染机制、内存和GC，电量优化
 
 * 渲染性能
@@ -247,190 +197,43 @@ Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能�
 12)Tool – Memory Monitor
 Android Studio中的Memory Monitor可以很好的帮组我们查看程序的内存使用情况。
 
-我的原则
-每当处理或者排查性能问题的时候，我都遵循这些原则：
 
-持续测量： 用你的眼睛做优化从来就不是一个好主意。同一个动画看了几遍之后，你会开始想像它运行地越来越快。数字从来都不说谎。使用我们即将讨论的工具，在你做改动的前后多次测量应用程序的性能。
-使用慢速设备：如果你真的想让所有的薄弱环节都暴露出来，慢速设备会给你更多帮助。有的性能问题也许不会出现在更新更强大的设备上，但不是所有的用户都会使用最新和最好的设备。
-权衡利弊 ：性能优化完全是权衡的问题。你优化了一个东西 —— 往往是以损害另一个东西为代价的。很多情况下，损害的另一个东西可能是查找和修复问题的时间，也可能是位图的质量，或者是应该在一个特定数据结构中存储的大量数据。你要随时做好取舍的准备。
+#### 工具
 
-支付宝安卓客户端启动速度的优化工作 《垃圾回收篇》https://www.atatech.org/articles/62980
+#### 方法
 
-通过优化Davild，抑制GC
+1. 启动速度测量方法
 
+实用工具 TraceView
+分阶段排查，找出各个占用CPU的耗时点。
+注意点：
+整体的Trace，观察整个时间段情况。找出明显点耗时。
+分小段，多次。因为时间过长容易把耗时占比高的稀释掉。加上线程启动时间差等叠加原因都会对性能产生影响。
 
-原则：
-用户接触App第一印象肯定是启动速度，如果启动速度慢则严重影响到App在用户心中的形象。因此手机启动速度是至关重要的，要求越快越好。
+2. 优化思路
 
-阿里巴巴主客优化整体思路如下：
+    针对第一次启动优化：
 
-针对第一次启动优化：
-1.按开始初始化时间点进行分类：1.立即初始化(又分为两种，必须在UI线程里初始化，不必须在UI线程里初始化)，2.可以首页加载后初始化，3.可以在第一次调用时初始化
-2.欢迎界面提前初始化并展示
-3.profile查找性能瓶颈进行优化
+    1. 按开始初始化时间点进行分类：
+        
+        a. 立即初始化(又分为两种，必须在UI线程里初始化，不必须在UI线程里初始化)
+        
+        b. 可以首页加载后初始化
+        
+        c. 可以在第一次调用时初始化
+    
+    2. 欢迎界面提前初始化并展示
+    
+    3. profile查找性能瓶颈进行优化
 
-针对第二次启动优化:
-4.对首页数据进行缓存
-5.对网络请求支持AliEtag，返回304时则可以减少网络传输数据时间
+    针对第二次启动优化:
 
-
-Android性能优化Tips整理
-如何优化
-优化本身是一个很大的主题，对于Android平台优化可以为以下几部分：
-一是JAVA语法层次通用的优化，如尽量使用局部变量（栈变量），IO缓冲等。
-二是通用的Android性能优化，如同步改异步，各种缓存的使用等
-三是应用程序内部的性能优化，如内部逻辑、数据插入及查找、数据结构的安排与组织等
-
-一、JAVA语法层次的优化
-1. 类和对象使用技巧
-1.  尽量少用new生成新对象
-2.  使用clone方法生成新对象
-3.  尽量使用局部变量栈变量
-4.  减少方法调用
-5.  使用final类和final/static/private方法
-6.  让访问实例内变量的 getter/setter 方法变成final  
-7.  避免不需要的 instanceof 操作  
-8.  避免不需要的造型操作  
-9.  尽量重用对象
-10. 不要重复初始化变量  
-11. 不要过分创建对象
-2. Java IO技巧
-1.  使用缓冲提高IO性能
-2.  lnputStream比Reader高效，OutputStream比Writer高效
-3   在适当的时候用byte替代char
-4.  有缓冲的块操作IO要比缓冲的流字符IO快
-5.  序列化时使用原子类型
-6.  在finally块中关闭stream 
-7.  SQL语句
-8.  尽早释放资源
-3. 异常Exceptions使用技巧
-1.  避免使用异常来控制程序流程
-2.  尽可能重用异常
-3.  将trycatch 块移出循环  
-4. 线程使用技巧
-1.  在使用大量线程Threading的场合使用线程池管理
-2.  防止过多的同步
-3.  同步方法而不要同步整个代码段
-4.  在追求速度的场合用ArrayList和HashMap代替Vector和Hashtable
-5.  使用notify而不是notifyAll
-6.  不要在循环中调用 synchronized同步方法   
-7.  单线程应尽量使用 HashMap，ArrayList
-5. 其它常用技巧
-*   使用移位操作替代乘除法操作可以极大地提高性能
-*   对Vector中最后位置的添加删除操作要远远快于埘第一个元素的添加删除操作
-*   当复制数组时使用System.arraycop方法
-*   使用复合赋值运算符
-*   用int而不用其它基本类型
-*   在进行数据库连接和网络连接时使用连接池
-*   用压缩加快网络传输速度一种常用方法是把相关文件打包到一个jar文件中
-*   在数据库应用程序中使用批处理功能
-*   消除循环体中不必要的代码
-*   为vectors 和 hashtables定义初始大小  
-*   如果只是查找单个字符的话用charat代替startswith
-*   在字符串相加的时候使用 charat()代替startswith() 如果该字符串只有一个字符的话  
-*   对于 boolean 值避免不必要的等式判断  
-*   对于常量字符串用string 代替 stringbuffer   
-*   用stringtokenizer 代替 indexof 和substring  
-*   使用条件操作符替代if cond else  结构 
-*   不要在循环体中实例化变量  
-*   确定 stringbuffer的容量  
-*   不要总是使用取反操作符  
-*   与一个接口 进行instanceof 操作  
-*   采用在需要的时候才开始创建的策略  
-*   通过 StringBuffer 的构造函数来设定他的初始化容量可以明显提升性能  
-*   合理使用 javautilVector
-*   不要将数组声明为public static final
-*   HaspMap 的遍历
-*   array数组和 ArrayList 的使用  
-*   StringBufferStringBuilder 的区别
-*   尽量使用基本数据类型代替对象   
-*   用简单的数值计算代替复杂的函数计算比如查表方式解决三角函数问题  
-*   使用具体类比使用接口效率高但结构弹性降低了但现代 IDE都可以解决这个问题 
-*   考虑使用静态方法
-*   应尽可能避免使用内在的GET/SET 方法 
-*   避免枚举浮点数的使用   
-*   二维数组比一维数组占用更多的内存空间大概是 10倍计算 
-*   SQLite
-*   奇偶判断
-
-二、通用Android性能优化
-布局优化
-（原文参考：ImprovingLayout Performance）
-• 尽量减少Android程序布局中View的层次，View层次越多，效率就越低
-• 使用<include/>复用布局
-• 使用ViewStub懒加载布局 (TODO:Android布局技巧：使用ViewStub提高UI性能)
-• 使用ViewHolder、Thread使ListView滚动更加流畅
-其它优化点
-• 合理使用异步操作
-• 懒加载：当前不需要的数据，不要加载，即按需加载。懒加载的范围是广泛的，可以是数据，可以是View，或者其它
-• 使用缓存
-• 图片缓存：包括MemoryCache和DiskCache，推荐使用官方DEMO中的Cache
-参考：DisplayingBitmaps Efficiently
-• 单例数据缓存：建立一个管理数据的类，管理所有数据，当主界面消失后，由于Application本身没有实际退出，因此，数据本身也没有释放掉，下次启动时，省去了加载数据的时间，当然，这并不是一个好的行为。
-• 使用ListView、GridView的View缓存
-• 使用Message自身的缓存，避免重复创建Message实例
-• 线程池
-• 数据池（可参考Message Pool的实现方式）
-• ……
-• 数据库优化
-• SQL优化
-• 建立索引
-• 使用事务
-• …...
-• 算法优化
-• 用快速排序代替冒泡排序
-• 用二分查找代替线性查找
-• ……
-• 数据结构使用
-• 不要全部使用ArrayList，合理使用LinkedList等易于插入和删除的集合
-• 合理使用HashMap、HashSet来提高查找性能
-• 使用SparseArray、SparseIntArray、SparseBooleanArray来替代某些特定的HashMap
-• ……
-• 其它策略
-• 可以考虑延迟处理，避免在同一时间干过多的事情
-三、应用程序内部的性能优化
-该部分的优化应该是依据程序的不同而不同，没有万般皆准的法则，实际上，上述的性能优化点基本上已经能够解决很多性能问题了。
-主要的优化手段有：
-
-• 程序逻辑简化：分析代码，去掉冗余逻辑
-• 数据结构的优化：对集合类的灵活使用，特别是HashMap的使用，极大的提高查找性能。
-• 批量处理原则：对于需要循环调用地方，采用批量处理
-
-# 启动性能优化
-
-[Android 开发之 App 启动时间统计](https://www.jianshu.com/p/c967653a9468)
-
-[应用启动速度(Launch-Time)的优化](https://www.jianshu.com/p/56971f2cf0ec)
-
-性能优化
-http://hukai.me/
-[胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。]()
-
-[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
-
-[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
-
-https://hujiaweibujidao.github.io/
-Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
-
-[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
-
-[一触即发 App启动优化最佳实践](https://zhuanlan.zhihu.com/p/23442027)
-
-[android面试题-App应用启动分析与优化](https://www.jianshu.com/p/f0f73fefdd43)
-
-[Activity到底是什么时候显示到屏幕上的呢？](http://blog.desmondyao.com/android-show-time/)
-
-[Android性能优化典范 - 第6季](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578016&idx=1&sn=d997d1142bac09e3764c075392468ae5&chksm=84b3b127b3c4383197c7d1cf15ecec44d66a1119b033ae383f9e2126bb1be0abc93416622dc0&scene=21#wechat_redirect)
+    4. 对首页数据进行缓存
+    
+    5. 对网络请求支持AliEtag，返回304时则可以减少网络传输数据时间
 
 
-Android应用优化方案
-
-前言：
-
-前面两篇文章主要是讲关于activity、fragment生命周期方面的总结，这篇文章主要是总结在android应用开发过程的优化方案，还有一些常用的优化工具。优化的方向包括：启动速度、界面流畅性、内存使用情况、apk体积、耗电量、流量等方面。
-
-app启动速度
+优化方法
 
 1、通过style 设置一个默认的启动图来过度，从交互体验上来提高启动速度
 
@@ -441,36 +244,6 @@ app启动速度
 4、同工具DDMS中的TraceView来检测耗时的点在哪里，做针对的处理
 
 5、mainActivity的onCreate流程，特别是UI的布局与渲染操作，如果布局过于复杂很可能导致严重的启动性能问题；（可以考虑先把mainActivity需要的数据请求回来），根据首页的结构可以考虑懒加载。
-
-Android APP启动优化： wuxiaolong.me/2017/03/13/…
-
-App启动速度优化之耗时检测处理： www.jianshu.com/p/a0e242d57…
-
-使用 TraceView 找到卡顿的元凶： blog.csdn.net/u011240877/…
-
-上面的几篇文章基本上描述了应用的启动流程，如何优化白屏，检测耗时以及一些SDK的懒加载等等...
-
-
-启用问题和优化思路
-
-在CPU、内存以及IO的限制下，启动问题显得尤为严重。
-
-主要问题：
-1.启动界面卡太久
-2.进入首页白屏
-
-实用工具
-## TraceView
-分阶段排查，找出各个占用CPU的耗时点。
-注意点：
-整体的Trace，观察整个时间段情况。找出明显点耗时。
-分小段，多次。因为时间过长容易把耗时占比高的稀释掉。加上线程启动时间差等叠加原因都会对性能产生影响。
-
-一般占用CPU时间，需要留意的地方：
-1. 线程（一般用于初始化其他模块）
-2. 网络请求 
-3. 日志输出
-4. GC 可能引起GC的原因：主线程中字符串拼接和扩容，容器的遍历和扩容，inflate界面；网络线程和图片加载频繁分配Byte，图片解码，HashMap操作
 
 ## Threads
 分析线程情况，当前启动的线程以及执行情况
@@ -503,150 +276,32 @@ SP优化
 
 6. 功能降级
 
----
+7. 优化dex加载
+
+#### 原则
+
+提高app的启动速度，加快Application的执行时间也是一个很重要的方面，这里总结了几条原则：
+
+* 尽量不将一些业务逻辑放于Application中；
+
+* Application尽量不以静态变量的方式保存应用数据；
+
+* 若App的大小不是特别大无需使用dex分包方案；
+
+* 在Application中关于文件，数据库的操作尽量异步的方式
+
+每当处理或者排查性能问题的时候，遵循这些原则：
+
+持续测量： 用你的眼睛做优化从来就不是一个好主意。同一个动画看了几遍之后，你会开始想像它运行地越来越快。数字从来都不说谎。使用我们即将讨论的工具，在你做改动的前后多次测量应用程序的性能。
+使用慢速设备：如果你真的想让所有的薄弱环节都暴露出来，慢速设备会给你更多帮助。有的性能问题也许不会出现在更新更强大的设备上，但不是所有的用户都会使用最新和最好的设备。
+权衡利弊 ：性能优化完全是权衡的问题。你优化了一个东西 —— 往往是以损害另一个东西为代价的。很多情况下，损害的另一个东西可能是查找和修复问题的时间，也可能是位图的质量，或者是应该在一个特定数据结构中存储的大量数据。你要随时做好取舍的准备。
 
 
-#1、优化dex加载
-## 背景
-由于app的体量较大，超过了65536的天坑，于是我们的安装包被迫分为2个dex文件，第2个文件在第一次启动时会进行安装。（当然，这里暂不讨论为什么不精减到一个的问题，这是后面努力的方向），然而安装的过程在低端手机上惨不忍睹，普通需要4秒以上。我们的多DEX支持的代码是从Google官方的MultiDex和MultiDexExtractor中取出来的，那么这块是否还有优化空间了呢？
-[http://www.atatech.org/articles/56465/?frm=mail_daily&uid=130616](http://www.atatech.org/articles/56465/?frm=mail_daily&uid=130616)
-
-##现状
-经过分析，安装过程中比较耗时的有2个过程，一是把classes2.dex从apk中取出来的，然后以zip的形式保存在程序目录下面，这个过程为extract。
-
-private static void extract(ZipFile apk, ZipEntry dexFile, File extractTo,
-            String extractedFilePrefix) throws IOException, FileNotFoundException {
-
-        InputStream in = apk.getInputStream(dexFile);
-        ZipOutputStream out = null;
-        File tmp = File.createTempFile(extractedFilePrefix, EXTRACTED_SUFFIX,
-                extractTo.getParentFile());
-
-        TMLog.i(TAG, "Extracting " + tmp.getPath());
-        try {
-            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
-            out.setLevel(Deflater.BEST_SPEED);
-            try {
-                ZipEntry classesDex = new ZipEntry("classes.dex");
-                // keep zip entry time since it is the criteria used by Dalvik
-                classesDex.setTime(dexFile.getTime());
-                out.putNextEntry(classesDex);
-
-                byte[] buffer = new byte[BUFFER_SIZE];
-                int length = in.read(buffer);
-                while (length != -1) {
-                    out.write(buffer, 0, length);
-                    length = in.read(buffer);
-                }
-                out.closeEntry();
-            } finally {
-                out.close();
-            }
-            TMLog.i(TAG, "Renaming to " + extractTo.getPath());
-            if (!tmp.renameTo(extractTo)) {
-                throw new IOException("Failed to rename \"" + tmp.getAbsolutePath() +
-                        "\" to \"" + extractTo.getAbsolutePath() + "\"");
-            }
-        } finally {
-            closeQuietly(in);
-            tmp.delete(); // return status ignored
-        }
-    }
-
-
-
-二是对这个dex进行安装（系统优化），这个过程为install。目前的情况，我用两台低端手机各测三次，结果如下：(单位毫秒)
-
-手机1，TCL 
-06-14 17:46:48.073 24963-24963/com.tmall.wireless E/TTTT: extract time1873
-06-14 17:46:50.553 24963-24963/com.tmall.wireless E/TTTT: install time2477
-06-14 17:47:34.193 26517-26517/com.tmall.wireless E/TTTT: extract time1878
-06-14 17:47:35.883 26517-26517/com.tmall.wireless E/TTTT: install time1679
-06-14 17:48:35.193 28026-28026/com.tmall.wireless E/TTTT: extract time1960
-06-14 17:48:36.893 28026-28026/com.tmall.wireless E/TTTT: install time1698
-
-手机2，华为电信赠送机
-
-06-14 17:48:37.698 25220-25220/com.tmall.wireless E/TTTT: extract time2518
-06-14 17:48:41.158 25220-25220/com.tmall.wireless E/TTTT: install time3447
-06-14 18:02:49.658 10344-10344/com.tmall.wireless E/TTTT: extract time2168
-06-14 18:02:52.058 10344-10344/com.tmall.wireless E/TTTT: install time2396
-06-14 18:03:20.908 11684-11684/com.tmall.wireless E/TTTT: extract time2207
-06-14 18:03:23.138 11684-11684/com.tmall.wireless E/TTTT: install time2224
-
-classes2.dex.zip 文件大小为约为2.1M
-
-尝试一
-我们知道，PathClassLoader是可以加载zip, dex等文件，看上述源代码这一行：
-
-new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
-它是把文件流取出来又重新压缩，如果不经过压缩这一步，直接取出来就是dex，那是不是会快一点呢？
-动手尝试后，发现更慢了。原因在于SD卡的写入速度。原始的dex文件有5M多，而我这手机的SD卡的写入速度了10Mb/S，约为每秒1M的写入速度，实验数据太难看，就不发出来污大家眼了。
-
-尝试二
-有了前面的经验，我尝试对压缩的参数进行调整，
-
-            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
-            out.setLevel(Deflater.BEST_COMPRESSION);
-猜一下结果，
-
-TCL
-06-14 17:46:48.073 24963-24963/com.tmall.wireless E/TTTT: extract time2564
-06-14 17:46:50.553 24963-24963/com.tmall.wireless E/TTTT: install time2311
-06-14 17:47:34.193 26517-26517/com.tmall.wireless E/TTTT: extract time2870
-06-14 17:47:35.883 26517-26517/com.tmall.wireless E/TTTT: install time1899
-06-14 17:48:35.193 28026-28026/com.tmall.wireless E/TTTT: extract time2509
-06-14 17:48:36.893 28026-28026/com.tmall.wireless E/TTTT: install time1769
-
-华为手机
-06-14 17:43:28.883 20248-20248/com.tmall.wireless E/TTTT: extract time4015
-06-14 17:43:30.983 20248-20248/com.tmall.wireless E/TTTT: install time2099
-06-14 17:44:01.123 21681-21681/com.tmall.wireless E/TTTT: extract time3703
-06-14 17:44:02.803 21681-21681/com.tmall.wireless E/TTTT: install time1676
-06-14 17:44:26.623 22339-22339/com.tmall.wireless E/TTTT: extract time3626
-06-14 17:44:28.243 22339-22339/com.tmall.wireless E/TTTT: install time1613
-
-classes2.dex.zip 文件大小为约为2.1M
-
-根本原因是压缩花了大量的时间，文件大小几乎没变！
-
-尝试三
-            out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)));
-            out.setLevel(Deflater.BEST_SPEED);
-时间数据如下：
-
-TCL
-06-14 17:30:44.152 12719-12719/com.tmall.wireless E/TTTT: extract time924
-06-14 17:30:45.762 12719-12719/com.tmall.wireless E/TTTT: install time1605
-06-14 17:31:35.252 14335-14335/com.tmall.wireless E/TTTT: extract time865
-06-14 17:31:37.072 14335-14335/com.tmall.wireless E/TTTT: install time1821
-06-14 17:32:44.102 16292-16292/com.tmall.wireless E/TTTT: extract time838
-06-14 17:32:45.782 16292-16292/com.tmall.wireless E/TTTT: install time1675
-
-华为
-
-06-14 17:33:31.285 10842-10842/com.tmall.wireless E/TTTT: extract time1028
-06-14 17:33:34.045 10842-10842/com.tmall.wireless E/TTTT: install time2155
-06-14 17:34:07.255 12350-12350/com.tmall.wireless E/TTTT: extract time985
-06-14 17:34:09.515 12350-12350/com.tmall.wireless E/TTTT: install time2357
-06-14 17:34:46.095 13734-13734/com.tmall.wireless E/TTTT: extract time1020
-06-14 17:34:48.425 13734-13734/com.tmall.wireless E/TTTT: install time2030
-
-classes2.dex.zip文件大小约为2.28M
-
-可以看出，在install时间波动不大的情况下，解压的时间缩短了约1s的样子，使得安装第2个dex的整体时间从4到5s降低到3到4s，虽然结果还是很难看，但也算有20%到25%的提升。。。。
-
-为了追求解压速度与SD卡写入速度的一个平衡，要求速度足够快，文件又不能太大。这就需要综合了解了Deflater算法，从网上抠了别人的测试结果。
-
-时间图：
-
-压缩数据图：
-7bfc85c0d74ff05806e0b5a0fa0c1df1
-
-由此可以看出，BEST_COMPRESS(值为9）需要的时间最久，效果也最好，BEST_SPEED(1)最快，效果看起来是最差。但是要考虑到IO的吞吐性能与时间的综合因素，压缩参数321的收益是最大的，我考虑到移动处理器较慢的影响，最后使用了BEST_SPEED来作为程序参数。
-
-结论
-压缩是程序中经常会用到的算法，包括处理网络协议，图片，文件等，这时我们要选择适当的压缩算法，调整适当的参数，才能让算法的收益达到最大。同时，我们也要对默认参数保持足够多的警戒心。
+一般占用CPU时间，需要留意的地方：
+1. 线程（一般用于初始化其他模块）
+2. 网络请求 
+3. 日志输出
+4. GC 可能引起GC的原因：主线程中字符串拼接和扩容，容器的遍历和扩容，inflate界面；网络线程和图片加载频繁分配Byte，图片解码，HashMap操作
 
 ## 参考
 
@@ -663,3 +318,58 @@ classes2.dex.zip文件大小约为2.28M
 [【Android端 APP 启动时长获取】启动时长获取方案及具体实施](https://www.cnblogs.com/keke-xiaoxiami/p/6180563.html)
 
 [Android应用或界面启动时间性能](https://blog.csdn.net/hdandan2015/article/details/78519797)
+
+[胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章](http://hukai.me/)
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
+
+
+[Android 开发之 App 启动时间统计](https://www.jianshu.com/p/c967653a9468)
+
+[应用启动速度(Launch-Time)的优化](https://www.jianshu.com/p/56971f2cf0ec)
+
+性能优化
+http://hukai.me/
+[胡凯，腾讯开发者，翻译了一系列的Google Android性能优化典范的文章。]()
+
+[Android性能优化（一）之启动加速35%](https://juejin.im/post/5874bff0128fe1006b443fa0)
+
+[应用程序启动速度提升60% !](https://juejin.im/entry/5b8134cdf265da434a1fce4b?utm_source=gold_browser_extension)
+
+https://hujiaweibujidao.github.io/
+Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集统计的相关的文章，本人受益匪浅。
+
+[【掌阅出品】android 提升布局加载速度200%（X2C）](https://www.jianshu.com/p/c1b9ce20ceb3)
+
+[一触即发 App启动优化最佳实践](https://zhuanlan.zhihu.com/p/23442027)
+
+[android面试题-App应用启动分析与优化](https://www.jianshu.com/p/f0f73fefdd43)
+
+[Activity到底是什么时候显示到屏幕上的呢？](http://blog.desmondyao.com/android-show-time/)
+
+[Android性能优化典范 - 第6季](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653578016&idx=1&sn=d997d1142bac09e3764c075392468ae5&chksm=84b3b127b3c4383197c7d1cf15ecec44d66a1119b033ae383f9e2126bb1be0abc93416622dc0&scene=21#wechat_redirect)
+
+
+[写启动界面Splash的正确姿势,解决启动白屏](http://www.jianshu.com/p/cd6ef8d3d74d)
+
+[Android开发之解决APP启动白屏或者黑屏闪现的问题](http://blog.csdn.net/minimicall/article/details/39854969)
+
+[Android app启动时黑屏或者白屏的原因及解决办法](http://www.manongjc.com/article/1221.html)
+
+[Android 启动APP时黑屏白屏的三个解决方案](http://www.cnblogs.com/liqw/p/4263418.html)
+
+[冷启动秒开](http://www.jianshu.com/p/03c0fd3fc245)
+
+[Android 官方关于启动说明](https://developer.android.com/topic/performance/vitals/launch-time)
+[Android应用启动界面分析（Starting Window）](http://blog.csdn.net/xueshanhaizi/article/details/51262528)
+[Android冷启动白屏解析，带你一步步分析和解决问题](http://blog.csdn.net/guolin_blog/article/details/51019856)
+[Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
+
+
+支付宝安卓客户端启动速度的优化工作 《垃圾回收篇》https://www.atatech.org/articles/62980
+
+通过优化Davild，抑制GC
