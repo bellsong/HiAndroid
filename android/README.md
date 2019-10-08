@@ -73,6 +73,8 @@
 
 ### [Handler](./android_handler.md)
 
+### [Android网络相关知识](./network/README.md)
+
 ### 进阶篇
 
 #### [性能优化专项](./android_optimize.md)
@@ -89,7 +91,7 @@
 
 #### [图片加载框架](./andorid_imageloader.md)
 
-#### [推动](./android_push.md)
+#### [推送](./android_push.md)
 
 #### 安全
 
@@ -109,67 +111,6 @@
 
 #### [拍摄相关](./android_camera.md)
 
-#### 黑科技
-[Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
-
-[AD SDK](./market/android_4_ad_sdk.md)
-
-### Public
-
-[开放通用Api](https://github.com/MZCretin/RollToolsApi)
-
-[发布开源库](http://blog.chengdazhi.com/index.php/217?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-
-[From @author 张兴业 http://blog.csdn.net/xyz_lmn](http://blog.csdn.net/xyz_lmn/article/details/41411355)
-
-[jsoup爬虫获取数据](http://blog.csdn.net/qq_30379689/article/details/55005796)
-
-### 支付
-
-[Android快速集成微信支付](http://sunzq1993.com/2017/02/17/Android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/)
-
-# Doc
-
-[国内Top500Android应用分析报告](http://mp.weixin.qq.com/s?__biz=MzA5OTMxMjQzMw==&mid=2648112527&idx=1&sn=b23c1b5f3e32e343ad96d705bd4d63ff&scene=2&srcid=0711GL3B90iyRPmjRKTBN1I0&from=timeline&isappinstalled=0#wechat_redirect)
-
-[面试感悟：一名3年工作经验的程序员应该具备的技能](http://mp.weixin.qq.com/s?__biz=MzI1MTA3Mzk4Mg==&mid=2651020152&idx=1&sn=31706c082faf35c74a5ac29efbbbc3aa&chksm=f20f7fa9c578f6bfab1d34c8a264541e625b0a0c8ce4a1900549d62e7f0309647eab7168ecd1&mpshare=1&scene=1&srcid=0217VZ9RuHDTbYXKHfJcOELH#rd)
-
-[Android消息机制—sdk源码解读之旅](https://zhuanlan.zhihu.com/p/25222485?utm_source=gank.io&utm_medium=email&refer=levent-j)
-
-
-[Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
-
-[提高代码质量－工具篇](http://www.atatech.org/articles/58486)
-
-
-[EasyAdapter for Android 高效列表开发解决方案](http://www.atatech.org/articles/57535)
-
-[Android解决ImageSpan不居中的问题](http://www.atatech.org/articles/57158)
-
-[Android上使用SVG矢量图](http://www.atatech.org/articles/56499)
-
-[BlockCanary — 轻松找出Android App界面卡顿元凶](http://www.atatech.org/articles/56493)
-
-[简单的安卓monkey测试脚本](http://www.atatech.org/articles/56363)
-
-[Android 方法数杂谈](http://www.atatech.org/articles/56219)
-
-[Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
-
-[Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
-
-[无痕换肤的实现方案 for Android](http://www.atatech.org/articles/24389)
-
-[DumpTool----操作Android app 私有文件的利器！](http://www.atatech.org/articles/55926)
-
-[Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
-
-[Android Plugin](./android_pulgin.md)
-
-[Android Accessibility](./Accessibility/android_accessibility.md)
-
-[高斯模糊](./andorid_blur.md)
-
 ### 编码规范
 * [编码规范](./android_style.md)
 
@@ -177,143 +118,62 @@
 * [adb](./android_adb.md)
 * [Android 工具](http://www.androiddevtools.cn/)
 
-[【FreeBuf年终策划】2017年最好用的Android渗透工具合集](http://www.freebuf.com/sectool/124507.html)
-
-[Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
-
-https://github.com/zzz40500/GsonFormat
-根据JSON数据快速生成Java实体类，又一波解放生产力。
-
-### android SDK
-https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
-
-### 伟大的 SDK Fabric SDK
-易用、稳定、轻巧、灵活，很好的支持
-Easy to Use
-Stable
-LightWeight
-Flexable
-WellSupport
-
-[Design of Android application for developers, what is your favorite approach?](https://medium.com/@lolevsky/design-of-android-application-for-developers-what-is-your-favorite-approach-d16e23cf2ce3#.ur3cqnbum)
-
-SuperToasts
-
-拥有的不过是岁月留下来的经验，而不是智慧。
-
-
-### 分辨率适配
-[（全解析）屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
-
 ### 单元测试
 [在Android Studio中进行单元测试和UI测试](http://www.jianshu.com/p/03118c11c199)
 
-### 工具
-[ADB](./awesome_adb/README.md)
-
-### 发布
-[发布Android studio项目到本地Maven仓库](http://www.jianshu.com/p/8d7d0cc8fcc3)
-[Android Studio发布库到Jcenter并推送到Maven Central最新超级详细!!!](http://www.jianshu.com/p/fb1e0fb2d966)
-[Android Studio提交库至Bintray jCenter从入门到放弃](http://www.jianshu.com/p/31410d71eaba#)
+### [发布](./android_publish.md)
 
 ### [Android Architecture 架构](./Architecture/README.md)
 
 ### [开源项目](./android_open_source.md)
 
-### 产品
-[如何用一周时间开发一款Android APP并在Google Play上线](http://www.jianshu.com/p/b08e3ef22bce)
-[从零开始开发一款Android App](http://www.jianshu.com/p/a58d15ef5c8b)
-[干货IO](http://www.jianshu.com/p/d92258d76f7e?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-[我的第一款全栈side project](http://www.jianshu.com/p/39dce598faf1)
-[开发一个简易的干货客户端](http://www.jianshu.com/p/fbfb666bad31)
-[我的吱吱：视频图片新闻应用](http://www.jianshu.com/p/e2a8c34932a6)
-[如何在没有官方API的情况下写一个第三方客户端](http://www.jianshu.com/p/b235773063e3)
-[[干货]如何在一天之内完成一款具备cool属性的Android产品<简诗>](http://www.jianshu.com/p/cf496fc408b2)
-[一个27岁零基础无业游民的第一个开源作品](http://www.jianshu.com/p/aef225ae1502?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-[「daza.io」这将是我独立完成全端开发的项目](http://www.jianshu.com/p/0b6e630e5cf2?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+### [产品](../prd/README.md)
 
-### 开发资源
+### [开发资源](android_source.md)
 
-[GitHub 上优质项目整理](https://juejin.im/post/5cc56099e51d456e8a12f01f?utm_source=gold_browser_extension)
+### 源码阅读
+[Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
+[Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
 
-[2017年初你绝对想尝试的25个新安卓库](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0216/7122.html)
+## 常见问题通用解决方案
 
-[我是如何自学Android，资料分享（2015 版）](http://www.jianshu.com/p/874ff12a4c01)
-[Android最全开发资源](http://www.jianshu.com/p/0c36302e0ed0?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+### [Android Accessibility](./Accessibility/android_accessibility.md)
 
-[为开发者准备的最佳 Android 函数库（2016年版）](http://www.jianshu.com/p/3baf4b4f34b6)
+### [高斯模糊](./andorid_blur.md)
 
-[有赞移动技术团队](https://youzanmobile.github.io/)
+### [主题切换](./android_theme.md)
 
-[途牛App](https://mp.weixin.qq.com/s/CfPlVKElv2SshAbfzHfRhg)
+### [Android Resource获取](./android_resource.md)
 
-[美团点评技术团队](http://tech.meituan.com/)
+### [日志](./android_log.md)
 
-[底层原理](http://qiangbo.space/)
+### [悬浮窗](./android_floatwindow.md)
 
-[Android架构学习](http://qiangbo.space/2016-09-05/AndroidAnatomy_Introduction/)
+### [图片颜色提取 Android Palette](./android_case.md)
 
-[深入理解ServiceManager](https://pqpo.me/2017/04/26/learn-servicemanager/)
-
-[深入理解MessageQueue](https://pqpo.me/2017/05/03/learn-messagequeue/)
-
-[Android 模块化探索与实践](http://baronzhang.com/blog/Framework/Android-%E6%A8%A1%E5%9D%97%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5/)
-
-[Android事件分发机制源码解析](http://allenfeng.com/2017/02/22/android-touch-event-transfer-mechanism/)
-
-[2017年Android百大框架排行榜](http://www.cnblogs.com/jincheng-yangchaofan/articles/7018780.html)
-
-[花了 6 个月整理了 100 篇 Android 干货文章](https://juejin.im/post/598d1a0d6fb9a03c350a64c8?utm_source=gold_browser_extension)
-
-[Android 开发工程师进阶指南：深入研究 Android 系统开篇](https://xiaozhuanlan.com/topic/0185629347)
-如何准确的描述一个问题。搜索。有用资讯。决策。
-
-
-### 其他
+### 分辨率适配
+[（全解析）屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
 
 [[Android]动态更换应用Icon](http://www.jianshu.com/p/eecfd9e0b878)
 
-### [Android网络相关知识](./network/README.md)
+### [Android卸载监听实现](http://www.jianshu.com/p/189e319a5c45)
 
-### [Resource](./android_resource.md)
+### [AD SDK](./market/android_4_ad_sdk.md)
 
-[ButterKnife](http://jakewharton.github.io/butterknife/)
+### android SDK
+https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
+
+## 生产效能
+
+#### [android studio快捷键盘](./android_keymap.md)
+
+### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
 
 ![](./res/android_tool_2015.jpg)
 
 ### 总结归纳
 [随想录:开发一流Android SDK](http://blog.csdn.net/dd864140130/article/details/53558011)
 [android日常开发总结的技术经验60条](http://www.vmatianyu.cn/summarization-of-technical-experience.html)
-
-### 案例实践
-[图片颜色提取 Android Palette](./android_case.md)
-
-### 源码阅读
-[Android LayoutInflater](https://www.jianshu.com/p/f0f3de2f63e3)
-[Android LayoutInflater Factory 源码解析](https://juejin.im/post/5b52ee765188251b176a666d)
-
-#### 体系
-[蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
-
-
-# 主题切换
-[Android App切换主题的实现原理剖析](https://blog.csdn.net/watertekhqx/article/details/51320515)
-
-## 常见问题通用解决方案
-
-### [日志](./android_log.md)
-
-### [悬浮窗](./android_floatwindow.md)
-
-### 生产效能
-
-#### [android studio快捷键盘](./android_keymap.md)
-
-### [Android：MediaSession框架介绍](https://www.oschina.net/question/2561862_2150611)
-
-# KEY WORD
-
-推荐引擎 作用？实现？
 
 ![](./res/android_path.png)
 

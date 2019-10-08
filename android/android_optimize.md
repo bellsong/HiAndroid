@@ -34,6 +34,10 @@
 
 * [网络流量优化专项](./android_network_flow.md)
 
+
+#### 体系
+[蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
+
 #### 检测工具
 
 [Android性能测试工具列表](https://zmywly8866.github.io/2015/09/09/android-performance-tools.html)

@@ -655,3 +655,11 @@ classes2.dex.zip文件大小约为2.28M
 [Android性能优化笔记（一）——启动优化](https://juejin.im/post/5c21ea325188254eaa5c45b1)
 
 [Android 性能优化之启动优化](https://juejin.im/post/5d82020cf265da03d21176cb?utm_source=gold_browser_extension)
+
+[Android：获取APP启动时间的踩坑经历](https://www.jianshu.com/p/c20743a0650e)
+
+[App启动时间（翻译）](https://juejin.im/post/5bb082675188255ca1538e0e)
+
+[【Android端 APP 启动时长获取】启动时长获取方案及具体实施](https://www.cnblogs.com/keke-xiaoxiami/p/6180563.html)
+
+[Android应用或界面启动时间性能](https://blog.csdn.net/hdandan2015/article/details/78519797)

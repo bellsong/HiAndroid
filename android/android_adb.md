@@ -3047,3 +3047,7 @@ adb shell am broadcast -a NotifyServiceStop
 adb forward tcp:12580 tcp:10086
 
 adb shell am broadcast -a NotifyServiceStart
+
+## 参考
+
+awesome_adb
