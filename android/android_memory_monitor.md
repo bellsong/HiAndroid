@@ -1,4 +1,93 @@
-### 内存概述
+### Andorid 内存监控
+
+
+### Linux内存基础
+
+Android 内存是如何统计的？Android系统基于Linux内核，而Linux中内存统计两个重要文件是
+
+1. /proc/meminfo 每个字段的含义可见 https://www.kernel.org/doc/Documentation/filesystems/proc.txt
+
+2. /proc/[pid]/smaps
+
+#### 内存明细
+
+1. /proc/meminfo 每个字段的含义可见 https://www.kernel.org/doc/Documentation/filesystems/proc.txt
+
+```
+MemTotal:        1009388 kB 总内存，物理内存减去系统预留内存和内核二进制代码
+MemFree:           57936 kB 空闲内存 
+MemAvailable:     441184 kB 可用内存
+Buffers:           24208 kB 磁盘数据缓存
+Cached:           375852 kB 文件数据缓存，一个文件不再跟进程关联后，原来在page cache的页面并不回收，被记入Cached
+SwapCached:        20052 kB
+Active:           383668 kB 最近被访问过的内存页
+Inactive:         283188 kB 长时间未被访问过的内存页
+Active(anon):     109180 kB 活跃的anonymous pages（匿名页）
+Inactive(anon):   162104 kB 不活跃的anonymous pages
+Active(file):     274488 kB 活跃的file-backed pages （与文件对应的内存页）
+Inactive(file):   121084 kB 不活跃的file-backed pages（与文件对应的内存页）
+Unevictable:        2016 kB 
+Mlocked:             332 kB
+HighTotal:        498432 kB
+HighFree:          18684 kB
+LowTotal:         510956 kB
+LowFree:           39252 kB
+SwapTotal:        403748 kB
+SwapFree:         338904 kB
+Dirty:                40 kB
+Writeback:             0 kB
+AnonPages:        267724 kB 用户进程的内存页分两种：file-backed pages(与文件对应的内存页) 和 anonymous pages（匿名页，主要是堆和栈内存）
+Mapped:           204736 kB
+Shmem:              2804 kB
+Slab:              55996 kB
+SReclaimable:      23144 kB
+SUnreclaim:        32852 kB
+KernelStack:        8840 kB
+PageTables:        18192 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      908440 kB
+Committed_AS:   18203240 kB
+VmallocTotal:     499712 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB 
+
+```
+
+2. /proc/[pid]/smaps
+
+linux 通过proc文件每一个进程都提供一个smaps文件，里面的每一条记录表示进程虚拟内存空间中一块连续的区域。
+从第一行左边到右边意识表示地址范围、权限标识、映射文件偏移，设备号，inode，文件路径。
+
+* Size： 表示该映射区在虚拟内存空间中的大小
+* Rss： 表示该映射区当前在物理内存中占用空间大小
+* Pss： 表示虚拟内存区域按比例平摊计算后的物理内存大小（有些内存会和其他进程共享，例如mmap），将smaps文件中所有的Pss字段加起来就是这个进程占用总的Pss内存
+* Shared_Clean：和其他进程共享的未被改写page的大小
+* Shared_Dirty：和其他进程共享的被改写的page的大小，通过copy-on-write的方式，共享的堆栈，例如Zyote堆内存与其fork出来的其他APP进程间共享内存
+* Private_Clean:未被改写的私有页面大小
+* Private_Dirty:已被改写的私有页面大小
+
+### Android 内存基础
+
+  https://developer.android.com/topic/performance/memory-overview
+
+Android上查看系统内存占用情况
+
+  adb dumpsys meminfo -a 
+
+### 分析工具
+
+1. Java层 AndroidStudio的Memory Profiler
+2. Native堆内存分析工具   
+
+  https://source.android.com/devices/tech/debug/native-memory
+
+### 数据收集 
+  
+  需要关注的内存指标 PSS，系统剩余内存，已用内存
+
+
 
 | Name        | Full Name    |  含义  | 等价	|
 | --------   | -----:   | :----: |:----:|
@@ -9,7 +98,6 @@
 
 > 内存大小关系 USS <= PSS <= RSS <= VSS
 
-
 ###  内存的查看方法
 1. dumpsys meminfo
 2. procrank
@@ -17,6 +105,7 @@
 4. free
 5. showmap
 6. vmstat
+7. adb shell kill -QUIT PID 生成anr traces文件,名称一般是trace_xx，在data/anr目录下，包含了GC的统计信息
 
 #### 详细介绍
 1. dumpsys meminfo
@@ -289,7 +378,7 @@ showmap适用场景： 查看进程的虚拟地址空间的内存分配情况；
 
 vmstat适用场景： 周期性地打印出进程运行队列、系统切换、CPU时间占比等情况；
 
-### 运行时内存📱
+### 运行时内存
 
 ```java
 private void getMemoryInfo() {

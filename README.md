@@ -51,7 +51,7 @@
 
 ### Market
 * Google
-* 国内各大应用市场
+* 华为、OPPO、小米国内各大应用市场
 
 ### 商业变现
 * Facebook
