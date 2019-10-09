@@ -10,18 +10,17 @@
 
 ### [Android Jetpack](./AndroidJetpack/README.md)
 
-### [Android 源码](./SOURCE/README.md)
+### [Android 源码](./SOURCE/README.md) 
 
 ### [Android NDK](./ndk/README.md)
 
 ### [流程规范](./standard/README.md)
 
+### [代码Review Code Review](./standard/code_review.md)
+
 ### [Andorid 面试大全](./interview/README.md)
 
-### 思想
-
-* 面向接口编程
-* 面向服务编程
+### [思维方式训练](./think/README.md)
 
 [设计模式](./designpattern/README.md)
 
