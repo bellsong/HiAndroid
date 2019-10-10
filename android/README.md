@@ -3,6 +3,7 @@
 ## Y Android 知识点
 
 ### 引言
+
 [自学入门](http://gityuan.com/2016/04/24/how-to-study-android/)
 
 ### [基础篇](./java/README.md)
@@ -54,6 +55,8 @@
 ### 进阶篇
 
 #### [性能优化专项](./android_optimize.md)
+
+#### [andorid性能优化思考](./android_optimize_think.md)
 
 #### [插件化](./android_pulgin.md)
 

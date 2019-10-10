@@ -448,7 +448,7 @@ PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this,
 * [WPAndroidPermissions](https://github.com/webpartners/WPAndroidPermissions)
 
 
-##参考
+## 参考
 
 [Android 6.0运行时权限完全解析](http://aaronchansunny.github.io/2016/03/05/AndroidRuntimePermissions/)
 
@@ -469,5 +469,3 @@ PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this,
 [在Android 6.0 设备上动态获取权限](http://gudong.name/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html)
 
 [Android M 新的运行时权限开发者需要知道的一切](http://jijiaxin89.com/2015/08/30/Android-s-Runtime-Permission/)
-
-[Android 新权限系统，及使用AOP进行适配](http://www.atatech.org/articles/57176)

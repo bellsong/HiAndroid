@@ -101,8 +101,6 @@ Android 内存优化总结&实践
 
 [Android - 利用LeakCanary检测内存泄露](http://cashow.github.io/android-detect-out-of-memory-with-leakcanary.html)
 
-[如何写一个匿名内部类，而又不引起内存泄漏](http://www.atatech.org/articles/58280)
-
 [Android -> 如何避免Handler引起内存泄露](http://blog.csdn.net/feelang/article/details/39059705)
 [避免Android中Context引起的内存泄露](http://blog.csdn.net/boyupeng/article/details/46503221)
 

@@ -117,14 +117,5 @@ android gradle plugin 3.3.0需在项目的 gradle.properties 里加上：android
 
 [美团Android 资源混淆保护实践](http://tech.meituan.com/mt-android-resource-obfuscation.html)
 
-[APK瘦身记](http://www.atatech.org/articles/51081)
-
-[Android客户端方法数精简的尝试](http://www.atatech.org/articles/57128)
-
 [Android APK 瘦身 - JOOX Music项目实战](https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg)
-
-[优化dex文件方法数超65535的一种思路](http://www.atatech.org/articles/55152)
-
-[Facebook Android Dex优化工具ReDex初探](http://www.atatech.org/articles/53348)
-
 

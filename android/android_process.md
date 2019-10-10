@@ -172,14 +172,20 @@ public class TempService extends Service {
 
 有了这两个服务之后，你会惊奇的发现在后台之后oom_adj的值为1.其优先级则紧次于前台进程，又不会很流氓的霸占内存，又没有额外的守护进程开销，算是一种比较优雅的保活方式之一。
 
+## 杀进程方法
+
+1. forceStopPackage
+
+1. killBackgroundProcesses
+
+1. removeTask
+
+
+
 
 ## 参考
 
-* [进程保活](http://www.atatech.org/articles/54730/?frm=mail_week)
-
-* [Android中杀进程的几种方法 (1) - killBackgroundProcesses](http://www.atatech.org/articles/57816)
-
-* [进程保活](http://www.atatech.org/articles/55546)
+* [进程保活](https://segmentfault.com/a/1190000006251859)
 
 * [Android 进程保活](./android_process.md)
 

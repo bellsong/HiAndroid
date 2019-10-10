@@ -1,5 +1,7 @@
 # [HiAndroid](https://github.com/bellsong/HiAndroid)
 
+## Android技术
+
 ### [Android Explore](./android/README.md)    
 
 ### [Android 100问](./QA/README.md)
@@ -16,21 +18,28 @@
 
 ### [流程规范](./standard/README.md)
 
+## 编程思想
+
+[设计模式](./designpattern/README.md)
+
+## 程序员修炼
+
+### [思维方式训练](./think/README.md)
+
+
+## 流程规范
+
 ### [代码Review Code Review](./standard/code_review.md)
 
 ### [Andorid 面试大全](./interview/README.md)
 
-### [思维方式训练](./think/README.md)
-
-[设计模式](./designpattern/README.md)
-
-### 行业趋势
+## 行业趋势
 
 * [小程序](./miniprogram/README.md)
 
 * 人工智能
 
-### 行业资讯
+## 行业资讯
 
 * 掘金
 
@@ -46,7 +55,7 @@
 
 ### 优秀 App
 
-1. [最美应用](http://zuimeia.com/?platform=2)
+1. [最美应用](http://zuimeia.com)
 
 ### Market
 * Google

@@ -4,10 +4,7 @@
 
 [Android Studio](http://jiangbing.me/2016/01/27/2016-01-27-android-studio-preview/)
 
-[Android Studio 2.2 Preview 1 新版速递](http://www.atatech.org/articles/55296/?frm=mail_daily&uid=130616)
-
 [Android Studio每日小技巧](http://www.jianshu.com/p/a40fc225c337)
-
 
 ##TraceView
 [Android 编程下的 TraceView 简介及其案例实战](http://www.cnblogs.com/622698abc/p/5525473.html)

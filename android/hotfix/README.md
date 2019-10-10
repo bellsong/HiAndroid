@@ -9,6 +9,4 @@
 [美团动态加载框架](http://tech.meituan.com/mt-android-auto-split-dex.html)
 [Android热更新方案Robust](http://tech.meituan.com/android_robust.html)
 
-[Android热修复升级探索——追寻极致的代码热替换](http://www.atatech.org/articles/72533)
-
 [Android Classloader热修复技术之百家齐放](http://blog.csdn.net/sbsujjbcy/article/details/51760578)

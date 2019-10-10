@@ -81,25 +81,8 @@ SuperToasts
 
 [Android App 沉浸式状态栏解决方案](http://jaeger.itscoder.com/android/2016/02/15/status-bar-demo.html)
 
-[提高代码质量－工具篇](http://www.atatech.org/articles/58486)
-
-[EasyAdapter for Android 高效列表开发解决方案](http://www.atatech.org/articles/57535)
-
-[Android解决ImageSpan不居中的问题](http://www.atatech.org/articles/57158)
-
-[Android上使用SVG矢量图](http://www.atatech.org/articles/56499)
-
-[BlockCanary — 轻松找出Android App界面卡顿元凶](http://www.atatech.org/articles/56493)
-
-[简单的安卓monkey测试脚本](http://www.atatech.org/articles/56363)
-
-[Android 方法数杂谈](http://www.atatech.org/articles/56219)
 
 [Android魔镜：方法耗时统计插件Mirror-基础篇](https://juejin.im/post/5bce85e9e51d457b7c3e6bed?utm_source=gold_browser_extension)
-
-[Android 流式布局组件 MMCherryUI](http://www.atatech.org/articles/55379)
-
-[DumpTool----操作Android app 私有文件的利器！](http://www.atatech.org/articles/55926)
 
 [Android系统源码分析--Process启动过程](https://juejin.im/post/59ba055ef265da064a0f232b)
 
@@ -108,6 +91,4 @@ https://github.com/zzz40500/GsonFormat
 根据JSON数据快速生成Java实体类，又一波解放生产力。
 
 [【FreeBuf年终策划】2017年最好用的Android渗透工具合集](http://www.freebuf.com/sectool/124507.html)
-
-[Android技术周报](http://www.atatech.org/articles/73880/?flag_data_from=mail_daily_recommend&uid=130616)
 

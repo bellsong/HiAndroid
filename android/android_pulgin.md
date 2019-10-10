@@ -1023,15 +1023,12 @@ QFix的方式，是取得虚拟机中的某些底层函数，提前resolve所有
 
 [热修复三大流派](https://baichuan.bbs.taobao.com/detail.html?spm=5176.100239.blogcont65319.11.0Ukaxl&postId=6571722)
 
-[Android热修复升级探索](https://www.atatech.org/articles/72533)
 
 摘自：
 
 [从放弃到捡起 Android插件化开发框架CJFrameForAndroid](http://kymjs.com/column/plugin.html)
 
 [DroidPlugin360](https://github.com/Qihoo360/DroidPlugin)
-
-[Android 插件化之AssetManager](http://www.atatech.org/articles/56034)
 
 [动态加载](https://juejin.im/entry/566109fd00b01b7852c1cc9d)
 
@@ -1056,4 +1053,3 @@ QFix的方式，是取得虚拟机中的某些底层函数，提前resolve所有
 
 [Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
 
-[章鱼店长Andfix接入与插件扩展](http://www.atatech.org/articles/57735)
