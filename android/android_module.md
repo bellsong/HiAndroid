@@ -65,6 +65,8 @@ Hermes.connect()本质上还是 bindService()的方式，那同样存在上面�
 
 ## 参考
 
+[安居客 Android 项目架构演进](https://zhuanlan.zhihu.com/p/25420181)
+
 [Andromeda:首个适用于多进程架构的组件通信框架](https://www.v2ex.com/t/459033) http://blog.imallen.wang/
 
 [Android模块化实践](https://juejin.im/post/5b44a0d76fb9a04f932fe147?utm_source=gold_browser_extension)

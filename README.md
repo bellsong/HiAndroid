@@ -16,8 +16,6 @@
 
 ### [Android NDK](./ndk/README.md)
 
-### [流程规范](./standard/README.md)
-
 ## 编程思想
 
 [设计模式](./designpattern/README.md)
@@ -28,6 +26,10 @@
 
 
 ## 流程规范
+
+### [开发流程规范](./standard/README.md)
+
+### [代码质量](./standard/code.md)
 
 ### [代码Review Code Review](./standard/code_review.md)
 
