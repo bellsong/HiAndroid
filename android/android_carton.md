@@ -1,4 +1,4 @@
-## UI卡顿优化
+# Android UI卡顿优化
 
 ### 卡顿优化点
 
@@ -61,14 +61,8 @@ Android UI性能优化实战 ：blog.csdn.net/lmj62356579…
 
 方式2、利用Choreographer
 
-当然也相应的有一些开源工具：
-
-github.com/markzhai/An… [方式1]
-
-github.com/wasabeef/Ta… [方式2]
-
-github.com/friendlyrob… [方式2]
-
-
 ## 参考
+
 [为什么你的 App 会卡顿](https://juejin.im/entry/58f5b6a18d6d81006493bb7e)
+
+[Android卡顿监控系统-微信读书](https://cloud.tencent.com/developer/article/1156121)

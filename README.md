@@ -88,6 +88,8 @@
 
 * [Gityuan Android技术架构演进与未来](https://mp.weixin.qq.com/s/W38aauoCEEUbL8KvUkb_Rw)
 
+* [腾讯云社区](https://cloud.tencent.com/developer)
+
 ### MORE
 
 [RESTFUL API](https://www.restapitutorial.com/)

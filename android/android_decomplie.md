@@ -472,9 +472,6 @@ http://code.google.com/p/onekey-decompile-apk/
 
 [Android逆向从未如此简单](https://juejin.im/post/58cc92a1b123db00532757cc?utm_source=gold_browser_extension)
 
-
-通过Android API Hook技术，即通过动态代理等方法替换关键节点
-
 https://github.com/google/android-classyshark
 Classyshark，轻松查看apk内部每个包的方法数，用了哪些开源库，同样拿知乎开刀做例子。
 

@@ -312,6 +312,11 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [冷启动秒开](http://www.jianshu.com/p/03c0fd3fc245)
 
 [Android 官方关于启动说明](https://developer.android.com/topic/performance/vitals/launch-time)
+
 [Android应用启动界面分析（Starting Window）](http://blog.csdn.net/xueshanhaizi/article/details/51262528)
+
 [Android冷启动白屏解析，带你一步步分析和解决问题](http://blog.csdn.net/guolin_blog/article/details/51019856)
+
 [Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
+
+[如何统计Android App启动时间](https://cloud.tencent.com/developer/article/1371846)

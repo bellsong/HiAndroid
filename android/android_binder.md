@@ -2,9 +2,8 @@
 
 一.引言
 最近一段时间由于工作，接触到framework部分比较多一点，也难免要和Binder打一些交道，也整理了一些相关知识，但准备写这篇文章时，还是有些慌。而且关于整个Binder机制的复杂程度不是三言两语能描叙清楚的，也害怕自己的理解有些偏差，误导一些朋友（ps:反正也没人看....扎心）所以也参考了很多资料。
-本文主要站在Android开发的角度来大致解析下Binder在java层的一些知识原理，给大家脑子形成一个完整的概念，比如AIDL的实现原理，Binder是怎么通信的等等，文章文字较多，请耐心观看
-熟悉的朋友可以看看下篇，将介绍Activity的启动流程以及Android中的Hook技术:
-震惊！Activity不用注册？手把手教你Hook
+本文主要站在Android开发的角度来大致解析下Binder在java层的一些知识原理，给大家脑子形成一个完整的概念，比如AIDL的实现原理，Binder是怎么通信的等等，
+
 二.Binder概述
 2.1 Android为什么选择Binder
 Android是基于Linux内核的，所以Android要实现进程间的通信，其实大可使用linux原有的一些手段，比如管道，共享内存，socket等方式，但是Android还是采用了Binder作为主要机制，说明Binder具有无可比拟的优势。
