@@ -20,10 +20,11 @@
 
 [设计模式](./designpattern/README.md)
 
+[面向切面编程(AOP)](./think/aop.md)
+
 ## 程序员修炼
 
 ### [思维方式训练](./think/README.md)
-
 
 ## 流程规范
 

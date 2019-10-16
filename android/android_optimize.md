@@ -34,9 +34,12 @@
 
 * [网络流量优化专项](./android_network_flow.md)
 
+* [磁盘空间优化](./android_storge.md)
 #### 监控体系
 
 [蜂鸟团队移动端异常监控体系建设](https://juejin.im/post/5b874cbce51d4538b77667e3?utm_source=gold_browser_extension)
+
+[方法执行耗时统计](./android_method_time.md)
 
 #### 检测工具
 
@@ -58,7 +61,7 @@ https://juejin.im/entry/587c43a3570c352201039814
 
 [Android性能优化典范](http://hukai.me/android-performance-patterns/)
 
-[性能优化视频](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
+[性能优化](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE)
 
 [Android性能优化案例研究](http://www.importnew.com/4065.html)
 

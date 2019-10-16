@@ -1,4 +1,6 @@
-#Something about Android View
+# Something about Android View
+
+[强烈建议！让你的团队强制推行ConstraintLayout！])(https://cloud.tencent.com/developer/article/1355429)
 
 
 Android中加载View是从Activity的OnCreate方法调用setContentView开始。那View的具体加载过程是怎么样的？
