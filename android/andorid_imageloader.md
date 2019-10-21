@@ -219,6 +219,17 @@ I/cxmyDev: bgImage byteCount : 5308416
 2
 可以看到，优化的目的还是达到了。可以节约大概 3MB 左右的内存空间，而图片又不至于模糊到无法看的地步。
 
+
+## Glide导致OOM处理
+
+1. 当ImageView的scaleType设置为fitXY时，Glide会加载全分辨率的图片，尽管ImageView可能不需要这么大。
+
+
+有2种选择
+
+1. 更改ImageView的scaleType，比如改成fitCenter或者centerCrop
+2. 或者加载的时候改为
+
 ## 参考
 
 [官方网站](http://bumptech.github.io/glide/)
@@ -258,3 +269,7 @@ I/cxmyDev: bgImage byteCount : 5308416
 [Android 图片加载缓存问题：为什么你的Glide缓存没有起作用？](https://juejin.im/post/5ad3fd336fb9a028b5485713)
 
 [Glide 核心设计二: 缓存管理](https://juejin.im/post/58b42cb9ac502e0069e0e370)
+
+[Android glide使用过程中遇到的坑(进阶篇)](https://www.jianshu.com/p/deccde405e04)
+
+[Android 高清加载巨图方案 拒绝压缩图片](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1021/3607.html)
