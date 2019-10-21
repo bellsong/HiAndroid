@@ -1715,6 +1715,16 @@ ro.product.cpu.abi2=armeabi
 
 ### 分辨率
 
+
+DPI，DP，PX
+
+|宽×高(标准值)	| 240×320|	320×480|	480×800|	720×1280|	1080×1920|	1440×2560|
+|-------------|--------|---------|-----------|------------|-------------|----------|
+| DPI等级	| LDPI  |	MDPI |	HDPI |	XHDPI |	XXHDPI	| XXXHDPI |
+| DPI数值	| 120   |	160	 |  240	 |  320	  |   480	|   640   |
+| 对应比例	 | 3	 |    4	 |     6  |	8      |	12   |	16     |
+| 1DP=？PX	| 0.75	|   1	|   1.5	| 2	      |     3	| 4       |
+
 命令：
 
 ```sh
@@ -3047,6 +3057,10 @@ adb shell am broadcast -a NotifyServiceStop
 adb forward tcp:12580 tcp:10086
 
 adb shell am broadcast -a NotifyServiceStart
+
+
+
+
 
 ## 参考
 
