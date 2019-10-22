@@ -1,3 +1,9 @@
+# Android 动态更新
+
+
+
+## 参考
+
 [利用动态加载实现手机淘宝的节日特效](http://www.jianshu.com/p/195eb1d8d0de)
 
 [Android热补丁动态更新实践](http://www.jianshu.com/p/f8edac2f7487)
@@ -10,3 +16,5 @@
 [Android热更新方案Robust](http://tech.meituan.com/android_robust.html)
 
 [Android Classloader热修复技术之百家齐放](http://blog.csdn.net/sbsujjbcy/article/details/51760578)
+
+[Android增量更新](https://juejin.im/post/5da845cdf265da5b7244c63e)

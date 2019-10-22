@@ -320,3 +320,5 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [Android应用启动优化:一种DelayLoad的实现和原理(上篇)](http://androidperformance.com/2015/11/18/Android-app-lunch-optimize-delay-load.html)
 
 [如何统计Android App启动时间](https://cloud.tencent.com/developer/article/1371846)
+
+[手机淘宝性能优化全记录](https://yq.aliyun.com/articles/2696?spm=a2c4e.11155435.0.0.2a91451fYsRxAr)

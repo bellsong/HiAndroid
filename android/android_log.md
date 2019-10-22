@@ -6,7 +6,6 @@
 
 [Android无埋点数据收集SDK关键技术](https://www.jianshu.com/p/b5ffe845fe2d)
 
-
 Android程序log追踪工具_cooker-tracer
 
 [Android打印Trace堆栈](http://gityuan.com/2017/07/09/android_debug/)
@@ -48,6 +47,15 @@ android:分享 一个很强大的LOG开关---Log.isLoggable
 
 adb shell setprop log.tag.YOUR_LOG_TAG 
 adb shell setprop log.tag.UNIONADS D
+
+### 日志记录框架
+
+日志记录无论在服务端开发还是移动端开发，都是一个基础且重要的能力，开发人员在代码调试以及错误定位过程中，大多说都要依赖日志信息，一个简洁灵活的日志记录模块是相当重要的。Logger（https://github.com/orhanobut/logger） 是基于系统Log类基础上进行的封装，但新增了如下超赞的特性。
+
+1. 在Logcat中完美的格式化输出，再也不用担心和手机其他APP或者系统的日志信息相混淆了
+2. 包含线程、类、方法信息，可以清楚地看到日志记录的调用堆栈
+3. 支持跳转到源码处
+4. 支持格式化输出JSON、XML格式信息
 
 ### 参考
 [android 4.2.1 一种高效log打开方式](http://blog.csdn.net/maybe_windleave/article/details/8742178)
@@ -96,3 +104,4 @@ adb shell setprop log.tag.UNIONADS D
 
 这一个个都是彩信里面重要log开关。知道了这些以后调试彩信就方便多了，不用换APK，在出问题的手机上就直接能抓到有效log，能提升不少工作效率。我们接着载回去看看isLoggable(Stringtag, int level)在哪里有调用，发现除了framework层和Mms应用，还有Contacts等重要模块有调用，以后调试这些模块都会方便很多。
 
+https://github.com/orhanobut/logger

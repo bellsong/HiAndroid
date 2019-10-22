@@ -181,3 +181,5 @@ Heap Tool：查看当前内存快照，便于对比分析哪些对象有可能�
 [调查 RAM 使用情况](https://developer.android.com/studio/profile/investigate-ram?hl=zh-cn)
 
 [我这样减少了26.5M Java内存！](https://wetest.qq.com/lab/view/359.html)
+
+[Android 内存暴减的秘密？！](https://wetest.qq.com/lab/view/362.html)

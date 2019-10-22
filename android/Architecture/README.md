@@ -68,3 +68,11 @@
 
 [支付宝客户端架构解析：Android 容器化框架初探](https://juejin.im/post/5bd81cf2f265da0ab674096c)
 
+[ Android UI 组件开源软件](http://www.oschina.net/project/tag/342/android-ui?lang=0&os=0&sort=view)
+
+[Android 高仿 频道管理----网易、今日头条、腾讯视频 （可以拖动的GridView）附源码DEMO](http://blog.csdn.net/vipzjyno1/article/details/25005851)
+
+[Android应用架构的发展和实践](https://juejin.im/post/5c6656c9e51d451b08296d43)
+
+[优秀架构师必须掌握的架构思维](https://www.infoq.cn/article/architecture-thought)
+
