@@ -1,5 +1,11 @@
 # Android日志收集
 
+### Log原则
+
+1. 别 log 太多信息，也别 log 太少；
+2. log 要有结构化；
+3. 要用对 log 的等级，info 级的 log 千万不能把熟睡中的 oncall 的工程师吵醒；
+4. 别因为 log 而影响了整体性能。
 
 ### 埋点
 [JJEvent 一个可靠的Android端数据埋点SDK](https://juejin.im/post/5bbdca89e51d450e92526a3b?utm_source=gold_browser_extension)
