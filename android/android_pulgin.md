@@ -1,6 +1,6 @@
-#动态加载和插件化
+# 动态加载和插件化
 
-##简介
+## 简介
 
 1. 第一部分前世今生，即插件化的历史。
 
@@ -930,9 +930,6 @@ Resources getTopLevelResources(String resDir, String[] splitResDirs,
 
 > Lody
 
-
-
-
 # I, Programmer.
 ##Day 1 Android插件化
 
@@ -998,7 +995,6 @@ QQZone作为ClassLoader hook的方案代码，需要对code进行插桩，只可
 [Amigo](https://www.diycode.cc/projects/eleme/Amigo)
 Amigo 原理与 QQZone 的方案有些类似，QQZone,Tinker,Nuwa这类方案是通过修改PathClassLoader中的dex实现的，Amigo则是釜底抽薪直接替换ClassLoader。同时进一步实现了 so 文件、资源文件、四大组件的修复，可以对APP全面进行修复，不愧 Amigo（朋友）这个称号，能在危急时刻送来全面的帮助。同时Amigo也致力解决使用过程中的带来的束缚，比如对代码进行插桩、打包时保存和指定映射文件等(如果mapping文件丢了后果不堪设想)，所以开发和打包完全无侵入。
 
-
 [Aceso](https://www.diycode.cc/projects/meili/Aceso)
 
 [Robust]()
@@ -1050,6 +1046,6 @@ QFix的方式，是取得虚拟机中的某些底层函数，提前resolve所有
 
 [热修复入门：Android 中的 ClassLoader](http://jaeger.itscoder.com/android/2016/08/27/android-classloader.html)
 
-
 [Android 插件化系列第（一）篇 ---Hook 技术之 Activity 的启动过程拦截](https://juejin.im/entry/58a15712b123db16a3e0afc1)
 
+[腾讯插件框架Shadow解析之动态化和插件加载](https://juejin.im/post/5dae773151882510b0155c02?utm_source=gold_browser_extension)
