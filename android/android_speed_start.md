@@ -322,3 +322,5 @@ Hujiawei，魅族开发者，博客最近经常更新Android性能数据搜集�
 [如何统计Android App启动时间](https://cloud.tencent.com/developer/article/1371846)
 
 [手机淘宝性能优化全记录](https://yq.aliyun.com/articles/2696?spm=a2c4e.11155435.0.0.2a91451fYsRxAr)
+
+[Android进阶——性能优化之APP启动速度优化实战总结（三）](https://blog.csdn.net/CrazyMo_/article/details/80035314)
