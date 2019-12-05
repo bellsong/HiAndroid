@@ -1,8 +1,5 @@
 # Something about Android View
 
-[强烈建议！让你的团队强制推行ConstraintLayout！])(https://cloud.tencent.com/developer/article/1355429)
-
-
 Android中加载View是从Activity的OnCreate方法调用setContentView开始。那View的具体加载过程是怎么样的？
 
 追踪一下代码：
@@ -214,3 +211,6 @@ public static int generateViewId() {
 [自定义View系列：打造一个显示密码等级的控件](https://philipdroid.github.io/2016/10/26/%E4%B8%80%E4%B8%AA%E6%98%BE%E7%A4%BA%E5%AF%86%E7%A0%81%E7%AD%89%E7%BA%A7%E7%9A%84%E6%8E%A7%E4%BB%B6PasswordLevelView/)
 
 [图解 View 测量、布局及绘制原理](https://juejin.im/entry/58d37fb861ff4b006cb6670a)
+
+[强烈建议！让你的团队强制推行ConstraintLayout！])(https://cloud.tencent.com/developer/article/1355429)
+

@@ -73,9 +73,7 @@ Source code is the design
 组件化要解决的问题
 
 1. 路由跳转，页面跳转
-    * 阿里ARouter [ARouter](https://juejin.im/entry/5b72331e6fb9a009b16d42ae?utm_source=gold_browser_extension)
-
-[Android 路由框架ARouter最佳实践](https://blog.csdn.net/zhaoyanjun6/article/details/76165252?spm=a2c4e.10696291.0.0.4dd619a4zl7A7F)
+    * [阿里ARouter ](./android_arouter.md)
 
     * 天猫的统一跳转协议
     
