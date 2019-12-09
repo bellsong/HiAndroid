@@ -10,8 +10,6 @@
 
 [android 软软的动画弹出菜单，基于Facebook的Rebuond](https://gold.xitu.io/post/5849658161ff4b006cb86031)
 
-[Android轻松实现RecyclerView悬浮条](http://www.jianshu.com/p/fe69a53502ab)
-
 [模仿荷包启动动画](http://www.jianshu.com/p/50c358e2155a)
 
 [模拟自然动画的精髓——TimeInterpolator与TypeEvaluator](https://blog.csdn.net/eclipsexys/article/details/52693324)

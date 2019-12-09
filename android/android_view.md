@@ -161,8 +161,6 @@ public static int generateViewId() {
 * [View原理](http://www.jianshu.com/p/17b372ef3f41)
 * [教你实现一个具备展开折叠功能的TextView](http://www.jianshu.com/p/317b118dd2d7)
 
-* [把RecyclerView撸成 马 蜂 窝](http://www.jianshu.com/p/6c78a5a07db5)
-
 * [Vector](http://www.jianshu.com/p/e3614e7abc03)
 
 * [屏幕尺寸，分辨率，像素，PPI之间到底什么关系？](http://www.jianshu.com/p/c3387bcc4f6e)
@@ -184,8 +182,6 @@ public static int generateViewId() {
 * [Fragment](./android_fragment.md)
 
 * [ListView](./android_listview.md)
-
-* [RecyclerView](http://antonioleiva.com/recyclerview-listener/)
 
 * [Bitmap](./android_view_bitmap.md)
 
@@ -212,5 +208,4 @@ public static int generateViewId() {
 
 [图解 View 测量、布局及绘制原理](https://juejin.im/entry/58d37fb861ff4b006cb6670a)
 
-[强烈建议！让你的团队强制推行ConstraintLayout！])(https://cloud.tencent.com/developer/article/1355429)
-
+[Android ConstraintLayout 使用](./View/ConstraintLayout.md)

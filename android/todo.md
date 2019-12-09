@@ -99,7 +99,6 @@ tagsoup	Html解析	https://github.com/ndmitchell/tagsoup
 ViewPagerIndicator	JakeWharton主导的项目,所以不用说了吧,很老的项目了,学习还是很不错的,Github上衍生出了很多,尝试搜索"Indicator"	https://github.com/JakeWharton/ViewPagerIndicator
 wire	项目简介: Clean, lightweight protocol buffers for Android and Java.	https://github.com/square/wire
 okio	java IO框架 :Okio是一个新的库，补充java.io和java.nio，使它更容易访问，存储和处理您的数据。	https://github.com/square/okio
-XRecyclerView	一个支持下拉刷新和下拉加载的RecyclerView	https://github.com/jianghejie/XRecyclerView
 ijkplayer	Bilibili开源的视频播放库,用过的都说好=.=	https://github.com/Bilibili/ijkplayer
 dagger	Square 公司开源的 一种针对Android和Java的快速依赖注入器	https://github.com/square/dagger
 jackson-databind	解放双手,减少重复代码编写量	https://github.com/FasterXML/jackson-databind
