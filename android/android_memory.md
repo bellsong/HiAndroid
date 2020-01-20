@@ -26,6 +26,8 @@
 
 3. [Andorid Studio 自带的分析工具 Memory Profiler](https://developer.android.com/studio/profile/memory-profiler?hl=zh-cn)
 
+4. [Native内存泄漏检测](./android_memory_native.md)
+
 ### 内存优化建议
 
 1. 谨慎使用服务
