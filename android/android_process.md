@@ -180,6 +180,9 @@ public class TempService extends Service {
 
 1. removeTask
 
+## Android 跨进程通信
+
+[跨进程通信框架Hermes](https://blog.csdn.net/yehui928186846/article/details/99677022)
 
 
 
