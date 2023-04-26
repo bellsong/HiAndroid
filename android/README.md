@@ -78,7 +78,32 @@ https://www.jianshu.com/p/37370c1d17fc
 
 https://juejin.cn/post/6844904116561379341
 
+#### Gradle
+
+[Gradle 使用](https://juejin.cn/post/6844903951846899719?utm_source=gold_browser_extension)
+[一文彻底搞清 Gradle 依赖](https://juejin.cn/post/6844903741297016840)
+
+
 #### [跨进程通信](https://blog.csdn.net/u011240877/article/details/72863432)
+
+
+#### 消息推送
+
+[Android 消息推送](https://juejin.cn/post/6844903478200909837)
+
+[Android 架构之长连接技术](https://juejin.cn/post/6844903775337971725)
+
+
+#### WebView
+
+[WebView](https://juejin.cn/post/6844904004825120775)
+
+[Android WebView 优化](https://juejin.cn/post/6844904016443359245?utm_source=gold_browser_extension) 
+
+[QQ 音乐 WebView 优化](https://juejin.cn/post/6850418120335573000?utm_source=gold_browser_extension)
+
+[基于腾讯x5封源库，提高60%开发效率](https://juejin.cn/post/6844903950785708040?utm_source=gold_browser_extension)
+
 
 #### [性能优化专项](./android_optimize.md)
 
@@ -86,11 +111,25 @@ https://juejin.cn/post/6844904116561379341
 
 [Android 性能优化](https://www.cnblogs.com/qcloud1001/p/9525078.html)
 
+
+[Android 卡顿优化](https://juejin.cn/post/6844903949560971277?utm_source=gold_browser_extension)
+
+[今日头条启动优化](https://juejin.cn/post/6844903958113157128?utm_source=gold_browser_extension)
+
+[IdleHandler，页面启动优化神器](https://juejin.cn/post/6844903713006419975)
+
+[Handler中的IdleHandler](https://juejin.cn/post/6844903791926444046)
+
+[荣登Github日榜！微信最新开源MMKV](https://juejin.cn/post/6844903683994435598)
+
+
 #### [andorid性能优化思考](./android_optimize_think.md)
 
 #### [插件化](./android_pulgin.md)
 
 https://segmentfault.com/a/1190000041622219
+
+[Android Virtualview：淘宝、天猫 又一个动态化、高性能的UI框架力作](https://juejin.cn/post/6844903566314831886)
 
 [【Android 插件化】插件化原理 ( 类加载器 )](https://bbs.huaweicloud.com/blogs/324577)
 
@@ -195,6 +234,48 @@ https://segmentfault.com/a/1190000041622219
 #### [音频相关](./android_media.md)
 
 ### [Programmer](./programmer.md)
+
+
+
+[Android 视频播放]()
+
+[ExoPlayer](https://juejin.cn/post/6854573203994443789)
+
+[ContentProvider的查询访问流程](https://juejin.cn/post/7074042136781389837)
+
+
+[GooglePay 谷歌支付](https://juejin.cn/post/7090373554172067848)
+
+[Android APK 打包编译过程](https://juejin.cn/post/7173651266823225374)
+
+[Android 跨进程通信](https://juejin.cn/post/6844903614377361421)
+
+
+[MMAP](https://juejin.cn/post/6844903839745703950)
+
+
+## Android 动态化
+
+[支付宝移动端动态化方案实践](https://juejin.cn/post/6844903700507426823)
+
+[Android 源码学习](https://juejin.cn/post/6844903843948396558)
+
+
+## 前端技术 
+
+[前端技术](https://juejin.cn/post/6844903709382541320)
+
+## 项目实战
+
+[ReadHub App](https://juejin.cn/post/6844903792631103501)
+
+[从零开始仿写一个抖音App——app架构更新与网络层定制](https://juejin.cn/post/6844903687563788301?utm_source=gold_browser_extension)
+
+
+## 深度学习
+
+[深度学习模型GitHub集合](https://juejin.cn/post/6844903620962418702)
+
 
 ## Online Course
 
