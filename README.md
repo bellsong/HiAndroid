@@ -19,6 +19,43 @@
 
 ### [项目实践](./project/README.md)
 
+## Android 服务
+
+国内 Android 稳定性SDK 腾讯 [Bugly](https://bugly.qq.com/v2/index)
+
+## Android 常见场景以及解决方案
+
+[Android 进程保活](https://segmentfault.com/a/1190000006251859)
+
+[Android 性能优化博客](https://www.androidperformance.com/)
+
+[Android 性能优化-抖音APP](https://mp.weixin.qq.com/s/AQI2S2oK7HFDs9lH-nsx5g)
+
+[Android 异常捕获-Android 平台 Native 代码的崩溃捕获机制及实现](https://mp.weixin.qq.com/s/g-WzYF3wWAljok1XjPoo7w)
+
+[Android 异常捕获-稳定性-Native 异常](https://www.cnblogs.com/willhua/p/6718379.html)
+
+[Android NDK 内存泄漏检测](https://source.android.com/docs/core/tests/debug/native-memory?hl=zh-cn)
+
+[Android 模块化](https://zhuanlan.zhihu.com/p/26744821)
+
+[Android 模块化实践-滴滴国际化APP](https://www.trinea.cn/android/didi-internationalization-android-evolution/)
+
+[Android 组件化](https://www.jianshu.com/p/f8c2b6042bdc)
+
+[Android 性能优化](https://mp.weixin.qq.com/s/QVOYF2nfoWMCbM5YsxQgRQ?)
+
+[Android ANR 问题总结](https://www.jianshu.com/p/fa962a5fd939)
+
+[Cannot draw a recycled Bitmap ](https://shumxin.github.io/android/2021/06/27/glide-resource-re-use-error.html)
+
+## Android 源码查找
+
+[https://cs.android.com/](https://cs.android.com/)
+
+[Android APP 启动流程简析](https://www.jianshu.com/p/910df9643d8c)
+
+[Android 源码解读 - 进程](https://www.jianshu.com/p/7bd3d0ee8a56)
 
 ## 流程规范
 
