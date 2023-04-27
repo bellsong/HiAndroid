@@ -2,9 +2,7 @@
 
 ## Android 开发技术
 
-### [Android 基础知识](./base/README.md)
-
-### [Android 进阶知识](./android/README.md)    
+### [Android 开发技术](./android/README.md)    
 
 ### [Android 开发工具](./tool/README.md)
 
@@ -14,12 +12,6 @@
 ## Android 源码
 
 ### [Android 源码](./source/README.md) 
-
-[https://cs.android.com/](https://cs.android.com/)
-
-[Android APP 启动流程简析](https://www.jianshu.com/p/910df9643d8c)
-
-[Android 源码解读 - 进程](https://www.jianshu.com/p/7bd3d0ee8a56)
 
 
 ### [Android Jetpack](./AndroidJetpack/README.md)
