@@ -116,3 +116,6 @@ Android官网（https://developer.android.com/guide/topics/connectivity/bluetoot
 Apple官网（https://developer.apple.com/bluetooth/）提供了iOS设备蓝牙开发的指南和API文档。
 
 Bluetooth开发者社区（https://www.bluetooth-dev.com/）提供了蓝牙开发的论坛和博客，可以与其他开发者交流和分享经验。
+
+https://www.bluetooth.com/wp-content/uploads/2022/05/The-Bluetooth-LE-Primer-V1.1.0.pdf?__hstc=44473531.f5d1a56f1e97ce6f0aaaabf25be4d31b.1684486747182.1684486747182.1684489643566.2&__hssc=44473531.2.1684489643566&__hsfp=425377405&hsCtaTracking=8e3cb9ce-2e7b-471a-b5cc-2343a4915b6a%7C090f705a-f0df-4f4b-8a54-c8f97c73eb69
+
