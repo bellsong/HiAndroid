@@ -22,6 +22,8 @@
 
 ## 蓝牙技术
 
+[Bluetooth Guide 蓝牙基础知识](./bluetooth/README.md)
+
 [BLE Bluetooth Low Energy](./bluetoothLowEnergy.md)
 
 [BLE_Mesh](./BLE_MESH.md)
