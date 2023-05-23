@@ -26,7 +26,7 @@
 
 [BLE_Mesh](./BLE_MESH.md)
 
-### 蓝牙耳机规格 (HFP\HSP\A2DP\AVRCP)(./bluetooth/profile.md)
+### [蓝牙耳机规格 (HFP\HSP\A2DP\AVRCP)](./bluetooth/profile.md)
 
 ## Android 服务
 
